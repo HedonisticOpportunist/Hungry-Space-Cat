@@ -71,7 +71,7 @@ public class GameManager : MonoBehaviour
     private void StartGame()
     {
         SetScore(0);
-        SetLives(3);
+        SetLives(9); // A cat has nine lives. 
         NewRound();
     }
 
