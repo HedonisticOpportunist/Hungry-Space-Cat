@@ -77,7 +77,7 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        if (this.Lives <= 0 && Input.anyKeyDown)
+        if (Lives <= 0 && Input.anyKeyDown)
         {
             StartGame();
         }
@@ -102,20 +102,20 @@ public class GameManager : MonoBehaviour
         DeactivateCat();
     }
 
-    private void SetScore(int score) => this.Score = score;
+    private void SetScore(int score) => Score = score;
 
-    private void SetLives(int lives) => this.Lives = lives;
+    private void SetLives(int lives) => Lives = lives;
 
     private void ActivatePellets()
     {
-        foreach (Transform pellet in this.pellets)
+        foreach (Transform pellet in pellets)
         {
             pellet.gameObject.SetActive(true);
         }
     } 
     private void ActivateWolves()
     {
-        foreach (Wolf wolf in this.wolves)
+        foreach (Wolf wolf in wolves)
         {
             wolf.gameObject.SetActive(true);
         }
@@ -131,7 +131,7 @@ public class GameManager : MonoBehaviour
 
     private void DeactivateWolves()
     {
-        foreach (Wolf wolf in this.wolves)
+        foreach (Wolf wolf in wolves)
         {
             wolf.gameObject.SetActive(false);
         }
