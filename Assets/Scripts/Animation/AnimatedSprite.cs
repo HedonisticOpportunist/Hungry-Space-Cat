@@ -1,57 +1,57 @@
-// @Credit: https://github.com/zigurous/unity-pacman-tutorial/blob/main/Assets/Scripts/AnimatedSprite.cs
-// Any modifications and errors are mine and mine alone 
+// With modification @Credit: https://github.com/zigurous/unity-pacman-tutorial/blob/main/Assets/Scripts/AnimatedSprite.cs
+// Any errors are mine and mine alone 
 using UnityEngine;
 
 [RequireComponent(typeof(SpriteRenderer))]
 public class AnimatedSprite : MonoBehaviour
 {
-    public SpriteRenderer SpriteRenderer { get; private set; }
-    public Sprite[] spritesArray;
-    public float animationTime = 0.25f;
-    public int AnimationFrame { get; private set; }
-    public bool animationShouldLoop = true;
+    [SerializeField] SpriteRenderer spriteRenderer;
+    [SerializeField] Sprite[] spritesArray;
+    [SerializeField] float animationTime = 0.25f;
+    [SerializeField] int animationFrame;
+    [SerializeField] bool animationShouldLoop = true;
 
     // PUBLIC METHODS //
 
-    public void RestartAnimation()
+    void RestartAnimation()
     {
-        this.AnimationFrame = -1;
+        animationFrame = -1;
 
         MoveAnimationForward();
     }
 
     // PRIVATE METHODS //
-    private void Awake()
+    void Awake()
     {
-        SpriteRenderer = GetComponent<SpriteRenderer>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
-    private void Start()
+    void Start()
     {
         InvokeRepeating(nameof(MoveAnimationForward), animationTime, animationTime);
     }
 
-    private void MoveAnimationForward()
+    void MoveAnimationForward()
     {
-        if (!SpriteRenderer.enabled)
+        if (!spriteRenderer.enabled)
         {
             return;
         }
 
-        this.AnimationFrame++;
+        animationFrame++;
         CheckAnimationFrameConditions();
     }
 
-    private void CheckAnimationFrameConditions()
+    void CheckAnimationFrameConditions()
     {
-        if (AnimationFrame >= spritesArray.Length && animationShouldLoop)
+        if (animationFrame >= spritesArray.Length && animationShouldLoop)
         {
-            AnimationFrame = 0;
+            animationFrame = 0;
         }
 
-        if (AnimationFrame >= 0 && AnimationFrame < spritesArray.Length)
+        if (animationFrame >= 0 && animationFrame < spritesArray.Length)
         {
-            SpriteRenderer.sprite = spritesArray[AnimationFrame];
+            spriteRenderer.sprite = spritesArray[animationFrame];
         }
     }
 }

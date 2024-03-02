@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2919494075165361520}
   - component: {fileID: 7700279869668029155}
   - component: {fileID: 6280830789039459459}
+  - component: {fileID: 6564404691724261011}
   m_Layer: 0
   m_Name: Cat
   m_TagString: Untagged
@@ -161,10 +162,76 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2a9686d2325ee94f87771599cbbff40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spriteRenderer: {fileID: 8973300992348093397}
   spritesArray:
   - {fileID: -349795524, guid: 9417259ab63b6df478f3de995eb9d85d, type: 3}
   - {fileID: -1951632733, guid: 9417259ab63b6df478f3de995eb9d85d, type: 3}
   - {fileID: -1101731659, guid: 9417259ab63b6df478f3de995eb9d85d, type: 3}
   - {fileID: -932313436, guid: 9417259ab63b6df478f3de995eb9d85d, type: 3}
   animationTime: 0.25
-  animationShouldLoop: 1
+  animationFrame: 0
+  animationShouldLoop: 0
+--- !u!114 &6564404691724261011
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8360398628935114832}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e869ac33235881c48ae5dc30ab402550, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  movement:
+    m_Name: Movement
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 1f7c7d3b-0329-48b1-841b-cc6fa36557d0
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 2D Vector
+      m_Id: b4402063-a3fc-4566-913f-a23221cf27f8
+      m_Path: 2DVector
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Movement
+      m_Flags: 4
+    - m_Name: up
+      m_Id: c6955b95-5096-4295-bff9-3707ba5f419f
+      m_Path: <Keyboard>/upArrow
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Movement
+      m_Flags: 8
+    - m_Name: down
+      m_Id: 4fa48946-bafc-44c2-8dfb-541f50a32e58
+      m_Path: <Keyboard>/downArrow
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Movement
+      m_Flags: 8
+    - m_Name: left
+      m_Id: fe322bdb-18af-4ae7-b820-1bbcb0159994
+      m_Path: <Keyboard>/leftArrow
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Movement
+      m_Flags: 8
+    - m_Name: right
+      m_Id: 9561b50e-8b5e-4f17-94de-ff1282b6e30a
+      m_Path: <Keyboard>/rightArrow
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Movement
+      m_Flags: 8
+    m_Flags: 0
+  body: {fileID: 2919494075165361520}
+  moveLimiter: 0.7
+  speed: 20
