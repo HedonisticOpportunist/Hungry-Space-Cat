@@ -314,7 +314,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Level:'
+  m_text: 'Level: 1'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
   m_sharedMaterial: {fileID: 2140032, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
@@ -552,10 +552,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Wolf
       objectReference: {fileID: 0}
-    - target: {fileID: 5910535728110759971, guid: a9820faed61896e4e91bb74a045f5e77, type: 3}
-      propertyPath: m_Layer
-      value: 7
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -613,7 +609,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fish (1)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5315752511448512153, guid: 6579666a8aab26148be77572ba0decfd, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -727,7 +724,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fish (2)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5315752511448512153, guid: 6579666a8aab26148be77572ba0decfd, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -789,6 +787,54 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6579666a8aab26148be77572ba0decfd, type: 3}
+--- !u!1 &1339636854
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1339636855}
+  - component: {fileID: 1339636856}
+  m_Layer: 0
+  m_Name: GameSession
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1339636855
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1339636854}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 4.678667, y: 4.4381638, z: 0.18431571}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1339636856
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1339636854}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 756fdc7aeccc33341802e480d1598b0d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  numberOfCatLives: 9
+  score: 0
+  catLivesText: {fileID: 2118802084}
+  scoreText: {fileID: 160662166}
 --- !u!1 &1428368156
 GameObject:
   m_ObjectHideFlags: 0
@@ -996,6 +1042,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2501369768520929524, guid: 2fc9a5c4d7c870a4e9431bb63948fabf, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6564404691724261011, guid: 2fc9a5c4d7c870a4e9431bb63948fabf, type: 3}
+      propertyPath: isAlive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7700279869668029155, guid: 2fc9a5c4d7c870a4e9431bb63948fabf, type: 3}
+      propertyPath: m_IsTrigger
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8360398628935114832, guid: 2fc9a5c4d7c870a4e9431bb63948fabf, type: 3}
@@ -3283,7 +3337,7 @@ GameObject:
   - component: {fileID: 2118802085}
   - component: {fileID: 2118802084}
   m_Layer: 5
-  m_Name: HighScoreText
+  m_Name: CatLivesText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3328,7 +3382,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'High Score:'
+  m_text: 'Cat LIVES: '
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
   m_sharedMaterial: {fileID: 2140032, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
@@ -3421,3 +3475,4 @@ SceneRoots:
   - {fileID: 1195722662}
   - {fileID: 1038200247}
   - {fileID: 1651656793}
+  - {fileID: 1339636855}
