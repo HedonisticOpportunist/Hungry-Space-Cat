@@ -1,5 +1,6 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameSession : MonoBehaviour
 {
@@ -21,12 +22,41 @@ public class GameSession : MonoBehaviour
         scoreText.text = "Score:: " + score.ToString();
     }
 
+    public void HandleCatDeath()
+    {
+       /* Based on the below, with minor modifications 
+       // @Credit: https://www.gamedev.tv/courses/1394720/lectures/34966898
+       // Part of the https://www.gamedev.tv/p/unity-2d-game-dev-course-2021 course
+       // Note that the video is not accessible unless enrolled to the above 
+       */
+
+       if (numberOfCatLives > 1)
+        {
+            RemoveCatLives();
+        }
+
+       else
+        {
+            ResetGameSession();
+        }
+
+    }
+
     // PRIVATE METHODS
     void Awake()
     {
+        /* Based on the below, with minor modifications 
+        // @Credit: https://www.gamedev.tv/courses/1394720/lectures/34966898
+        // Part of the https://www.gamedev.tv/p/unity-2d-game-dev-course-2021 course
+        // Note that the video is not accessible unless enrolled to the above 
+        */
         int numberOfGameSessions = FindObjectsOfType<GameSession>().Length;
 
-        if (numberOfGameSessions > 0)
+        if (numberOfGameSessions > 1)
+        {
+            Destroy(gameObject);
+        }
+        else
         {
             DontDestroyOnLoad(gameObject);
         }
@@ -40,5 +70,29 @@ public class GameSession : MonoBehaviour
         */
         catLivesText.text = "Cat Lives: " + numberOfCatLives.ToString();
         scoreText.text = "Score:: " + score.ToString();
+    }
+
+    void ResetGameSession()
+    {
+        /* Based on the below, with minor modifications 
+        // @Credit: https://www.gamedev.tv/courses/1394720/lectures/34966898
+        // Part of the https://www.gamedev.tv/p/unity-2d-game-dev-course-2021 course
+        // Note that the video is not accessible unless enrolled to the above 
+        */
+        FindObjectOfType<LevelManager>().LoadGame();
+        Destroy(gameObject);
+    }
+
+    void RemoveCatLives()
+    {
+        /* Based on the below, with minor modifications 
+        // @Credit: https://www.gamedev.tv/courses/1394720/lectures/34966898
+        // Part of the https://www.gamedev.tv/p/unity-2d-game-dev-course-2021 course
+        // Note that the video is not accessible unless enrolled to the above 
+         */
+        numberOfCatLives -= 1;
+        int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+        SceneManager.LoadScene(currentSceneIndex);
+        catLivesText.text = "Cat Lives:: " + numberOfCatLives.ToString();
     }
 }

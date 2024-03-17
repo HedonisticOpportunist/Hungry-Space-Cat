@@ -93,7 +93,18 @@ public class CatController : MonoBehaviour
     {
         if (other.CompareTag("Wolf"))
         {
-            isAlive = false;
+            CatDeath();
         }
+    }
+
+    void CatDeath()
+    {
+        /* Based on the below, with modifications and deletions 
+        // @Credit: https://www.gamedev.tv/courses/1394720/lectures/34966898
+        // Part of the https://www.gamedev.tv/p/unity-2d-game-dev-course-2021 course
+        // Note that the video is not accessible unless enrolled to the above 
+         */
+        isAlive = false;
+        FindObjectOfType<GameSession>().HandleCatDeath();
     }
 }
