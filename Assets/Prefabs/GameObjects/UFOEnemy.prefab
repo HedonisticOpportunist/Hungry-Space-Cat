@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 6245590720827944055}
   - component: {fileID: 6807116023903516783}
   - component: {fileID: 8458343818831153004}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: UFOEnemy
   m_TagString: UFO
   m_Icon: {fileID: 0}
@@ -193,5 +193,5 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 4.5, y: 4}
+  m_Size: {x: 3, y: 2}
   m_EdgeRadius: 0
