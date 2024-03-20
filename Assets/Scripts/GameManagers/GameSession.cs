@@ -19,7 +19,7 @@ public class GameSession : MonoBehaviour
         // Note that the video is not accessible unless enrolled to the above 
         */
         score += pointsScored;
-        scoreText.text = "Score:: " + score.ToString();
+        scoreText.text = "Score: " + score.ToString();
     }
 
     public void HandleCatDeath()
@@ -37,7 +37,7 @@ public class GameSession : MonoBehaviour
 
        else
         {
-            ResetGameSession();
+            Debug.Log("Game over");
         }
 
     }
@@ -69,7 +69,7 @@ public class GameSession : MonoBehaviour
         // Note that the video is not accessible unless enrolled to the above 
         */
         catLivesText.text = "Cat Lives: " + numberOfCatLives.ToString();
-        scoreText.text = "Score:: " + score.ToString();
+        scoreText.text = "Score: " + score.ToString();
     }
 
     void ResetGameSession()
@@ -93,6 +93,6 @@ public class GameSession : MonoBehaviour
         numberOfCatLives -= 1;
         int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
         SceneManager.LoadScene(currentSceneIndex);
-        catLivesText.text = "Cat Lives:: " + numberOfCatLives.ToString();
+        catLivesText.text = "Cat Lives: " + numberOfCatLives.ToString();
     }
 }

@@ -34,7 +34,7 @@ public class BugController : MonoBehaviour
         // @Credit: https://gitlab.com/GameDevTV/unity2d-v3/tilevania/-/blob/master/Assets/Scripts/CoinPickup.cs for updating the score when a fish has been eaten. 
         // Part of the https://www.gamedev.tv/p/unity-2d-game-dev-course-2021 course
         */
-        if (other.CompareTag("Cat") && !wasEaten)
+        if (other.CompareTag("SpaceCat") && !wasEaten)
         {
             wasEaten = true;
             FindObjectOfType<GameSession>().UpdateGameScore(pointsForBugsEaten);
