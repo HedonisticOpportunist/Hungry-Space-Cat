@@ -1,6 +1,8 @@
-// With modification @Credit: https://github.com/zigurous/unity-pacman-tutorial/blob/main/Assets/Scripts/AnimatedSprite.cs
-// Any errors are mine and mine alone 
 using UnityEngine;
+
+/* Based on, with modification
+// @Credit: https://github.com/zigurous/unity-pacman-tutorial/blob/main/Assets/Scripts/AnimatedSprite.cs
+*/
 
 [RequireComponent(typeof(SpriteRenderer))]
 public class AnimatedSprite : MonoBehaviour
@@ -14,7 +16,6 @@ public class AnimatedSprite : MonoBehaviour
     void RestartAnimation()
     {
         animationFrame = -1;
-
         MoveAnimationForward();
     }
 

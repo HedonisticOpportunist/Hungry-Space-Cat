@@ -7,9 +7,18 @@ public class BugController : MonoBehaviour
     [SerializeField] float floatStrength = 0.6f;
     [SerializeField] float speed = 2.4f;
     [SerializeField] int pointsForBugsEaten = 10;
+
+    // OTHER VARIABLES
+
     bool wasEaten = false;
+    AudioPlayer audioPlayer;
 
     // PRIVATE METHODS
+
+    void Awake()
+    {
+        audioPlayer = FindObjectOfType<AudioPlayer>();
+    }
 
     void Start()
     {
@@ -37,6 +46,7 @@ public class BugController : MonoBehaviour
         if (other.CompareTag("SpaceCat") && !wasEaten)
         {
             wasEaten = true;
+            audioPlayer.PlayPickupClip();
             FindObjectOfType<GameSession>().UpdateGameScore(pointsForBugsEaten);
             gameObject.SetActive(false);
             Destroy(gameObject);

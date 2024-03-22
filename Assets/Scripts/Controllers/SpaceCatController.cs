@@ -13,6 +13,7 @@ public class SpaceCatController : MonoBehaviour
     [SerializeField] float moveLimiter = 0.7f;
 
     // OTHER VARIABLES
+    AudioPlayer audioPlayer;
     private float horizontal;
     private float vertical;
     Rigidbody2D body;
@@ -22,6 +23,7 @@ public class SpaceCatController : MonoBehaviour
     void Awake()
     {
         body = GetComponent<Rigidbody2D>();
+        audioPlayer = FindObjectOfType<AudioPlayer>();
     }
 
     void FixedUpdate()
@@ -63,13 +65,14 @@ public class SpaceCatController : MonoBehaviour
 
     void FlipCat()
     {
-        transform.localScale = new Vector2((-Mathf.Sign(body.velocity.x) / 2.0f), 0.5f);
+        transform.localScale = new Vector2((-Mathf.Sign(body.velocity.x) / 2.1f), 0.4f);
     }
 
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("UFO"))
         {
+            audioPlayer.PlayCatDamageClip();
             CatDeath();
         }
 
