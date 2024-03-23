@@ -18,5 +18,13 @@ public class SpawnBugs : MonoBehaviour
             Vector2 position = Camera.main.ViewportToWorldPoint(new Vector2(Random.value, Random.value));
             Instantiate(bugs[i], position, Quaternion.identity);
         }
-    }  
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("Bug"))
+        {
+            Destroy(other.gameObject);
+        }
+    }
 }

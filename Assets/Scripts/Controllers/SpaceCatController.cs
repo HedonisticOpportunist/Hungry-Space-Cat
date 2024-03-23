@@ -17,8 +17,16 @@ public class SpaceCatController : MonoBehaviour
     private float horizontal;
     private float vertical;
     Rigidbody2D body;
+    Vector2 minimumBounds;
+    Vector2 maximumBounds;
 
     // PRIVATE METHODS //
+
+
+    void Start()
+    {
+        InitBounds();
+    }
 
     void Awake()
     {
@@ -61,6 +69,18 @@ public class SpaceCatController : MonoBehaviour
 
         body.velocity = new Vector2(horizontal * speed, vertical * speed);
 
+        /* Based on the below, with modifications 
+        // @Credit: https://gitlab.com/GameDevTV/unity2d-v3/laser-defender/-/blob/master/Assets/Scripts/Player.cs for setting up boundaries. 
+        */
+
+        Vector2 newPos = new()
+        {
+            x = Mathf.Clamp(transform.position.x, minimumBounds.x, maximumBounds.x),
+            y = Mathf.Clamp(transform.position.y, minimumBounds.y, maximumBounds.y)
+        };
+
+        transform.position = newPos;
+
     }
 
     void FlipCat()
@@ -78,18 +98,16 @@ public class SpaceCatController : MonoBehaviour
 
     }
 
-    void OnTriggerExit2D(Collider2D other)
-    {
-        if (other.CompareTag("Boundary"))
-        {
-            speed = -speed;
-            FlipCat();
-        }
-    }
-
     void CatDeath()
     {
         isAlive = false;
         FindObjectOfType<GameSession>().HandleCatDeath();
+    }
+
+    void InitBounds()
+    {
+        Camera mainCamera = Camera.main;
+        minimumBounds = mainCamera.ViewportToWorldPoint(new Vector2(0, 0));
+        maximumBounds = mainCamera.ViewportToWorldPoint(new Vector2(1, 1));
     }
 }
