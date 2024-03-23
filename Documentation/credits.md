@@ -47,3 +47,11 @@ The tables below list all the audio assets and where they came from.
 | -----------     | -----------                                        | -----------                       |
 | SFX-Pickup      | https://mixkit.co/free-sound-effects/arcade/       | Fairy arcade sparkle              |
 | SFX-Damage      | https://mixkit.co/free-sound-effects/arcade/       | Failure arcade alert notification |
+
+### FONTS 🐾
+
+| Font Name    | Link                                 |
+| -----------  | -----------                          |
+| Cat Paw      | https://www.dafont.com/cat-paw.font  |
+| Cattie 2     | https://www.dafont.com/cattie-2.font |  
+
