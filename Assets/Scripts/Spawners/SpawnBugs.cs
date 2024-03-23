@@ -19,12 +19,4 @@ public class SpawnBugs : MonoBehaviour
             Instantiate(bugs[i], position, Quaternion.identity);
         }
     }
-
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.CompareTag("Bug"))
-        {
-            Destroy(other.gameObject);
-        }
-    }
 }

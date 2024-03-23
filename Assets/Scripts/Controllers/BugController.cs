@@ -51,5 +51,12 @@ public class BugController : MonoBehaviour
             gameObject.SetActive(false);
             Destroy(gameObject);
         }
+
+        if (other.CompareTag("Bug"))
+        {
+            // This avoids the object overlapping with itself while spawning. 
+            other.gameObject.SetActive(false);
+            Destroy(other.gameObject);
+        }
     }
 }

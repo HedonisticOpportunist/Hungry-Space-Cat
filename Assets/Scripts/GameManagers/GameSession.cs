@@ -79,7 +79,7 @@ public class GameSession : MonoBehaviour
         // Part of the https://www.gamedev.tv/p/unity-2d-game-dev-course-2021 course
         // Note that the video is not accessible unless enrolled to the above 
         */
-        FindObjectOfType<LevelManager>().LoadGame();
+        FindObjectOfType<SceneLoaderManager>().LoadGame();
         Destroy(gameObject);
     }
 
