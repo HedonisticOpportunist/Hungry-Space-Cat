@@ -6,11 +6,11 @@
 
 Green Astronaut Cat Cat: https://bevouliin.com/green-cat-astronaut-game-asset-sprites/
 
-👽 #### Pickups 
+#### Pickups 👽
 
 Bugs: https://bevouliin.com/purple-bug-game-asset-sprites/
 
-👽 #### Enemies 
+#### Enemies 👽
 
 Hamburger UFO: https://bevouliin.com/sandwich-alien-game-asset-sprites/
 
@@ -18,7 +18,7 @@ Cute Angry UFO: https://kububbis.itch.io/kawaii-ufo-sprite-pack
 
 Ghost: https://bevouliin.com/doll-ghost-game-asset-sprites/
 
-👽 #### Backgrounds 
+#### Backgrounds 👽
 
 Space-Themed-Backgrounds: https://screamingbrainstudios.itch.io/seamless-space-backgrounds
 
