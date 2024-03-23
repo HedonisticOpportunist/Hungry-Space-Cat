@@ -2,9 +2,9 @@
 
 ### SPRITES 🐾
 
-#### Space Cat / Player 
+The tables below list all the sprite assets and where they came from.
 
-The table below lists all the assets used for the player and their source links. 
+#### Space Cat / Player 
 
 | Sprite Name                  | Link                                                          |
 | -----------                  | -----------                                                   |
@@ -12,15 +12,11 @@ The table below lists all the assets used for the player and their source links.
 
 #### Pickups 👽
 
-The table below lists all the assets used for the pickups and their source links. 
-
 | Sprite Name  | Link                                                |
 | -----------  | -----------                                         |
 | Bug          | https://bevouliin.com/purple-bug-game-asset-sprites |
 
 #### Enemies 👽
-
-The table below lists all the enemy sprites and where they came from. 
 
 | Sprite Name     | Link                                                    |
 | -----------     | -----------                                             |
@@ -30,8 +26,6 @@ The table below lists all the enemy sprites and where they came from.
 
 #### Backgrounds 👽
 
-The table below lists all the assets used for the backgrounds and their source links. 
-
 | Sprite Name              | Link                                                                    |
 | -----------              | -----------                                                             |
 | Space-Themed-Backgrounds | https://screamingbrainstudios.itch.io/seamless-space-backgrounds        |
@@ -39,15 +33,15 @@ The table below lists all the assets used for the backgrounds and their source l
 
 ### AUDIO 🐾
 
-The tables below lists all the audio assets and their source of origin. 
+The tables below list all the audio assets and where they came from.
 
-#### Background 👽
+#### Background Music 👽
 
-Background Music:  https://opengameart.org/content/cat-in-space                                    
-
+| Song Name    | Link                                         |
+| -----------  | -----------                                  |
+| Cat in Space | https://opengameart.org/content/cat-in-space |
+                                   
 #### SFX 👽
-
-The table below lists all the SFX audio assets and their source links. 
 
 | Clip            | Link                                               | Other Information                 |
 | -----------     | -----------                                        | -----------                       |
