@@ -24,12 +24,13 @@ The tables below list all the sprite assets and where they came from.
 | Cute Angry UFO  | https://kububbis.itch.io/kawaii-ufo-sprite-pack         |
 | Ghost Doll      | https://bevouliin.com/doll-ghost-game-asset-sprites/    |
 
-#### Backgrounds 👽
+#### Backgrounds / Landscape 👽
 
 | Sprite Name              | Link                                                                    |
 | -----------              | -----------                                                             |
 | Space-Themed-Backgrounds | https://screamingbrainstudios.itch.io/seamless-space-backgrounds        |
 | Menu-Space-Background    | https://free-game-assets.itch.io/free-space-shooter-game-user-interface |
+| Planets                  | https://kenney.nl/assets/planets                                        |
 
 ### AUDIO 🐾
 
