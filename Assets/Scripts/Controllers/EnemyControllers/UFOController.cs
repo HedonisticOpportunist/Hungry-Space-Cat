@@ -8,13 +8,8 @@ using UnityEngine;
 public class UFOController : MonoBehaviour
 {
     [SerializeField] float speed = 2.5f;
-
-    // OTHER VARIABLES
-
     Rigidbody2D body;
     ControllerHelper controllerHelper;
-
-    // PRIVATE METHODS
 
     void Awake()
     {

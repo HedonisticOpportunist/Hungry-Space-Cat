@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 // Part of the https://www.gamedev.tv/p/unity-2d-game-dev-course-2021 course
 */
 
-public class SceneLoaderManager: MonoBehaviour
+public class SceneLoaderManager : MonoBehaviour
 {
     static SceneLoaderManager instance;
 
@@ -30,8 +30,6 @@ public class SceneLoaderManager: MonoBehaviour
         }
     }
 
-    // PUBLIC METHODS 
-
     public void LoadMenu()
     {
         SceneManager.LoadScene("MenuScene");
@@ -42,7 +40,7 @@ public class SceneLoaderManager: MonoBehaviour
         SceneManager.LoadScene("LevelOne");
     }
 
-    public void GameOver()
+    public void LoadGameOver()
     {
         SceneManager.LoadScene("GameOver");
     }

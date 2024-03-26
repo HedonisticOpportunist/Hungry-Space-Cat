@@ -37,9 +37,6 @@ public class AudioPlayer : MonoBehaviour
         }
     }
 
-
-    // PUBLIC METHODS
-
     public void PlayPickupClip()
     {
         PlayAudioClip(pickupClip, pickupVolume);
@@ -49,8 +46,6 @@ public class AudioPlayer : MonoBehaviour
     {
         PlayAudioClip(catDamageClip, catDamageVolume);
     }
-
-    // PRIVATE METHODS
 
     void PlayAudioClip(AudioClip audioClip, float volume)
     {

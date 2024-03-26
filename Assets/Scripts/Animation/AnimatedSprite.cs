@@ -1,6 +1,6 @@
 using UnityEngine;
 
-/* Based on, with modification
+/* Based on, with modifications:
 // @Credit: https://github.com/zigurous/unity-pacman-tutorial/blob/main/Assets/Scripts/AnimatedSprite.cs
 */
 
@@ -19,7 +19,6 @@ public class AnimatedSprite : MonoBehaviour
         MoveAnimationForward();
     }
 
-    // PRIVATE METHODS //
     void Awake()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();

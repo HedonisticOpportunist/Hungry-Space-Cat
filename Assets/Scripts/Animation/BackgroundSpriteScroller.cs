@@ -7,13 +7,8 @@ using UnityEngine;
 public class BackgroundSpriteScroller : MonoBehaviour
 {
     [SerializeField] Vector2 moveSpeed;
-
-    // OTHER VARIABLES
-
     Vector2 offset;
     Material backgroundMaterial;
-
-    // PRIVATE METHODS
 
     void Awake()
     {

@@ -7,11 +7,7 @@ public class FlyingHamburgerController : MonoBehaviour
 {
     [SerializeField] float speed = 2.5f;
     [SerializeField] float rotationSpeed = 1.5f;
-
-    // OTHER VARIABLES 
     Transform spaceCat;
-
-    // PRIVATE METHODS
 
     void Awake()
     {
