@@ -32,6 +32,12 @@ The tables below list all the sprite assets and where they came from.
 | Menu-Space-Background    | https://free-game-assets.itch.io/free-space-shooter-game-user-interface |
 | Planets                  | https://kenney.nl/assets/planets                                        |
 
+#### Buttons 👽
+
+| Sprite Name           | Link                                                                |
+| -----------           | -----------                                                         |
+| Mute / Unmute Button | https://opengameart.org/content/play-pause-mute-and-unmute-buttons   |
+
 ### AUDIO 🐾
 
 The tables below list all the audio assets and where they came from.
