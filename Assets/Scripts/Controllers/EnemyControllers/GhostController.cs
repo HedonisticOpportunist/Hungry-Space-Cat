@@ -2,26 +2,26 @@ using UnityEngine;
 
 public class GhostController : MonoBehaviour
 {
-    [SerializeField] float speed = 2.5f;
+    [SerializeField] float speed = 4.5f;
     [SerializeField] float rotationSpeed = 1.5f;
-    Transform spaceCat;
+    [SerializeField] Vector3 minDistance = new Vector3(0.1f, 0.1f, 0f);
+    ControllerHelper controllerHelper;
 
     void Awake()
     {
-        spaceCat = FindObjectOfType<SpaceCatController>().transform;
+        controllerHelper = FindObjectOfType<ControllerHelper>();
     }
 
-    void Update() => FollowPlayer();
-    void FollowPlayer()
+    void Update() => controllerHelper.FollowPlayer(transform, speed, rotationSpeed, minDistance);
+
+    void OnTriggerEnter2D(Collider2D other)
     {
-
-        if (spaceCat == null)
+        if (other.CompareTag("UFO"))
         {
-            return;
+            // This avoids the object overlapping with itself while spawning. 
+            other.gameObject.SetActive(false);
+            Destroy(other.gameObject);
         }
-
-        Vector3 direction = transform.position - spaceCat.position;
-        transform.up = Vector3.MoveTowards(transform.up, direction, rotationSpeed * Time.deltaTime);
-        transform.position = Vector3.MoveTowards(transform.position, spaceCat.position, speed * Time.deltaTime);
     }
+
 }
