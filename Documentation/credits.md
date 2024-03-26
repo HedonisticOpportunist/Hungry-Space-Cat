@@ -38,9 +38,10 @@ The tables below list all the audio assets and where they came from.
 
 #### Background Music 👽
 
-| Song Name    | Link                                         |
-| -----------  | -----------                                  |
-| Cat in Space | https://opengameart.org/content/cat-in-space |
+| Song Name     | Link                                          |
+| -----------   | -----------                                   |
+| Cat in Space  | https://opengameart.org/content/cat-in-space  |
+| Through Space | https://opengameart.org/content/through-space | 
                                    
 #### SFX 👽
 
