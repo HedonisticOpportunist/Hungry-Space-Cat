@@ -34,9 +34,9 @@ The tables below list all the sprite assets and where they came from.
 
 #### Buttons 👽
 
-| Sprite Name           | Link                                                                |
-| -----------           | -----------                                                         |
-| Mute / Unmute Button | https://opengameart.org/content/play-pause-mute-and-unmute-buttons   |
+| Sprite Name          | Link                                                |
+| -----------          | -----------                                         |
+| Mute / Unmute Button | https://icons8.com/icon/set/mute-unmute/group-color |
 
 ### AUDIO 🐾
 
