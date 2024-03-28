@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 7458745817401422297}
   - component: {fileID: 2461074076841320802}
   - component: {fileID: 6949534211095489948}
-  - component: {fileID: 3309496060336688386}
   - component: {fileID: 6334020632722992146}
   - component: {fileID: -3186090852034388358}
+  - component: {fileID: 3309496060336688386}
   m_Layer: 0
   m_Name: GhostDollEnemy
   m_TagString: UFO
@@ -31,7 +31,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -135,21 +135,6 @@ MonoBehaviour:
   animationTime: 0.25
   animationFrame: 0
   animationShouldLoop: 1
---- !u!114 &3309496060336688386
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5128528164242818374}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5452fcddad5bab042b725d79182bba4c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 2.5
-  rotationSpeed: 1.5
-  minDistance: {x: 0.1, y: 0.1, z: 0}
 --- !u!50 &6334020632722992146
 Rigidbody2D:
   serializedVersion: 4
@@ -222,3 +207,15 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.195, y: 2.995}
   m_EdgeRadius: 0
+--- !u!114 &3309496060336688386
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5128528164242818374}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5452fcddad5bab042b725d79182bba4c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

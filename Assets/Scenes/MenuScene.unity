@@ -441,7 +441,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1605215075}
         m_TargetAssemblyTypeName: SceneLoaderManager, Assembly-CSharp
-        m_MethodName: LoadGame
+        m_MethodName: LoadRandomScene
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1908,6 +1908,10 @@ PrefabInstance:
     - target: {fileID: 1077991818636143845, guid: 50c905f8fff67c149a8a851600ed2f19, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2496123824046233552, guid: 50c905f8fff67c149a8a851600ed2f19, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2632428209850011981, guid: 50c905f8fff67c149a8a851600ed2f19, type: 3}
       propertyPath: m_Name
