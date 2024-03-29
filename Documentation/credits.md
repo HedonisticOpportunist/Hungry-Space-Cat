@@ -9,6 +9,7 @@ The tables below list all the sprite assets and where they came from.
 | Sprite Name                  | Link                                                          |
 | -----------                  | -----------                                                   |
 | Green Astronaut Cat          | https://bevouliin.com/green-cat-astronaut-game-asset-sprites/ |
+| Sleeping Cat                 | https://www.anyrgb.com/en-clipart-22sxz                       |
 
 #### Pickups 👽
 
