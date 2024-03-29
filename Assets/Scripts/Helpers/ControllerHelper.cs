@@ -5,7 +5,6 @@ public class ControllerHelper : MonoBehaviour
 {
     Vector2 minimumBounds;
     Vector2 maximumBounds;
-    private float distance;
 
     public void FlipSprite(Transform transform, Rigidbody2D body)
     {
@@ -13,7 +12,7 @@ public class ControllerHelper : MonoBehaviour
     }
     public void ClampSpriteMovements(Transform transform)
     {
-        /* Based on the below, with modifications 
+       /* Based on the below, with modifications 
        // @Credit: https://gitlab.com/GameDevTV/unity2d-v3/laser-defender/-/blob/master/Assets/Scripts/Player.cs for setting up boundaries. 
        */
 
@@ -46,7 +45,7 @@ public class ControllerHelper : MonoBehaviour
         if (target != null)
         {
 
-            distance = Vector2.Distance(transform.position, target.transform.position);
+            float distance = Vector2.Distance(transform.position, target.transform.position);
             Vector2 direction = target.transform.position - transform.position;
             direction.Normalize();
             float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
@@ -57,5 +56,14 @@ public class ControllerHelper : MonoBehaviour
         {
             return;
         }
+    }
+
+    public void ChangeSprite(SpriteRenderer spriteRenderer, Sprite newSprite)
+    {
+        /* Based on the below, with modifications, additions and deletions:
+        // @Credit: https://gamedevbeginner.com/how-to-change-a-sprite-from-a-script-in-unity-with-examples/#change_sprite_from_script
+        */
+
+        spriteRenderer.sprite = newSprite;
     }
 }

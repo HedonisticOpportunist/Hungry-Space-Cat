@@ -1,6 +1,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/* Based on the below, with minor modifications 
+// @Credit: https://gitlab.com/GameDevTV/unity2d-v3/laser-defender/-/blob/master/Assets/Scripts/Pathfinder.cs
+// Part of the https://www.gamedev.tv/p/unity-2d-game-dev-course-2021 course
+*/
+
 public class GhostController : MonoBehaviour
 {
     SpawnGhostDoll spawnGhostDoll;

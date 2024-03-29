@@ -11,6 +11,8 @@ public class SpaceCatController : MonoBehaviour
     [SerializeField] float speed = 20.0f;
     [SerializeField] bool isAlive = true;
     [SerializeField] float moveLimiter = 0.7f;
+    [SerializeField] SpriteRenderer spriteRenderer;
+    [SerializeField] Sprite newSprite;
 
     AudioPlayer audioPlayer;
     private float horizontal;
@@ -25,8 +27,10 @@ public class SpaceCatController : MonoBehaviour
     void Awake()
     {
         body = GetComponent<Rigidbody2D>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
         audioPlayer = FindObjectOfType<AudioPlayer>();
         controllerHelper = FindObjectOfType<ControllerHelper>();
+
         healthKeeper = FindObjectOfType<HealthKeeper>();
         sceneLoaderManager = FindObjectOfType<SceneLoaderManager>();
         spawnerHelper = FindObjectOfType<SpawnerHelper>();
@@ -97,6 +101,7 @@ public class SpaceCatController : MonoBehaviour
     {
         isAlive = false;
         sceneLoaderManager.LoadGameOver();
+        controllerHelper.ChangeSprite(spriteRenderer, newSprite);
     }
 }
 

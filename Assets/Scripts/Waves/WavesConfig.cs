@@ -1,12 +1,18 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+
+/* Based on the below, with minor modifications 
+// @Credit: https://gitlab.com/GameDevTV/unity2d-v3/laser-defender/-/blob/master/Assets/Scripts/WaveConfigSO.cs. 
+// Part of the https://www.gamedev.tv/p/unity-2d-game-dev-course-2021 course
+*/
+
 
 [CreateAssetMenu(menuName = "Wave Config", fileName = "New Wave Config")]
 public class WavesConfig : ScriptableObject
 {
     [SerializeField] List<GameObject> ghostDollPrefabs;
     [SerializeField] Transform pathPrefab;
+
     [SerializeField] float moveSpeed = 5f;
     [SerializeField] float timeBetweenEnemySpawns = 1f;
     [SerializeField] float spawnTimeVariance = 0f;
