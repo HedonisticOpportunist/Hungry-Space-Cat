@@ -7,12 +7,15 @@ public class BugController : MonoBehaviour
     [SerializeField] float floatStrength = 0.6f;
     [SerializeField] float speed = 2.4f;
     [SerializeField] int pointsForBugsEaten = 10;
+
     bool wasEaten = false;
     AudioPlayer audioPlayer;
+    ControllerHelper controllerHelper;
 
     void Awake()
     {
         audioPlayer = FindObjectOfType<AudioPlayer>();
+        controllerHelper = FindObjectOfType<ControllerHelper>();
     }
 
     void Start()
@@ -29,6 +32,7 @@ public class BugController : MonoBehaviour
         transform.position = new Vector3(transform.position.x,
             yPosition + ((float)Math.Sin(Time.time * speed) * floatStrength),
             transform.position.z);
+        controllerHelper.DestroyGameObjectsWhenLivesAreLost(this.gameObject);
     }
 
     void OnTriggerEnter2D(Collider2D other)

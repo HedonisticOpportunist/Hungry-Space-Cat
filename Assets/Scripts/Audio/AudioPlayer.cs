@@ -55,5 +55,4 @@ public class AudioPlayer : MonoBehaviour
             AudioSource.PlayClipAtPoint(audioClip, cameraPosition, volume);
         }
     }
-
 }

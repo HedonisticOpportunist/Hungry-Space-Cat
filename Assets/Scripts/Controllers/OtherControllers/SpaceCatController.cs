@@ -1,20 +1,11 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.SceneManagement;
-
-/* Based on the below, with modifications, additions and deletions:
-// @Credit: https://gitlab.com/GameDevTV/unity2d-v3/tilevania/-/blob/master/Assets/Scripts/PlayerMovement.cs
-// Part of the https://www.gamedev.tv/p/unity-2d-game-dev-course-2021 course
-*/
-
 public class SpaceCatController : MonoBehaviour
 {
     [SerializeField] float speed = 20.0f;
     [SerializeField] bool isAlive = true;
     [SerializeField] float moveLimiter = 0.7f;
-    [SerializeField] SpriteRenderer spriteRenderer;
-    [SerializeField] Sprite newSprite;
 
     AudioPlayer audioPlayer;
     private float horizontal;
@@ -31,7 +22,6 @@ public class SpaceCatController : MonoBehaviour
     void Awake()
     {
         body = GetComponent<Rigidbody2D>();
-        spriteRenderer = GetComponent<SpriteRenderer>();
         audioPlayer = FindObjectOfType<AudioPlayer>();
         controllerHelper = FindObjectOfType<ControllerHelper>();
 
@@ -52,7 +42,6 @@ public class SpaceCatController : MonoBehaviour
             {
                 controllerHelper.FlipSprite(transform, body);
             }
-
         }
         else
         {
@@ -94,12 +83,12 @@ public class SpaceCatController : MonoBehaviour
             if (healthKeeper.GetLives() == 0)
             {
                 CatDeath();
-            }
-
-            if (numberOfBugs == 0)
-            {
                 scoreKeeper.ResetScore();
                 healthKeeper.ResetLives();
+            }
+
+            if (numberOfBugs < 1 && healthKeeper.GetLives() != 0)
+            {
                 sceneLoaderManager.LoadRandomScene();
             }
         }
@@ -109,7 +98,6 @@ public class SpaceCatController : MonoBehaviour
     {
 
         isAlive = false;
-        controllerHelper.ChangeSprite(spriteRenderer, newSprite);
         StartCoroutine(DelayGameOverSceneLoad());
     }
 

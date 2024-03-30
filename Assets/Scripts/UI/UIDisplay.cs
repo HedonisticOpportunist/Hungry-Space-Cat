@@ -26,7 +26,6 @@ public class UIDisplay : MonoBehaviour
     void Update()
     {
       healthText.text = "Lives: " + healthKeeper.GetLives().ToString();
-      scoreText.text = "Score: " + scoreKeeper.GetScore().ToString("000000000");
-        
+      scoreText.text = "Score: " + scoreKeeper.GetScore().ToString("000000000");   
     }
 }

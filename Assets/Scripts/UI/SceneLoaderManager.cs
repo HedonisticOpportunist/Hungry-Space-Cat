@@ -43,6 +43,21 @@ public class SceneLoaderManager : MonoBehaviour
         SceneManager.LoadScene(scenes[index]);
     }
 
+    public void LoadUFOGame()
+    {
+        SceneManager.LoadScene("UFOGame");
+    }
+
+    public void LoadHamburgerGame()
+    {
+        SceneManager.LoadScene("HamburgerGame");
+    }
+
+    public void LoadGhostGame()
+    {
+        SceneManager.LoadScene("GhostGame");
+    }
+
     public void LoadGameOver()
     {
         SceneManager.LoadScene("GameOver");
@@ -54,9 +69,10 @@ public class SceneLoaderManager : MonoBehaviour
         // @Credit: https://gamedevbeginner.com/how-to-quit-the-game-in-unity/ 
         // Prepreprocessor directives allow for running of different code depending on conditions 
         */
-#if UNITY_EDITOR
-        UnityEditor.EditorApplication.isPlaying = false;
-#endif
+
+        #if UNITY_EDITOR
+            UnityEditor.EditorApplication.isPlaying = false;
+        #endif
         Application.Quit();
     }
 }
