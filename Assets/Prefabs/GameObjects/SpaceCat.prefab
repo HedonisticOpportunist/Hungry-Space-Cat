@@ -199,6 +199,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 9ee766aee4b0ae0408e116f844e3963b, type: 3}
   - {fileID: 21300000, guid: e679f391a03be28448b660fb8073baea, type: 3}
   - {fileID: 21300000, guid: 75ecf8d764c2df44ea6258b3c80e2d94, type: 3}
+  newSprite: {fileID: 21300000, guid: d3f75f630bed92749b66410e57c5f473, type: 3}
   animationTime: 0.25
   animationFrame: 0
   animationShouldLoop: 0
@@ -217,8 +218,6 @@ MonoBehaviour:
   speed: 20
   isAlive: 1
   moveLimiter: 0.7
-  spriteRenderer: {fileID: 8973300992348093397}
-  newSprite: {fileID: 21300000, guid: d3f75f630bed92749b66410e57c5f473, type: 3}
 --- !u!114 &2758612672106529872
 MonoBehaviour:
   m_ObjectHideFlags: 0
