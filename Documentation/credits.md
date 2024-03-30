@@ -33,6 +33,13 @@ The tables below list all the sprite assets and where they came from.
 | Menu-Space-Background    | https://free-game-assets.itch.io/free-space-shooter-game-user-interface |
 | Planets                  | https://kenney.nl/assets/planets                                        |
 
+#### Pictures / Images 👽
+
+| Image Name               | Link                                                                    |
+| -----------              | -----------                                                             |
+| Menu Cats    | https://dribbble.com/catalystvibes/about |
+| Sleeping Cat | https://dribbble.com/catalystvibes/about |
+
 #### Buttons 👽
 
 | Sprite Name          | Link                                                |
