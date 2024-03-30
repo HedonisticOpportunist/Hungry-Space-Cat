@@ -8,19 +8,19 @@ using UnityEngine;
 
 public class GhostController : MonoBehaviour
 {
-    SpawnGhostDoll spawnGhostDoll;
+    SpawnGhostDolls spawnGhostDolls;
     WavesConfig waveConfig;
     List<Transform> waypoints;
     int waypointIndex = 0;
 
     void Awake()
     {
-        spawnGhostDoll = FindObjectOfType<SpawnGhostDoll>();
+        spawnGhostDolls = FindObjectOfType<SpawnGhostDolls>();
     }
 
     void Start()
     {
-        waveConfig = spawnGhostDoll.GetCurrentWave();
+        waveConfig = spawnGhostDolls.GetCurrentWave();
         waypoints = waveConfig.GetWaypoints();
         transform.position = waypoints[waypointIndex].position;
     }

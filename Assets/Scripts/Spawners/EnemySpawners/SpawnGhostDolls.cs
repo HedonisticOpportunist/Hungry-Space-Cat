@@ -7,7 +7,7 @@ using UnityEngine;
 // Part of the https://www.gamedev.tv/p/unity-2d-game-dev-course-2021 course
 */
 
-public class SpawnGhostDoll : MonoBehaviour
+public class SpawnGhostDolls : MonoBehaviour
 {
     [SerializeField] List<WavesConfig> waveConfigs;
     [SerializeField] float timeBetweenWaves = 0f;
@@ -16,7 +16,7 @@ public class SpawnGhostDoll : MonoBehaviour
 
     void Start()
     {
-        StartCoroutine(SpawnGhostDolls());
+        StartCoroutine(SpawnGhostDollsIntoScene());
     }
 
     public WavesConfig GetCurrentWave()
@@ -24,7 +24,7 @@ public class SpawnGhostDoll : MonoBehaviour
         return currentWave;
     }
 
-    IEnumerator SpawnGhostDolls()
+    IEnumerator SpawnGhostDollsIntoScene()
     {
         do
         {

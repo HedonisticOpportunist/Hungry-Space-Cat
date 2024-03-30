@@ -1,5 +1,7 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 /* Based on the below, with modifications, additions and deletions:
 // @Credit: https://gitlab.com/GameDevTV/unity2d-v3/tilevania/-/blob/master/Assets/Scripts/PlayerMovement.cs
@@ -21,8 +23,10 @@ public class SpaceCatController : MonoBehaviour
     Rigidbody2D body;
     ControllerHelper controllerHelper;
     HealthKeeper healthKeeper;
+
     SceneLoaderManager sceneLoaderManager;
     SpawnerHelper spawnerHelper;
+    ScoreKeeper scoreKeeper;
 
     void Awake()
     {
@@ -34,6 +38,8 @@ public class SpaceCatController : MonoBehaviour
         healthKeeper = FindObjectOfType<HealthKeeper>();
         sceneLoaderManager = FindObjectOfType<SceneLoaderManager>();
         spawnerHelper = FindObjectOfType<SpawnerHelper>();
+        scoreKeeper = FindObjectOfType<ScoreKeeper>();
+
     }
 
     void FixedUpdate()
@@ -50,7 +56,7 @@ public class SpaceCatController : MonoBehaviour
         }
         else
         {
-            return;
+            transform.position = new(0, 0);
         }
     }
 
@@ -85,13 +91,15 @@ public class SpaceCatController : MonoBehaviour
             healthKeeper.TakeDamage();
             int numberOfBugs = spawnerHelper.GetNumberOfObjectsInScene("Bug");
 
-            if (healthKeeper.GetLives() <= 0)
+            if (healthKeeper.GetLives() == 0)
             {
                 CatDeath();
             }
 
             if (numberOfBugs == 0)
             {
+                scoreKeeper.ResetScore();
+                healthKeeper.ResetLives();
                 sceneLoaderManager.LoadRandomScene();
             }
         }
@@ -99,9 +107,16 @@ public class SpaceCatController : MonoBehaviour
 
     void CatDeath()
     {
+
         isAlive = false;
-        sceneLoaderManager.LoadGameOver();
         controllerHelper.ChangeSprite(spriteRenderer, newSprite);
+        StartCoroutine(DelayGameOverSceneLoad());
+    }
+
+    IEnumerator DelayGameOverSceneLoad()
+    {
+        yield return new WaitForSeconds(3f);
+        sceneLoaderManager.LoadGameOver();
     }
 }
 

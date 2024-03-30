@@ -38,7 +38,7 @@ public class HealthKeeper : MonoBehaviour
     {
         lives -= DeterminePointsBasedOnLevel();
 
-        if (lives <= 0)
+        if (lives == 0)
         {
             return;
         }
