@@ -1225,6 +1225,10 @@ PrefabInstance:
       propertyPath: healthText
       value: 
       objectReference: {fileID: 136652401}
+    - target: {fileID: 3849156744098185669, guid: a5bb5079a58ee65408d0169847591d8c, type: 3}
+      propertyPath: catAsleepText
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 5004826749162117692, guid: a5bb5079a58ee65408d0169847591d8c, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -1345,7 +1349,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 825087276169129418, guid: bdeba83d2f3dfea4ba5c4fb037b839d6, type: 3}
       propertyPath: lives
-      value: 35
+      value: 45
       objectReference: {fileID: 0}
     - target: {fileID: 8021833352468516136, guid: bdeba83d2f3dfea4ba5c4fb037b839d6, type: 3}
       propertyPath: m_Name
