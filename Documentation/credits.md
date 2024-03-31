@@ -68,6 +68,6 @@ The tables below list all the audio assets and where they came from.
 
 | Font Name    | Link                                 |
 | -----------  | -----------                          |
-| Cat Paw      | https://www.dafont.com/cat-paw.font  |
-| Cattie 2     | https://www.dafont.com/cattie-2.font |  
+| CatCafe      | htps://www.dafont.com/catcafe.font)  |
+ 
 
