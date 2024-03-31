@@ -68,6 +68,6 @@ The tables below list all the audio assets and where they came from.
 
 | Font Name    | Link                                 |
 | -----------  | -----------                          |
-| CatCafe      | htps://www.dafont.com/catcafe.font)  |
+| CatCafe      | htps://www.dafont.com/catcafe.font   |
  
 
