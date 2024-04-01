@@ -72,3 +72,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scoreText: {fileID: 0}
   healthText: {fileID: 0}
+  gameOverText: {fileID: 0}
+  redirectToMenuText: {fileID: 0}
+  newGameText: {fileID: 0}
