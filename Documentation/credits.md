@@ -37,7 +37,6 @@ The tables below list all the sprite assets and where they came from.
 
 | Image Name               | Link                                                                    |
 | -----------              | -----------                                                             |
-| Menu Cats    | https://dribbble.com/catalystvibes/about |
 | Sleeping Cat | https://dribbble.com/catalystvibes/about |
 
 #### Buttons 👽
