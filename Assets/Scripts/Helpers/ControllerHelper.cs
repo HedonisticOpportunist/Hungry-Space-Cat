@@ -63,12 +63,4 @@ public class ControllerHelper : MonoBehaviour
             return;
         }
     }
-
-    public void DestroyGameObjectsWhenLivesAreLost(GameObject gameObject)
-    {
-        if (healthKeeper.GetLives() == 0)
-        {
-            Destroy(gameObject);
-        }
-    }
 }

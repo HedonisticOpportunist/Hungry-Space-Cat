@@ -3,6 +3,7 @@ using UnityEngine;
 public class CatSpawner : MonoBehaviour
 {
     [SerializeField] GameObject spaceCat;
+    
     void Start()
     {
         SpawnCatRandomly();

@@ -28,6 +28,5 @@ public class FlyingHamburgerController : MonoBehaviour
     void Update()
     {
         controllerHelper.FollowPlayer(spaceCat, this.transform, speed, healthKeeper.GetLives());
-        controllerHelper.DestroyGameObjectsWhenLivesAreLost(this.gameObject);
     }
 }

@@ -19,7 +19,6 @@ public class UFOController : MonoBehaviour
     void Update()
     {
         MoveUFO();
-        controllerHelper.DestroyGameObjectsWhenLivesAreLost(this.gameObject);
     }
 
     void OnTriggerExit2D(Collider2D other)

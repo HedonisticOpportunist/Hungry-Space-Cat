@@ -9,7 +9,6 @@ using UnityEngine;
 public class GhostController : MonoBehaviour
 {
     SpawnGhostDolls spawnGhostDolls;
-    ControllerHelper controllerHelper;
     WavesConfig waveConfig;
     List<Transform> waypoints;
     int waypointIndex = 0;
@@ -17,7 +16,6 @@ public class GhostController : MonoBehaviour
     void Awake()
     {
         spawnGhostDolls = FindObjectOfType<SpawnGhostDolls>();
-        controllerHelper = FindObjectOfType<ControllerHelper>();
     }
 
     void Start()
@@ -30,7 +28,6 @@ public class GhostController : MonoBehaviour
     void Update()
     {
         FollowWavePath();
-        controllerHelper.DestroyGameObjectsWhenLivesAreLost(this.gameObject);
     }
 
     void FollowWavePath()

@@ -30,11 +30,6 @@ public class SceneLoaderManager : MonoBehaviour
         }
     }
 
-    public void LoadMenu()
-    {
-        SceneManager.LoadScene("MenuScene");
-    }
-
     public void LoadRandomScene()
     {
         string[] scenes = { "HamburgerGame", "UFOGame", "GhostGame" };
@@ -58,9 +53,9 @@ public class SceneLoaderManager : MonoBehaviour
         SceneManager.LoadScene("GhostGame");
     }
 
-    public void LoadGameOver()
+    public void LoadAdoptACatScene()
     {
-        SceneManager.LoadScene("GameOver");
+        Application.OpenURL("https://hedonisticopportunist.github.io/Cats-in-Neath/");
     }
 
     public void ExitGame()

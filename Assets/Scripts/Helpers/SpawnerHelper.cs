@@ -3,6 +3,12 @@ using UnityEngine;
 
 public class SpawnerHelper : MonoBehaviour
 {
+    HealthKeeper healthKeeper;
+
+    void Awake()
+    {
+        healthKeeper = FindObjectOfType<HealthKeeper>();
+    }
     public void SpawnObjectsRandomly(List<GameObject> objects)
     {
         for (int i = 0; i < objects.Count; i++)

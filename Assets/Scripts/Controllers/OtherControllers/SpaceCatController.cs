@@ -6,7 +6,8 @@ public class SpaceCatController : MonoBehaviour
     [SerializeField] float speed = 20.0f;
     [SerializeField] bool isAlive = true;
     [SerializeField] float moveLimiter = 0.7f;
-
+    [SerializeField] GameObject sleepingCat;
+    
     AudioPlayer audioPlayer;
     private float horizontal;
     private float vertical;
@@ -14,16 +15,18 @@ public class SpaceCatController : MonoBehaviour
     Rigidbody2D body;
     ControllerHelper controllerHelper;
     HealthKeeper healthKeeper;
-
     SceneLoaderManager sceneLoaderManager;
+
     SpawnerHelper spawnerHelper;
     ScoreKeeper scoreKeeper;
+    UIDisplay uIDisplay;
 
     void Awake()
     {
         body = GetComponent<Rigidbody2D>();
         audioPlayer = FindObjectOfType<AudioPlayer>();
         controllerHelper = FindObjectOfType<ControllerHelper>();
+        uIDisplay = FindObjectOfType<UIDisplay>();      
 
         healthKeeper = FindObjectOfType<HealthKeeper>();
         sceneLoaderManager = FindObjectOfType<SceneLoaderManager>();
@@ -32,10 +35,12 @@ public class SpaceCatController : MonoBehaviour
 
     }
 
-    void FixedUpdate()
+    void Update()
     {
+
         if (isAlive)
         {
+            DealWithNumberOfBugs();
             MoveCat();
 
             if (controllerHelper != null)
@@ -45,7 +50,7 @@ public class SpaceCatController : MonoBehaviour
         }
         else
         {
-            transform.position = new(0, 0);
+            return;
         }
     }
 
@@ -78,18 +83,11 @@ public class SpaceCatController : MonoBehaviour
         {
             audioPlayer.PlayCatDamageClip();
             healthKeeper.TakeDamage();
-            int numberOfBugs = spawnerHelper.GetNumberOfObjectsInScene("Bug");
 
             if (healthKeeper.GetLives() == 0)
             {
                 CatDeath();
-                scoreKeeper.ResetScore();
-                healthKeeper.ResetLives();
-            }
-
-            if (numberOfBugs < 1 && healthKeeper.GetLives() != 0)
-            {
-                sceneLoaderManager.LoadRandomScene();
+                
             }
         }
     }
@@ -98,13 +96,34 @@ public class SpaceCatController : MonoBehaviour
     {
 
         isAlive = false;
-        StartCoroutine(DelayGameOverSceneLoad());
+        uIDisplay.DisplayGameOverText();
+        Instantiate(sleepingCat, new Vector3(0, 0, 0), Quaternion.identity);
+        scoreKeeper.ResetScore();
+        healthKeeper.ResetLives();
+        StartCoroutine(DelayMenuSceneLoad());
     }
 
-    IEnumerator DelayGameOverSceneLoad()
+    IEnumerator DelayMenuSceneLoad()
     {
-        yield return new WaitForSeconds(3f);
-        sceneLoaderManager.LoadGameOver();
+        yield return new WaitForSeconds(2f);
+        sceneLoaderManager.ExitGame();
+    }
+
+    IEnumerator DelayReloadScene()
+    {
+        yield return new WaitForSeconds(2f);
+        sceneLoaderManager.LoadRandomScene();
+    }
+
+    void DealWithNumberOfBugs()
+    {
+        int numberOfBugs = spawnerHelper.GetNumberOfObjectsInScene("Bug");
+
+        if (numberOfBugs == 0 && healthKeeper.GetLives() != 0)
+        {
+            uIDisplay.LoadNextGameText();
+            StartCoroutine(DelayReloadScene());
+        }
     }
 }
 

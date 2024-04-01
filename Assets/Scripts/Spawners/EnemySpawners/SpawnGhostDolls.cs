@@ -13,7 +13,6 @@ public class SpawnGhostDolls : MonoBehaviour
     [SerializeField] float timeBetweenWaves = 0f;
     [SerializeField] bool isLooping;
     WavesConfig currentWave;
-
     void Start()
     {
         StartCoroutine(SpawnGhostDollsIntoScene());

@@ -10,12 +10,12 @@ public class BugController : MonoBehaviour
 
     bool wasEaten = false;
     AudioPlayer audioPlayer;
-    ControllerHelper controllerHelper;
+    ScoreKeeper scoreKeeper;
 
     void Awake()
     {
         audioPlayer = FindObjectOfType<AudioPlayer>();
-        controllerHelper = FindObjectOfType<ControllerHelper>();
+        scoreKeeper = FindObjectOfType<ScoreKeeper>();
     }
 
     void Start()
@@ -32,7 +32,6 @@ public class BugController : MonoBehaviour
         transform.position = new Vector3(transform.position.x,
             yPosition + ((float)Math.Sin(Time.time * speed) * floatStrength),
             transform.position.z);
-        controllerHelper.DestroyGameObjectsWhenLivesAreLost(this.gameObject);
     }
 
     void OnTriggerEnter2D(Collider2D other)
@@ -47,7 +46,7 @@ public class BugController : MonoBehaviour
         {
             wasEaten = true;
             audioPlayer.PlayPickupClip();
-            FindObjectOfType<ScoreKeeper>().ModifyScore(pointsForBugsEaten);
+            scoreKeeper.ModifyScore(pointsForBugsEaten);
             gameObject.SetActive(false);
             Destroy(gameObject);
         }

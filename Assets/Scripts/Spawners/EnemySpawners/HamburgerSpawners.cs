@@ -15,7 +15,6 @@ public class SpawnFlyingHamburgers : MonoBehaviour
     {
         spawnerHelper.SpawnObjectsRandomly(flyingHamburgers);
     }
-
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("UFO"))
