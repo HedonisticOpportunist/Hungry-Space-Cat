@@ -7,17 +7,17 @@ using UnityEngine;
 public class BackgroundSpriteScroller : MonoBehaviour
 {
     [SerializeField] Vector2 moveSpeed;
-    Vector2 offset;
-    Material backgroundMaterial;
+    Vector2 _offset;
+    Material _backgroundMaterial;
 
     void Awake()
     {
-        backgroundMaterial = GetComponent<SpriteRenderer>().material;
+        _backgroundMaterial = GetComponent<SpriteRenderer>().material;
 
     }
     void Update()
     {
-        offset = moveSpeed * Time.deltaTime;
-        backgroundMaterial.mainTextureOffset += offset;
+        _offset = moveSpeed * Time.deltaTime;
+        _backgroundMaterial.mainTextureOffset += _offset;
     }
 }

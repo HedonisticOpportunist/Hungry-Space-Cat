@@ -8,13 +8,13 @@ using UnityEngine;
 public class UFOController : MonoBehaviour
 {
     [SerializeField] float speed = 2.5f;
-    Rigidbody2D body;
-    ControllerHelper controllerHelper;
+    Rigidbody2D _body;
+    ControllerHelper _controllerHelper;
 
     void Awake()
     {
-        body = GetComponent<Rigidbody2D>();
-        controllerHelper = FindObjectOfType<ControllerHelper>();
+        _body = GetComponent<Rigidbody2D>();
+        _controllerHelper = FindObjectOfType<ControllerHelper>();
     }
     void Update()
     {
@@ -27,12 +27,12 @@ public class UFOController : MonoBehaviour
         {
             speed = -speed;
 
-            if (controllerHelper != null)
+            if (_controllerHelper != null)
             {
-                controllerHelper.FlipSprite(transform,body);
+                _controllerHelper.FlipSprite(transform, _body);
             }
 
         }
     }
-    void MoveUFO() => body.velocity = new Vector2(speed, 0);
+    void MoveUFO() => _body.velocity = new Vector2(speed, 0);
 }

@@ -4,16 +4,16 @@ using UnityEngine;
 public class SpawnFlyingHamburgers : MonoBehaviour
 {
     [SerializeField] List<GameObject> flyingHamburgers;
-    SpawnerHelper spawnerHelper;
+    SpawnerHelper _spawnerHelper;
 
     void Awake()
     {
-        spawnerHelper = FindObjectOfType<SpawnerHelper>();
+        _spawnerHelper = FindObjectOfType<SpawnerHelper>();
     }
 
     void Start()
     {
-        spawnerHelper.SpawnObjectsRandomly(flyingHamburgers);
+        _spawnerHelper.SpawnObjectsRandomly(flyingHamburgers);
     }
     void OnTriggerEnter2D(Collider2D other)
     {

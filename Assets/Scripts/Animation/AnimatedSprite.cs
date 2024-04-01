@@ -1,11 +1,9 @@
-using System.Collections;
 using UnityEngine;
 
 /* Based on, with modifications:
 // @Credit: https://github.com/zigurous/unity-pacman-tutorial/blob/main/Assets/Scripts/AnimatedSprite.cs
 */
 
-[RequireComponent(typeof(SpriteRenderer))]
 public class AnimatedSprite : MonoBehaviour
 {
     [SerializeField] SpriteRenderer spriteRenderer;

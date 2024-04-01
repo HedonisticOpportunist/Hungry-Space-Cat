@@ -12,7 +12,7 @@ public class SpawnGhostDolls : MonoBehaviour
     [SerializeField] List<WavesConfig> waveConfigs;
     [SerializeField] float timeBetweenWaves = 0f;
     [SerializeField] bool isLooping;
-    WavesConfig currentWave;
+    WavesConfig _currentWave;
     void Start()
     {
         StartCoroutine(SpawnGhostDollsIntoScene());
@@ -20,7 +20,7 @@ public class SpawnGhostDolls : MonoBehaviour
 
     public WavesConfig GetCurrentWave()
     {
-        return currentWave;
+        return _currentWave;
     }
 
     IEnumerator SpawnGhostDollsIntoScene()
@@ -29,13 +29,13 @@ public class SpawnGhostDolls : MonoBehaviour
         {
             foreach (WavesConfig wave in waveConfigs)
             {
-                currentWave = wave;
-                for (int i = 0; i < currentWave.GetEnemyCount(); i++)
+                _currentWave = wave;
+                for (int i = 0; i < _currentWave.GetEnemyCount(); i++)
                 {
-                    Instantiate(currentWave.GetEnemyPrefab(i),
-                                currentWave.GetStartingWaypoint().position,
+                    Instantiate(_currentWave.GetEnemyPrefab(i),
+                                _currentWave.GetStartingWaypoint().position,
                                 Quaternion.Euler(0, 0, 360), transform);
-                    yield return new WaitForSeconds(currentWave.GetRandomSpawnTime());
+                    yield return new WaitForSeconds(_currentWave.GetRandomSpawnTime());
                 }
                 yield return new WaitForSeconds(timeBetweenWaves);
             }

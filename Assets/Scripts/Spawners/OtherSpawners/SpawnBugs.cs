@@ -4,16 +4,16 @@ using UnityEngine;
 public class SpawnBugs : MonoBehaviour
 {
     [SerializeField] List<GameObject> bugs;
-    SpawnerHelper spawnerHelper;
+    SpawnerHelper _spawnerHelper;
 
     void Awake()
     {
-        spawnerHelper = FindObjectOfType<SpawnerHelper>();
+        _spawnerHelper = FindObjectOfType<SpawnerHelper>();
 
     }
 
     void Start()
     {
-        spawnerHelper.SpawnObjectsRandomly(bugs);
+        _spawnerHelper.SpawnObjectsRandomly(bugs);
     }
 }

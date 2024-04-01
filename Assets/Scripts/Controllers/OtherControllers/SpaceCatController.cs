@@ -6,32 +6,35 @@ public class SpaceCatController : MonoBehaviour
     [SerializeField] float speed = 20.0f;
     [SerializeField] bool isAlive = true;
     [SerializeField] float moveLimiter = 0.7f;
+
     [SerializeField] GameObject sleepingCat;
-    
-    AudioPlayer audioPlayer;
-    private float horizontal;
-    private float vertical;
+    [SerializeField] float damageDelay = 1.0f;
 
-    Rigidbody2D body;
-    ControllerHelper controllerHelper;
-    HealthKeeper healthKeeper;
-    SceneLoaderManager sceneLoaderManager;
+    AudioPlayer _audioPlayer;
+    float _horizontal;
+    float _vertical;
+    float _damageCountDown = 0;
 
-    SpawnerHelper spawnerHelper;
-    ScoreKeeper scoreKeeper;
-    UIDisplay uIDisplay;
+    Rigidbody2D _body;
+    ControllerHelper _controllerHelper;
+    HealthKeeper _healthKeeper;
+    SceneLoaderManager _sceneLoaderManager;
+
+    SpawnerHelper _spawnerHelper;
+    ScoreKeeper _scoreKeeper;
+    UIDisplay _uIDisplay;
 
     void Awake()
     {
-        body = GetComponent<Rigidbody2D>();
-        audioPlayer = FindObjectOfType<AudioPlayer>();
-        controllerHelper = FindObjectOfType<ControllerHelper>();
-        uIDisplay = FindObjectOfType<UIDisplay>();      
+        _body = GetComponent<Rigidbody2D>();
+        _audioPlayer = FindObjectOfType<AudioPlayer>();
+        _controllerHelper = FindObjectOfType<ControllerHelper>();
+        _uIDisplay = FindObjectOfType<UIDisplay>();
 
-        healthKeeper = FindObjectOfType<HealthKeeper>();
-        sceneLoaderManager = FindObjectOfType<SceneLoaderManager>();
-        spawnerHelper = FindObjectOfType<SpawnerHelper>();
-        scoreKeeper = FindObjectOfType<ScoreKeeper>();
+        _healthKeeper = FindObjectOfType<HealthKeeper>();
+        _sceneLoaderManager = FindObjectOfType<SceneLoaderManager>();
+        _spawnerHelper = FindObjectOfType<SpawnerHelper>();
+        _scoreKeeper = FindObjectOfType<ScoreKeeper>();
 
     }
 
@@ -43,11 +46,15 @@ public class SpaceCatController : MonoBehaviour
             DealWithNumberOfBugs();
             MoveCat();
 
-            if (controllerHelper != null)
+            if (_controllerHelper != null)
             {
-                controllerHelper.FlipSprite(transform, body);
+                _controllerHelper.FlipSprite(transform, _body);
             }
+
+            if (_damageCountDown > 0)
+                _damageCountDown -= Time.deltaTime;
         }
+
         else
         {
             return;
@@ -56,8 +63,8 @@ public class SpaceCatController : MonoBehaviour
 
     void OnMove(InputValue value)
     {
-        horizontal = value.Get<Vector2>().x;
-        vertical = value.Get<Vector2>().y;
+        _horizontal = value.Get<Vector2>().x;
+        _vertical = value.Get<Vector2>().y;
     }
 
     void MoveCat()
@@ -67,27 +74,26 @@ public class SpaceCatController : MonoBehaviour
         // @Credit: https://stuartspixelgames.com/2018/06/24/simple-2d-top-down-movement-unity-c/
         */
 
-        if (horizontal != 0 && vertical != 0)
+        if (_horizontal != 0 && _vertical != 0)
         {
-            horizontal *= moveLimiter;
-            vertical *= moveLimiter;
+            _horizontal *= moveLimiter;
+            _vertical *= moveLimiter;
         }
 
-        body.velocity = new Vector2(horizontal * speed, vertical * speed);
-        controllerHelper.ClampSpriteMovements(transform);
+        _body.velocity = new Vector2(_horizontal * speed, _vertical * speed);
+        _controllerHelper.ClampSpriteMovements(transform);
     }
 
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("UFO"))
         {
-            audioPlayer.PlayCatDamageClip();
-            healthKeeper.TakeDamage();
+            OnPlayerDamage();
 
-            if (healthKeeper.GetLives() == 0)
+            if (_healthKeeper.GetLives() == 0)
             {
                 CatDeath();
-                
+
             }
         }
     }
@@ -96,34 +102,46 @@ public class SpaceCatController : MonoBehaviour
     {
 
         isAlive = false;
-        uIDisplay.DisplayGameOverText();
+        _uIDisplay.DisplayGameOverText();
         Instantiate(sleepingCat, new Vector3(0, 0, 0), Quaternion.identity);
-        scoreKeeper.ResetScore();
-        healthKeeper.ResetLives();
+        _scoreKeeper.ResetScore();
+        _healthKeeper.ResetLives();
         StartCoroutine(DelayMenuSceneLoad());
+    }
+
+    void OnPlayerDamage()
+    {
+        if (_damageCountDown > 0)
+        {
+            return;
+        }
+        
+        _damageCountDown = damageDelay;
+        _audioPlayer.PlayCatDamageClip();
+        _healthKeeper.TakeDamage();
+    }
+
+    void DealWithNumberOfBugs()
+    {
+        int numberOfBugs = _spawnerHelper.GetNumberOfObjectsInScene("Bug");
+
+        if (numberOfBugs == 0 && _healthKeeper.GetLives() != 0)
+        {
+            _uIDisplay.LoadNextGameText();
+            StartCoroutine(DelayReloadScene());
+        }
     }
 
     IEnumerator DelayMenuSceneLoad()
     {
         yield return new WaitForSeconds(2f);
-        sceneLoaderManager.ExitGame();
+        _sceneLoaderManager.ExitGame();
     }
 
     IEnumerator DelayReloadScene()
     {
         yield return new WaitForSeconds(2f);
-        sceneLoaderManager.LoadRandomScene();
-    }
-
-    void DealWithNumberOfBugs()
-    {
-        int numberOfBugs = spawnerHelper.GetNumberOfObjectsInScene("Bug");
-
-        if (numberOfBugs == 0 && healthKeeper.GetLives() != 0)
-        {
-            uIDisplay.LoadNextGameText();
-            StartCoroutine(DelayReloadScene());
-        }
+        _sceneLoaderManager.LoadRandomScene();
     }
 }
 

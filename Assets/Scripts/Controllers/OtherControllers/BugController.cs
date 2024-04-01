@@ -8,14 +8,14 @@ public class BugController : MonoBehaviour
     [SerializeField] float speed = 2.4f;
     [SerializeField] int pointsForBugsEaten = 10;
 
-    bool wasEaten = false;
-    AudioPlayer audioPlayer;
-    ScoreKeeper scoreKeeper;
+    bool _wasEaten = false;
+    AudioPlayer _audioPlayer;
+    ScoreKeeper _scoreKeeper;
 
     void Awake()
     {
-        audioPlayer = FindObjectOfType<AudioPlayer>();
-        scoreKeeper = FindObjectOfType<ScoreKeeper>();
+        _audioPlayer = FindObjectOfType<AudioPlayer>();
+        _scoreKeeper = FindObjectOfType<ScoreKeeper>();
     }
 
     void Start()
@@ -42,11 +42,11 @@ public class BugController : MonoBehaviour
         // Part of the https://www.gamedev.tv/p/unity-2d-game-dev-course-2021 course
         */
 
-        if (other.CompareTag("SpaceCat") && !wasEaten)
+        if (other.CompareTag("SpaceCat") && !_wasEaten)
         {
-            wasEaten = true;
-            audioPlayer.PlayPickupClip();
-            scoreKeeper.ModifyScore(pointsForBugsEaten);
+            _wasEaten = true;
+            _audioPlayer.PlayPickupClip();
+            _scoreKeeper.ModifyScore(pointsForBugsEaten);
             gameObject.SetActive(false);
             Destroy(gameObject);
         }

@@ -4,14 +4,14 @@ public class FlyingHamburgerController : MonoBehaviour
 {
     [SerializeField] float speed = 2.5f;
     [SerializeField] Transform spaceCat;
-    ControllerHelper controllerHelper;
-    HealthKeeper healthKeeper;
+    ControllerHelper _controllerHelper;
+    HealthKeeper _healthKeeper;
 
 
     void Awake()
     {
-        controllerHelper = FindObjectOfType<ControllerHelper>();
-        healthKeeper = FindObjectOfType<HealthKeeper>();
+        _controllerHelper = FindObjectOfType<ControllerHelper>();
+        _healthKeeper = FindObjectOfType<HealthKeeper>();
        
 
         if (spaceCat != null)
@@ -27,6 +27,6 @@ public class FlyingHamburgerController : MonoBehaviour
 
     void Update()
     {
-        controllerHelper.FollowPlayer(spaceCat, this.transform, speed, healthKeeper.GetLives());
+        _controllerHelper.FollowPlayer(spaceCat, this.transform, speed, _healthKeeper.GetLives());
     }
 }

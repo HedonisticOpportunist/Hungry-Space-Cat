@@ -11,11 +11,11 @@ public class UIDisplay : MonoBehaviour
 {
     [Header("Score")]
     [SerializeField] TextMeshProUGUI scoreText;
-    ScoreKeeper scoreKeeper;
+    ScoreKeeper _scoreKeeper;
 
     [Header("Health")]
     [SerializeField] TextMeshProUGUI healthText;
-    HealthKeeper healthKeeper;
+    HealthKeeper _healthKeeper;
 
     [Header("GameOver")]
     [SerializeField] TextMeshProUGUI gameOverText;
@@ -24,8 +24,8 @@ public class UIDisplay : MonoBehaviour
 
     void Awake()
     {
-        scoreKeeper = FindObjectOfType<ScoreKeeper>();
-        healthKeeper = FindObjectOfType<HealthKeeper>();
+        _scoreKeeper = FindObjectOfType<ScoreKeeper>();
+        _healthKeeper = FindObjectOfType<HealthKeeper>();
     }
 
     void Start()
@@ -37,8 +37,8 @@ public class UIDisplay : MonoBehaviour
 
     void Update()
     {
-      healthText.text = "Lives: " + healthKeeper.GetLives().ToString();
-      scoreText.text = "Score: " + scoreKeeper.GetScore().ToString("000000000");   
+      healthText.text = "Lives: " + _healthKeeper.GetLives().ToString();
+      scoreText.text = "Score: " + _scoreKeeper.GetScore().ToString("000000000");   
     }
 
     public void DisplayGameOverText()
