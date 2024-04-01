@@ -111,6 +111,9 @@ public class SpaceCatController : MonoBehaviour
 
     void OnPlayerDamage()
     {
+        /* Based on, with modifactions and additions: 
+        // @Credit: https://forum.unity.com/threads/how-to-implement-time-delay-in-damage-invincibility-frames.1375731
+        */
         if (_damageCountDown > 0)
         {
             return;
