@@ -50,6 +50,6 @@ public class UIDisplay : MonoBehaviour
 
     public void LoadNextGameText()
     {
-        newGameText.text = "You will be redirected to the new (random) game scene in five, four, three ...";
+        newGameText.text = "You will be redirected to the next level in five, four, three ...";
     }
 }

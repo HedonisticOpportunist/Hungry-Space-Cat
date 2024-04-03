@@ -7,7 +7,7 @@ using UnityEngine;
 
 public class HealthKeeper : MonoBehaviour
 {
-   [SerializeField] int lives;
+   int _lives = 50;
    static HealthKeeper instance;
 
     void Awake()
@@ -31,21 +31,21 @@ public class HealthKeeper : MonoBehaviour
 
     public int GetLives()
     {
-        return lives;
+        return _lives;
     }
 
     public void TakeDamage()
     {
         if (GetLives() != 0)
         {
-            lives -= DeterminePointsBasedOnLevel();
+            _lives -= DeterminePointsBasedOnLevel();
         }
     }
 
 
     public void ResetLives()
     {
-        lives = 0;
+        _lives = 0;
     }
 
     int DeterminePointsBasedOnLevel()

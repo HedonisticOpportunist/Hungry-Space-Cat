@@ -30,27 +30,29 @@ public class SceneLoaderManager : MonoBehaviour
         }
     }
 
-    public void LoadRandomScene()
-    {
-        string[] scenes = { "HamburgerGame", "UFOGame", "GhostGame" };
-        System.Random random = new();
-        int index = random.Next(scenes.Length);
-        SceneManager.LoadScene(scenes[index]);
-    }
-
     public void LoadUFOGame()
     {
         SceneManager.LoadScene("UFOGame");
     }
 
-    public void LoadHamburgerGame()
+    public void LoadMenuScene()
     {
-        SceneManager.LoadScene("HamburgerGame");
+        SceneManager.LoadScene("MenuScene");
     }
 
-    public void LoadGhostGame()
+    public void LoadNextLevel()
     {
-        SceneManager.LoadScene("GhostGame");
+        int sceneNumber = SceneManager.GetActiveScene().buildIndex;
+
+        if (sceneNumber <= 3)
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        }
+
+        else
+        {
+            LoadMenuScene();
+        }
     }
 
     public void LoadAdoptACatScene()

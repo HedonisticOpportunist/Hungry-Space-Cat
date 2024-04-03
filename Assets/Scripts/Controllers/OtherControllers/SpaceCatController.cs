@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 public class SpaceCatController : MonoBehaviour
 {
-    [SerializeField] float speed = 20.0f;
+    [SerializeField] float speed = 15.0f;
     [SerializeField] bool isAlive = true;
     [SerializeField] float moveLimiter = 0.7f;
 
@@ -114,7 +114,7 @@ public class SpaceCatController : MonoBehaviour
         /* Based on, with modifications and additions: 
         // @Credit: https://forum.unity.com/threads/how-to-implement-time-delay-in-damage-invincibility-frames.1375731
         */
-        
+
         if (_damageCountDown > 0)
         {
             return;
@@ -145,7 +145,7 @@ public class SpaceCatController : MonoBehaviour
     IEnumerator DelayReloadScene()
     {
         yield return new WaitForSeconds(2f);
-        _sceneLoaderManager.LoadRandomScene();
+        _sceneLoaderManager.LoadNextLevel();
     }
 }
 
