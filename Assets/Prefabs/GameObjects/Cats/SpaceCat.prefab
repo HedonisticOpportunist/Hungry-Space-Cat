@@ -214,7 +214,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e869ac33235881c48ae5dc30ab402550, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 20
+  speed: 10
   isAlive: 1
   moveLimiter: 0.7
   sleepingCat: {fileID: 8321439424131616243, guid: 0103c3ff42c44ce4480f7b8d8cf7c19f, type: 3}
