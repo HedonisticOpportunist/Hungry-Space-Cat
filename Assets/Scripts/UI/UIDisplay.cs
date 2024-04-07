@@ -19,7 +19,7 @@ public class UIDisplay : MonoBehaviour
 
     [Header("GameOver")]
     [SerializeField] TextMeshProUGUI gameOverText;
-    [SerializeField] TextMeshProUGUI redirectToMenuText;
+    [SerializeField] TextMeshProUGUI applicationStopText;
     [SerializeField] TextMeshProUGUI newGameText;
 
     void Awake()
@@ -31,7 +31,7 @@ public class UIDisplay : MonoBehaviour
     void Start()
     {
         gameOverText.text = "";
-        redirectToMenuText.text = "";
+        applicationStopText.text = "";
         newGameText.text = "";
     }
 
@@ -45,7 +45,7 @@ public class UIDisplay : MonoBehaviour
     {
         newGameText.text = "";
         gameOverText.text = "Game over!";
-        redirectToMenuText.text = "The application will stop in five, four, three ...";
+        applicationStopText.text = "The application will stop in five, four, three ...";
     }
 
     public void LoadNextGameText()

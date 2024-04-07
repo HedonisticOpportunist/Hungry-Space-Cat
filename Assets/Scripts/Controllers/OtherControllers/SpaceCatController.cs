@@ -1,12 +1,9 @@
 using System.Collections;
 using UnityEngine;
-using UnityEngine.InputSystem;
 public class SpaceCatController : MonoBehaviour
 {
     [SerializeField] float speed = 15.0f;
     [SerializeField] bool isAlive = true;
-    [SerializeField] float moveLimiter = 0.7f;
-
     [SerializeField] GameObject sleepingCat;
     [SerializeField] float damageDelay = 1.0f;
 
@@ -35,10 +32,15 @@ public class SpaceCatController : MonoBehaviour
         _sceneLoaderManager = FindObjectOfType<SceneLoaderManager>();
         _spawnerHelper = FindObjectOfType<SpawnerHelper>();
         _scoreKeeper = FindObjectOfType<ScoreKeeper>();
-
     }
 
-    void Update()
+    private void Update()
+    {
+        _horizontal = Input.GetAxisRaw("Horizontal");
+        _vertical = Input.GetAxisRaw("Vertical");
+    }
+
+    void FixedUpdate()
     {
 
         if (isAlive)
@@ -61,24 +63,11 @@ public class SpaceCatController : MonoBehaviour
         }
     }
 
-    void OnMove(InputValue value)
-    {
-        _horizontal = value.Get<Vector2>().x;
-        _vertical = value.Get<Vector2>().y;
-    }
-
     void MoveCat()
     {
-
-        /* Based on the below, with modifications 
+        /* Based on the below, with modifications and deletions:
         // @Credit: https://stuartspixelgames.com/2018/06/24/simple-2d-top-down-movement-unity-c/
         */
-
-        if (_horizontal != 0 && _vertical != 0)
-        {
-            _horizontal *= moveLimiter;
-            _vertical *= moveLimiter;
-        }
 
         _body.velocity = new Vector2(_horizontal * speed, _vertical * speed);
         _controllerHelper.ClampSpriteMovements(transform);
@@ -106,7 +95,7 @@ public class SpaceCatController : MonoBehaviour
         Instantiate(sleepingCat, new Vector3(0, 0, 0), Quaternion.identity);
         _scoreKeeper.ResetScore();
         _healthKeeper.ResetLives();
-        StartCoroutine(DelayMenuSceneLoad());
+        StartCoroutine(DelayExitSceneLoad());
     }
 
     void OnPlayerDamage()
@@ -136,7 +125,7 @@ public class SpaceCatController : MonoBehaviour
         }
     }
 
-    IEnumerator DelayMenuSceneLoad()
+    IEnumerator DelayExitSceneLoad()
     {
         yield return new WaitForSeconds(2f);
         _sceneLoaderManager.ExitGame();

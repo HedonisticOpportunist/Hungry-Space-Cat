@@ -8,36 +8,27 @@ using UnityEngine.SceneManagement;
 */
 
 public class SceneLoaderManager : MonoBehaviour
-{
-    static SceneLoaderManager instance;
-
-    void Awake()
+{ 
+    void FixedUpdate()
     {
-        ManageSingleton();
+        LoadMenuScene();
     }
-
-    void ManageSingleton()
-    {
-        if (instance != null)
-        {
-            gameObject.SetActive(false);
-            Destroy(gameObject);
-        }
-        else
-        {
-            instance = this;
-            DontDestroyOnLoad(gameObject);
-        }
-    }
-
-    public void LoadUFOGame()
+        public void LoadUFOGame()
     {
         SceneManager.LoadScene("UFOGame");
     }
 
     public void LoadMenuScene()
     {
-        SceneManager.LoadScene("MenuScene");
+        int sceneNumber = SceneManager.GetActiveScene().buildIndex;
+
+        if (sceneNumber != 0)
+        {
+            if (Input.GetKey(KeyCode.Escape))
+            {
+                SceneManager.LoadScene("MenuScene");
+            }
+        }
     }
 
     public void LoadNextLevel()
