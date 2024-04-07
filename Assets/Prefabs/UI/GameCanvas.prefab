@@ -280,7 +280,7 @@ GameObject:
   - component: {fileID: 5984082299573875890}
   - component: {fileID: 1135864639451953930}
   m_Layer: 5
-  m_Name: DirectedBackToMenuText
+  m_Name: ApplicationStopText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

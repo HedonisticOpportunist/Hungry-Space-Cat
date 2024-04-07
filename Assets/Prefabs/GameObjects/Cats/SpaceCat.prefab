@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: -7254661651948235164}
   - component: {fileID: 6280830789039459459}
   - component: {fileID: 6564404691724261011}
-  - component: {fileID: 2758612672106529872}
   m_Layer: 0
   m_Name: SpaceCat
   m_TagString: SpaceCat
@@ -216,36 +215,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 10
   isAlive: 1
-  moveLimiter: 0.7
   sleepingCat: {fileID: 8321439424131616243, guid: 0103c3ff42c44ce4480f7b8d8cf7c19f, type: 3}
   damageDelay: 2
---- !u!114 &2758612672106529872
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8360398628935114832}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Actions: {fileID: -944628639613478452, guid: c1e7e7d8dc5b36c42a2c1de7e58da59d, type: 3}
-  m_NotificationBehavior: 0
-  m_UIInputModule: {fileID: 0}
-  m_DeviceLostEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_DeviceRegainedEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_ControlsChangedEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_ActionEvents: []
-  m_NeverAutoSwitchControlSchemes: 0
-  m_DefaultControlScheme: 
-  m_DefaultActionMap: Player
-  m_SplitScreenIndex: -1
-  m_Camera: {fileID: 0}
