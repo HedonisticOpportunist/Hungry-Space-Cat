@@ -35,9 +35,10 @@ The tables below list all the sprite assets and where they came from.
 
 #### Pictures / Images 👽
 
-| Image Name               | Link                                                                    |
-| -----------              | -----------                                                             |
-| Sleeping Cat | https://dribbble.com/catalystvibes/about |
+| Image Name      | Link                                     |
+| -----------     | -----------                              |
+| Sleeping Cat    | https://dribbble.com/catalystvibes/about |
+| Sitting Cat     | https://icons8.com/icon/set/cat/dusk     |
 
 #### Buttons 👽
 
