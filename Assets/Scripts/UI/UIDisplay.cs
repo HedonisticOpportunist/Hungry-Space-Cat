@@ -45,7 +45,7 @@ public class UIDisplay : MonoBehaviour
     {
         newGameText.text = "";
         gameOverText.text = "Game over!";
-        applicationStopText.text = "The application will exit in five, four, three ... Press ESC if you want to return to the menu.";
+        applicationStopText.text = "You will be redirected to the menu in five, four, three ...";
     }
 
     public void LoadNextGameText()

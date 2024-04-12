@@ -26,9 +26,31 @@ public class SceneLoaderManager : MonoBehaviour
         {
             if (Input.GetKey(KeyCode.Escape))
             {
+                AudioListener.volume = 0; // TODO stop audio from overflowing. 
                 SceneManager.LoadScene("MenuScene");
             }
         }
+    }
+
+    public void LoadEasyMode()
+    {
+        SceneManager.LoadScene("UFOGameEasy");
+    }
+
+    public void LoadInstructions()
+    {
+        SceneManager.LoadScene("Instructions");
+    }
+
+    public void ReturnToMenu()
+    {
+       SceneManager.LoadScene("MenuScene"); 
+    }
+
+
+    public void LoadSettingsScene()
+    {
+        SceneManager.LoadScene("GameSettings");
     }
 
     public void LoadNextLevel()
@@ -46,7 +68,7 @@ public class SceneLoaderManager : MonoBehaviour
         }
     }
 
-    public void LoadAdoptACatScene()
+    public void LoadAdoptACatSite()
     {
         Application.OpenURL("https://hedonisticopportunist.github.io/Cats-in-Neath/");
     }

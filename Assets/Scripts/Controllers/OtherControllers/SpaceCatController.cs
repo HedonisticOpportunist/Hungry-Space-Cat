@@ -110,7 +110,7 @@ public class SpaceCatController : MonoBehaviour
         Instantiate(sleepingCat, new Vector3(0, 0, 0), Quaternion.identity);
         _scoreKeeper.ResetScore();
         _healthKeeper.ResetLives();
-        StartCoroutine(DelayExitSceneLoad());
+        StartCoroutine(DelayReturnToMenu());
     }
 
     void OnPlayerDamage()
@@ -133,17 +133,17 @@ public class SpaceCatController : MonoBehaviour
     {
         int numberOfBugs = _spawnerHelper.GetNumberOfObjectsInScene("Bug");
 
-        if (numberOfBugs == 0 && _healthKeeper.GetLives() != 0)
+        if (numberOfBugs == 0 && _healthKeeper.GetLives() != 0 && !modeEasy)
         {
             _uIDisplay.LoadNextGameText();
             StartCoroutine(DelayReloadScene());
         }
     }
 
-    IEnumerator DelayExitSceneLoad()
+    IEnumerator DelayReturnToMenu()
     {
         yield return new WaitForSeconds(2f);
-        _sceneLoaderManager.ExitGame();
+        _sceneLoaderManager.ReturnToMenu();
     }
 
     IEnumerator DelayReloadScene()
