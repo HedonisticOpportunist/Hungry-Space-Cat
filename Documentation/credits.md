@@ -6,10 +6,11 @@ The tables below list all the sprite assets and where they came from.
 
 #### Space Cat / Player 
 
-| Sprite Name                  | Link                                                          |
-| -----------                  | -----------                                                   |
-| Green Astronaut Cat          | https://bevouliin.com/green-cat-astronaut-game-asset-sprites/ |
-| Sleeping Cat                 | https://www.anyrgb.com/en-clipart-22sxz                       |
+| Sprite Name                  | Link                                                           |
+| -----------                  | -----------                                                    |
+| Green Astronaut Cat          | https://bevouliin.com/green-cat-astronaut-game-asset-sprites/  |
+| Sleeping Cat                 | https://www.anyrgb.com/en-clipart-22sxz                        |
+| Ghost Cat                    | https://kububbis.itch.io/kawaii-ghost-sprite-pack-neko-edition |
 
 #### Pickups 👽
 
@@ -40,6 +41,7 @@ The tables below list all the sprite assets and where they came from.
 | Sleeping Cat    | https://dribbble.com/catalystvibes/about |
 | Sitting Cat     | https://icons8.com/icon/set/cat/dusk     |
 
+
 #### Buttons 👽
 
 | Sprite Name          | Link                                                |
@@ -49,6 +51,7 @@ The tables below list all the sprite assets and where they came from.
 | Exit Button          | https://icons8.com/icon/set/exit/nolan              |
 | Back Button          | https://icons8.com/icon/set/back-button/nolan       |
 | Settings Button      | https://icons8.com/icon/set/settings-button/nolan   |
+| Instructions Button  | https://icons8.com/icon/set/instructions/nolan      |
 | Green Play Button    | https://icons8.com/icon/set/play-button/dusk        |
 
 ### AUDIO 🐾
