@@ -2,14 +2,14 @@ using System.Collections;
 using UnityEngine;
 public class SpaceCatController : MonoBehaviour
 {
-    [SerializeField] float speed = 15.0f;
     [SerializeField] bool isAlive = true;
+    [SerializeField] bool modeEasy = true;
+    [SerializeField] float speed = 15.0f;
     [SerializeField] GameObject sleepingCat;
     [SerializeField] float damageDelay = 1.0f;
+    [SerializeField] float thrust = 1.0f;
 
     AudioPlayer _audioPlayer;
-    float _horizontal;
-    float _vertical;
     float _damageCountDown = 0;
 
     Rigidbody2D _body;
@@ -20,6 +20,10 @@ public class SpaceCatController : MonoBehaviour
     SpawnerHelper _spawnerHelper;
     ScoreKeeper _scoreKeeper;
     UIDisplay _uIDisplay;
+    
+    float _maxSpeed = 10;
+    float _horizontal;
+    float _vertical;
 
     void Awake()
     {
@@ -34,7 +38,7 @@ public class SpaceCatController : MonoBehaviour
         _scoreKeeper = FindObjectOfType<ScoreKeeper>();
     }
 
-    private void Update()
+    void Update()
     {
         _horizontal = Input.GetAxisRaw("Horizontal");
         _vertical = Input.GetAxisRaw("Vertical");
@@ -66,11 +70,22 @@ public class SpaceCatController : MonoBehaviour
     void MoveCat()
     {
         /* Based on the below, with modifications and deletions:
-        // @Credit: https://stuartspixelgames.com/2018/06/24/simple-2d-top-down-movement-unity-c/
+        // @Credit: https://forum.unity.com/threads/limit-the-velocity-of-an-object-after-addforce.531229/ for slowing down the force movement. 
         */
 
-        _body.velocity = new Vector2(_horizontal * speed, _vertical * speed);
+        if (modeEasy)
+        {
+            _body.velocity = new Vector2(_horizontal * speed, _vertical * speed);
+        }
+
+        else
+        {
+            ApplyRelativeForce();
+            _body.velocity = Vector3.ClampMagnitude(_body.velocity, _maxSpeed);
+        }
+
         _controllerHelper.ClampSpriteMovements(transform);
+
     }
 
     void OnTriggerEnter2D(Collider2D other)
@@ -135,6 +150,35 @@ public class SpaceCatController : MonoBehaviour
     {
         yield return new WaitForSeconds(2f);
         _sceneLoaderManager.LoadNextLevel();
+    }
+
+    void ApplyRelativeForce()
+    {
+
+        if (Input.GetKey(KeyCode.LeftArrow))
+        {
+            _body.AddRelativeForce(thrust * Time.deltaTime * Vector2.left);
+        }
+
+        else if (Input.GetKey(KeyCode.RightArrow))
+        {
+            _body.AddRelativeForce(thrust * Time.deltaTime * Vector2.right);
+        }
+
+        else if (Input.GetKey(KeyCode.UpArrow))
+        {
+            _body.AddRelativeForce(thrust * Time.deltaTime * Vector2.up);
+        }
+
+        else if (Input.GetKey(KeyCode.DownArrow))
+        {
+            _body.AddRelativeForce(thrust * Time.deltaTime * Vector2.down);
+        }
+
+        else
+        {
+            return;
+        }
     }
 }
 
