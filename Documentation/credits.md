@@ -47,6 +47,7 @@ The tables below list all the sprite assets and where they came from.
 | Mute / Unmute Button | https://icons8.com/icon/set/mute-unmute/group-color |
 | Play/ Start Button   | https://icons8.com/icon/set/play/nolan              |
 | Exit Button          | https://icons8.com/icon/set/exit/nolan              |
+| Green Play Button    | https://icons8.com/icon/set/play-button/dusk        |
 
 ### AUDIO 🐾
 
