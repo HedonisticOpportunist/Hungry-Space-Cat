@@ -52,7 +52,7 @@ The tables below list all the sprite assets and where they came from.
 | Back Button          | https://icons8.com/icon/set/back-button/nolan       |
 | Settings Button      | https://icons8.com/icon/set/settings-button/nolan   |
 | Instructions Button  | https://icons8.com/icon/set/instructions/nolan      |
-| Green Play Button    | https://icons8.com/icon/set/play-button/dusk        |
+| 'Easy' Play Button   | https://icons8.com/icon/set/play/nolan              |
 
 ### AUDIO 🐾
 
