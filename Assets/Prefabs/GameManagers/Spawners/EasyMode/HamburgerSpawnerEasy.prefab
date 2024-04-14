@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &7024448412782332266
+--- !u!1 &4167077421354878866
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,24 +8,24 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 6980945312667464429}
-  - component: {fileID: 5397671893136775187}
-  - component: {fileID: 8532878982724918147}
-  - component: {fileID: 5609635076019757897}
+  - component: {fileID: 5220934236888684819}
+  - component: {fileID: 4851711838467913177}
+  - component: {fileID: 5156665686823257534}
+  - component: {fileID: 2218147711131750058}
   m_Layer: 0
-  m_Name: UFOGameSpawnerEasy
+  m_Name: HamburgerSpawnerEasy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &6980945312667464429
+--- !u!4 &5220934236888684819
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7024448412782332266}
+  m_GameObject: {fileID: 4167077421354878866}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
@@ -34,13 +34,13 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5397671893136775187
+--- !u!114 &4851711838467913177
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7024448412782332266}
+  m_GameObject: {fileID: 4167077421354878866}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d3ca9ed04d28b7948b229f864f2254d3, type: 3}
@@ -51,29 +51,39 @@ MonoBehaviour:
   - {fileID: 6756778126985289246, guid: 6579666a8aab26148be77572ba0decfd, type: 3}
   - {fileID: 6756778126985289246, guid: 6579666a8aab26148be77572ba0decfd, type: 3}
   - {fileID: 6756778126985289246, guid: 6579666a8aab26148be77572ba0decfd, type: 3}
---- !u!114 &8532878982724918147
+  - {fileID: 6756778126985289246, guid: 6579666a8aab26148be77572ba0decfd, type: 3}
+  - {fileID: 6756778126985289246, guid: 6579666a8aab26148be77572ba0decfd, type: 3}
+  - {fileID: 6756778126985289246, guid: 6579666a8aab26148be77572ba0decfd, type: 3}
+  - {fileID: 6756778126985289246, guid: 6579666a8aab26148be77572ba0decfd, type: 3}
+  - {fileID: 6756778126985289246, guid: 6579666a8aab26148be77572ba0decfd, type: 3}
+  - {fileID: 6756778126985289246, guid: 6579666a8aab26148be77572ba0decfd, type: 3}
+  - {fileID: 6756778126985289246, guid: 6579666a8aab26148be77572ba0decfd, type: 3}
+--- !u!114 &5156665686823257534
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7024448412782332266}
+  m_GameObject: {fileID: 4167077421354878866}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 611459832f38250409fe31ad1f0f3c94, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  flyingHamburgers:
+  - {fileID: 2507550983694276274, guid: 9a3f009c54f273344898ec1e63984177, type: 3}
+  - {fileID: 2507550983694276274, guid: 9a3f009c54f273344898ec1e63984177, type: 3}
+  - {fileID: 2507550983694276274, guid: 9a3f009c54f273344898ec1e63984177, type: 3}
+--- !u!114 &2218147711131750058
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4167077421354878866}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b931117fb12a0844d8dd77c42ace1fb7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spaceCat: {fileID: 8360398628935114832, guid: 2fc9a5c4d7c870a4e9431bb63948fabf, type: 3}
---- !u!114 &5609635076019757897
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7024448412782332266}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 111a6badd86b5064c9447b99cff7d9f7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  UFO: {fileID: 5910535728110759971, guid: a9820faed61896e4e91bb74a045f5e77, type: 3}
+  spaceCat: {fileID: 1602777234211202908, guid: f37b26d09684345428c90c34bc57deb4, type: 3}
