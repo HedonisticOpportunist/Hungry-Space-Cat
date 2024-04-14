@@ -26,7 +26,7 @@ public class SceneLoaderManager : MonoBehaviour
         {
             if (Input.GetKey(KeyCode.Escape))
             {
-                AudioListener.volume = 0; // TODO stop audio from overflowing. 
+                AudioListener.volume = 0; 
                 SceneManager.LoadScene("MenuScene");
             }
         }
@@ -57,7 +57,7 @@ public class SceneLoaderManager : MonoBehaviour
     {
         int sceneNumber = SceneManager.GetActiveScene().buildIndex;
 
-        if (sceneNumber <= 3)
+        if (sceneNumber >= 3 && sceneNumber != 11)
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }

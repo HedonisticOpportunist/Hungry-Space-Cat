@@ -35,7 +35,7 @@ public class UIDisplay : MonoBehaviour
         newGameText.text = "";
     }
 
-    void Update()
+    void FixedUpdate()
     {
       healthText.text = "Lives: " + _healthKeeper.GetLives().ToString();
       scoreText.text = "Score: " + _scoreKeeper.GetScore().ToString("000000000");   

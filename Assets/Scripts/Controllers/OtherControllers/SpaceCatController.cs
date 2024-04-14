@@ -21,9 +21,10 @@ public class SpaceCatController : MonoBehaviour
     ScoreKeeper _scoreKeeper;
     UIDisplay _uIDisplay;
     
-    float _maxSpeed = 10;
+    readonly float _maxSpeed = 10;
     float _horizontal;
     float _vertical;
+    int _lives = 0;
 
     void Awake()
     {
@@ -42,6 +43,7 @@ public class SpaceCatController : MonoBehaviour
     {
         _horizontal = Input.GetAxisRaw("Horizontal");
         _vertical = Input.GetAxisRaw("Vertical");
+        _lives = _healthKeeper.GetLives();
     }
 
     void FixedUpdate()
@@ -94,7 +96,7 @@ public class SpaceCatController : MonoBehaviour
         {
             OnPlayerDamage();
 
-            if (_healthKeeper.GetLives() == 0)
+            if (_lives == 0)
             {
                 CatDeath();
 
@@ -133,7 +135,7 @@ public class SpaceCatController : MonoBehaviour
     {
         int numberOfBugs = _spawnerHelper.GetNumberOfObjectsInScene("Bug");
 
-        if (numberOfBugs == 0 && _healthKeeper.GetLives() != 0 && !modeEasy)
+        if (numberOfBugs == 0 && _healthKeeper.GetLives() != 0)
         {
             _uIDisplay.LoadNextGameText();
             StartCoroutine(DelayReloadScene());

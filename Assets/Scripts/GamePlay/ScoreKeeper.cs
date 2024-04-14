@@ -7,7 +7,7 @@ using UnityEngine;
 
 public class ScoreKeeper : MonoBehaviour
 {
-    [SerializeField] int score = 0;
+    private int score = 0;
     static ScoreKeeper instance;
 
     void Awake()
