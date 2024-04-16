@@ -1,32 +1,36 @@
 using UnityEngine;
+using static UnityEngine.GraphicsBuffer;
 
 public class FlyingHamburgerController : MonoBehaviour
 {
     [SerializeField] float speed = 2.5f;
-    [SerializeField] Transform spaceCat;
+    Transform _target;
+    GameObject _spaceCat;
     ControllerHelper _controllerHelper;
     HealthKeeper _healthKeeper;
-
-
+   
     void Awake()
     {
         _controllerHelper = FindObjectOfType<ControllerHelper>();
         _healthKeeper = FindObjectOfType<HealthKeeper>();
-       
 
-        if (spaceCat != null)
+    }
+
+    void Start()
+    {
+        _spaceCat = GameObject.FindWithTag("SpaceCat");
+        _target = _spaceCat.transform;
+    }
+
+    void FixedUpdate()
+    {
+        if (_target != null) 
         {
-            spaceCat = FindObjectOfType<SpaceCatController>().transform; 
+            _controllerHelper.FollowPlayer(_target, this.transform, speed, _healthKeeper.GetLives());
         }
         else
         {
             return;
         }
-
-    }
-
-    void Update()
-    {
-        _controllerHelper.FollowPlayer(spaceCat, this.transform, speed, _healthKeeper.GetLives());
     }
 }

@@ -52,7 +52,7 @@ public class ControllerHelper : MonoBehaviour
 
         if (target != null && lives != 0)
         {
-            Vector2 direction = target.transform.position - transform.position;
+            Vector2 direction = target.position - transform.position;
             direction.Normalize(); // Keeps the length of the direction to one, thus constant. 
             float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg; // This allows for smoother rotation. 
             transform.SetPositionAndRotation(Vector2.MoveTowards(transform.position, target.transform.position, speed * Time.deltaTime), Quaternion.Euler(Vector3.forward * angle));
