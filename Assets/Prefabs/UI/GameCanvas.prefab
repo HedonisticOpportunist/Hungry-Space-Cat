@@ -169,7 +169,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -600, y: 300}
-  m_SizeDelta: {x: 200, y: 50}
+  m_SizeDelta: {x: 400, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7386458274527007872
 CanvasRenderer:
@@ -201,8 +201,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Score:'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: a9efa6d55fab24e44aa2472a9f4a0452, type: 2}
-  m_sharedMaterial: {fileID: 6314450974119785583, guid: a9efa6d55fab24e44aa2472a9f4a0452, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 9ae507a686733d347a31523beb2d8b7f, type: 2}
+  m_sharedMaterial: {fileID: -4057388085854701957, guid: 9ae507a686733d347a31523beb2d8b7f, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -226,8 +226,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 25
-  m_fontSizeBase: 25
+  m_fontSize: 35
+  m_fontSizeBase: 35
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -709,8 +709,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Lives:'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: a9efa6d55fab24e44aa2472a9f4a0452, type: 2}
-  m_sharedMaterial: {fileID: 6314450974119785583, guid: a9efa6d55fab24e44aa2472a9f4a0452, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 9ae507a686733d347a31523beb2d8b7f, type: 2}
+  m_sharedMaterial: {fileID: -4057388085854701957, guid: 9ae507a686733d347a31523beb2d8b7f, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -734,8 +734,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 25
-  m_fontSizeBase: 25
+  m_fontSize: 35
+  m_fontSizeBase: 35
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18

@@ -9,9 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7993829408192786139}
-  - component: {fileID: 6848643595206044532}
-  - component: {fileID: 590645954095081771}
-  - component: {fileID: 2598804651454444218}
+  - component: {fileID: 298661162150793360}
+  - component: {fileID: 3704137323369704218}
+  - component: {fileID: 7219286980347775141}
   m_Layer: 0
   m_Name: HamburgerSpawner
   m_TagString: Untagged
@@ -34,7 +34,37 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6848643595206044532
+--- !u!114 &298661162150793360
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8164485491094820427}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b931117fb12a0844d8dd77c42ace1fb7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spaceCat: {fileID: 8360398628935114832, guid: 2fc9a5c4d7c870a4e9431bb63948fabf, type: 3}
+--- !u!114 &3704137323369704218
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8164485491094820427}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 611459832f38250409fe31ad1f0f3c94, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  flyingHamburgers:
+  - {fileID: 2507550983694276274, guid: 9a3f009c54f273344898ec1e63984177, type: 3}
+  - {fileID: 2507550983694276274, guid: 9a3f009c54f273344898ec1e63984177, type: 3}
+  - {fileID: 2507550983694276274, guid: 9a3f009c54f273344898ec1e63984177, type: 3}
+  - {fileID: 2507550983694276274, guid: 9a3f009c54f273344898ec1e63984177, type: 3}
+--- !u!114 &7219286980347775141
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -56,34 +86,3 @@ MonoBehaviour:
   - {fileID: 6756778126985289246, guid: 6579666a8aab26148be77572ba0decfd, type: 3}
   - {fileID: 6756778126985289246, guid: 6579666a8aab26148be77572ba0decfd, type: 3}
   - {fileID: 6756778126985289246, guid: 6579666a8aab26148be77572ba0decfd, type: 3}
-  - {fileID: 6756778126985289246, guid: 6579666a8aab26148be77572ba0decfd, type: 3}
-  - {fileID: 6756778126985289246, guid: 6579666a8aab26148be77572ba0decfd, type: 3}
---- !u!114 &590645954095081771
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8164485491094820427}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 611459832f38250409fe31ad1f0f3c94, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  flyingHamburgers:
-  - {fileID: 2507550983694276274, guid: 9a3f009c54f273344898ec1e63984177, type: 3}
-  - {fileID: 2507550983694276274, guid: 9a3f009c54f273344898ec1e63984177, type: 3}
-  - {fileID: 2507550983694276274, guid: 9a3f009c54f273344898ec1e63984177, type: 3}
---- !u!114 &2598804651454444218
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8164485491094820427}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b931117fb12a0844d8dd77c42ace1fb7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  spaceCat: {fileID: 8360398628935114832, guid: 2fc9a5c4d7c870a4e9431bb63948fabf, type: 3}
