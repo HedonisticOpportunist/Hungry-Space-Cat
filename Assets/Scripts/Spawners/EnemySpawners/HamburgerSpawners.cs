@@ -20,8 +20,7 @@ public class SpawnFlyingHamburgers : MonoBehaviour
         if (other.CompareTag("UFO"))
         {
             // This avoids the object overlapping with itself while spawning. 
-            other.gameObject.SetActive(false);
-            Destroy(other.gameObject);
+            other.gameObject.transform.position += new Vector3(200, 200);
         }
     }
 }
