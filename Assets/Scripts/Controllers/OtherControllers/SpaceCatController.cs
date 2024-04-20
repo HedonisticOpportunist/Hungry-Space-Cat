@@ -24,14 +24,14 @@ public class SpaceCatController : MonoBehaviour
     readonly float _maxSpeed = 10;
     float _horizontal;
     float _vertical;
-    int _lives = 0;
+    int _lives = 9;
 
     void Awake()
     {
         _body = GetComponent<Rigidbody2D>();
         _audioPlayer = FindObjectOfType<AudioPlayer>();
         _controllerHelper = FindObjectOfType<ControllerHelper>();
-        _uIDisplay = FindObjectOfType<UIDisplay>();
+        _uIDisplay = GameObject.Find("GameCanvas").GetComponent<UIDisplay>();
 
         _healthKeeper = FindObjectOfType<HealthKeeper>();
         _sceneLoaderManager = FindObjectOfType<SceneLoaderManager>();
@@ -95,6 +95,7 @@ public class SpaceCatController : MonoBehaviour
         if (other.CompareTag("UFO"))
         {
             OnPlayerDamage();
+            _uIDisplay.UpdateLives();
 
             if (_lives == 0)
             {
