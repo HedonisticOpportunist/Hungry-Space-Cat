@@ -1360,13 +1360,9 @@ PrefabInstance:
       objectReference: {fileID: 1682052070}
     - target: {fileID: 701064183879774954, guid: b03c4f2b6959f6b469349bbb5ec8660a, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 100
+      value: -50
       objectReference: {fileID: 0}
     - target: {fileID: 1367101397183746578, guid: b03c4f2b6959f6b469349bbb5ec8660a, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1682052070}
-    - target: {fileID: 3367944742079407204, guid: b03c4f2b6959f6b469349bbb5ec8660a, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1682052070}
@@ -1464,10 +1460,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7634909885666390648, guid: b03c4f2b6959f6b469349bbb5ec8660a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7911823741928326403, guid: b03c4f2b6959f6b469349bbb5ec8660a, type: 3}
-      propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
