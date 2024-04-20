@@ -52,16 +52,21 @@ public class SceneLoaderManager : MonoBehaviour
         SceneManager.LoadScene("GameSettings");
     }
 
+    public void LoadPlayScene()
+    {
+        SceneManager.LoadScene("Play");
+    }
+
     public void LoadNextLevel()
     {
         int sceneNumber = SceneManager.GetActiveScene().buildIndex;
 
-        if (sceneNumber >= 3 && sceneNumber <= 6)
+        if (sceneNumber >= 4 && sceneNumber <= 7)
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
 
-        else if (sceneNumber >= 7 && sceneNumber <= 10)
+        else if (sceneNumber >= 8 && sceneNumber <= 11)
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
