@@ -7,7 +7,7 @@ using UnityEngine;
 
 public class HealthKeeper : MonoBehaviour
 {
-   private int _lives = 90;
+   private int _lives = 9;
    static HealthKeeper instance;
 
     void Awake()
@@ -45,12 +45,12 @@ public class HealthKeeper : MonoBehaviour
 
     public void ResetLives()
     {
-        _lives = 90;
+        _lives = 9;
     }
 
     int CalculateDamagePoints()
     {
-        int pointsForDamage = 9;
+        int pointsForDamage = 1;
         return pointsForDamage;
     }
 }
