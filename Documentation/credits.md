@@ -54,6 +54,7 @@ The tables below list all the sprite assets and where they came from.
 | Instructions Button  | https://icons8.com/icon/set/instructions/nolan      |
 | 'Easy' Play Button   | https://icons8.com/icon/set/play/nolan              |
 | 'Normal' Play Button | https://icons8.com/icon/set/play-button/nolan       |
+| Replay Button        | https://www.flaticon.com/free-icons/play-again      |
 
 ### AUDIO 🐾
 
