@@ -72,33 +72,13 @@ public class SpaceCatController : MonoBehaviour
         }
     }
 
-    void MoveCat()
-    {
-        /* Based on the below, with modifications and deletions:
-        // @Credit: https://forum.unity.com/threads/limit-the-velocity-of-an-object-after-addforce.531229/ for slowing down the force movement. 
-        */
-
-        if (modeEasy)
-        {
-            _body.velocity = new Vector2(_horizontal * speed, _vertical * speed);
-        }
-
-        else
-        {
-            ApplyRelativeForce();
-            _body.velocity = Vector3.ClampMagnitude(_body.velocity, _maxSpeed);
-        }
-
-        _controllerHelper.ClampSpriteMovements(transform);
-
-    }
+    #region DamageAndDeath
 
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("UFO"))
         {
             OnPlayerDamage();
-            _uIDisplay.UpdateLives();
 
             if (_lives == 0)
             {
@@ -132,29 +112,9 @@ public class SpaceCatController : MonoBehaviour
         _healthKeeper.TakeDamage();
     }
 
-    void DealWithNumberOfBugs()
-    {
-        int numberOfBugs = _spawnerHelper.GetNumberOfObjectsInScene("Bug");
+    #endregion DamageAndDeath
 
-        if (numberOfBugs == 0 && _healthKeeper.GetLives() != 0)
-        {
-            _uIDisplay.LoadNextGameText();
-            StartCoroutine(DelayReloadScene());
-        }
-    }
-
-    IEnumerator DelayReloadScene()
-    {
-        yield return new WaitForSeconds(2f);
-        _sceneLoaderManager.LoadNextLevel();
-    }
-
-    IEnumerator DelayLoadEndScene()
-    {
-        yield return new WaitForSeconds(2f);
-        _sceneLoaderManager.LoadEndScene();
-    }
-
+    #region CatMovement
     void ApplyRelativeForce()
     {
 
@@ -184,5 +144,54 @@ public class SpaceCatController : MonoBehaviour
         }
     }
 
+    void MoveCat()
+    {
+        /* Based on the below, with modifications and deletions:
+        // @Credit: https://forum.unity.com/threads/limit-the-velocity-of-an-object-after-addforce.531229/ for slowing down the force movement. 
+        */
+
+        if (modeEasy)
+        {
+            _body.velocity = new Vector2(_horizontal * speed, _vertical * speed);
+        }
+
+        else
+        {
+            ApplyRelativeForce();
+            _body.velocity = Vector3.ClampMagnitude(_body.velocity, _maxSpeed);
+        }
+
+        _controllerHelper.ClampSpriteMovements(transform);
+
+    }
+
+    #endregion CatMovement
+
+    #region ReloadScenes
+
+    void DealWithNumberOfBugs()
+    {
+        int numberOfBugs = _spawnerHelper.GetNumberOfObjectsInScene("Bug");
+
+        if (numberOfBugs == 0 && _healthKeeper.GetLives() != 0)
+        {
+            _uIDisplay.LoadNextGameText();
+            StartCoroutine(DelayReloadScene());
+        }
+    }
+
+    IEnumerator DelayReloadScene()
+    {
+        yield return new WaitForSeconds(2f);
+        _sceneLoaderManager.LoadNextLevel();
+    }
+
+    IEnumerator DelayLoadEndScene()
+    {
+        yield return new WaitForSeconds(2f);
+        _sceneLoaderManager.LoadEndScene();
+    }
+
+    #endregion ReloadScenes
 }
 
