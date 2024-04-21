@@ -1241,6 +1241,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 773796308}
+    - target: {fileID: 1580182423348439211, guid: 24ec3d32980027d4d8737540f1322881, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: LoadMenuScene
+      objectReference: {fileID: 0}
     - target: {fileID: 3266014629672295642, guid: 24ec3d32980027d4d8737540f1322881, type: 3}
       propertyPath: m_Name
       value: PlayCanvas
