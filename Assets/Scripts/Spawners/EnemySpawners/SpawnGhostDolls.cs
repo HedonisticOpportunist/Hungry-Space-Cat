@@ -9,10 +9,14 @@ using UnityEngine;
 
 public class SpawnGhostDolls : MonoBehaviour
 {
+    [Header("Waves Config/List of Waves")]
     [SerializeField] List<WavesConfig> waveConfigs;
+    WavesConfig _currentWave;
+
+    [Header("Time Between Waves")]
     [SerializeField] float timeBetweenWaves = 0f;
     [SerializeField] bool isLooping;
-    WavesConfig _currentWave;
+   
     void Start()
     {
         StartCoroutine(SpawnGhostDollsIntoScene());

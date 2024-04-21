@@ -7,7 +7,10 @@ using UnityEngine;
 
 public class UFOController : MonoBehaviour
 {
+    [Header("Speed and Movmenet")]
     [SerializeField] float speed = 2.5f;
+
+    // OTHER GAME SCRIPTS 
     Rigidbody2D _body;
     ControllerHelper _controllerHelper;
 

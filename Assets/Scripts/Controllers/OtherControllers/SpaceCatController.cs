@@ -2,29 +2,32 @@ using System.Collections;
 using UnityEngine;
 public class SpaceCatController : MonoBehaviour
 {
+    [Header("Boolean Variables")]
     [SerializeField] bool isAlive = true;
     [SerializeField] bool modeEasy = true;
+
+    [Header("Speed and Movement")]
     [SerializeField] float speed = 15.0f;
-    [SerializeField] GameObject sleepingCat;
     [SerializeField] float damageDelay = 1.0f;
     [SerializeField] float thrust = 1.0f;
 
-    AudioPlayer _audioPlayer;
-    float _damageCountDown = 0;
-
-    Rigidbody2D _body;
-    ControllerHelper _controllerHelper;
-    HealthKeeper _healthKeeper;
-    SceneLoaderManager _sceneLoaderManager;
-
-    SpawnerHelper _spawnerHelper;
-    ScoreKeeper _scoreKeeper;
-    UIDisplay _uIDisplay;
-    
     readonly float _maxSpeed = 10;
     float _horizontal;
     float _vertical;
+    float _damageCountDown = 0;
     int _lives = 9;
+
+    // OTHER GAME SCRIPTS 
+    AudioPlayer _audioPlayer;
+    Rigidbody2D _body;
+    ControllerHelper _controllerHelper;
+
+    HealthKeeper _healthKeeper;
+    SceneLoaderManager _sceneLoaderManager;
+    SpawnerHelper _spawnerHelper;
+
+    ScoreKeeper _scoreKeeper;
+    UIDisplay _uIDisplay;
 
     void Awake()
     {
@@ -107,13 +110,10 @@ public class SpaceCatController : MonoBehaviour
 
     void CatDeath()
     {
-
         isAlive = false;
-        _uIDisplay.DisplayGameOverText();
-        Instantiate(sleepingCat, new Vector3(0, 0, 0), Quaternion.identity);
         _scoreKeeper.ResetScore();
         _healthKeeper.ResetLives();
-        StartCoroutine(DelayReturnToMenu());
+        StartCoroutine(DelayLoadEndScene());
     }
 
     void OnPlayerDamage()
@@ -126,7 +126,7 @@ public class SpaceCatController : MonoBehaviour
         {
             return;
         }
-        
+
         _damageCountDown = damageDelay;
         _audioPlayer.PlayCatDamageClip();
         _healthKeeper.TakeDamage();
@@ -143,16 +143,16 @@ public class SpaceCatController : MonoBehaviour
         }
     }
 
-    IEnumerator DelayReturnToMenu()
-    {
-        yield return new WaitForSeconds(2f);
-        _sceneLoaderManager.ReturnToMenu();
-    }
-
     IEnumerator DelayReloadScene()
     {
         yield return new WaitForSeconds(2f);
         _sceneLoaderManager.LoadNextLevel();
+    }
+
+    IEnumerator DelayLoadEndScene()
+    {
+        yield return new WaitForSeconds(2f);
+        _sceneLoaderManager.LoadEndScene();
     }
 
     void ApplyRelativeForce()
@@ -183,5 +183,6 @@ public class SpaceCatController : MonoBehaviour
             return;
         }
     }
+
 }
 

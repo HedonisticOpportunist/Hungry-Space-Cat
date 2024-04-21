@@ -3,12 +3,16 @@ using UnityEngine;
 
 public class BugController : MonoBehaviour
 {
+    [Header("Speed and Movement")]
     [SerializeField] float yPosition;
     [SerializeField] float floatStrength = 0.6f;
     [SerializeField] float speed = 2.4f;
-    [SerializeField] int pointsForBugsEaten = 10;
 
+    [Header("Points for Eating Bugs")]
+    [SerializeField] int pointsForBugsEaten = 10;
     bool _wasEaten = false;
+
+    // OTHER GAME SCRIPTS
     AudioPlayer _audioPlayer;
     ScoreKeeper _scoreKeeper;
 
@@ -49,13 +53,6 @@ public class BugController : MonoBehaviour
             _scoreKeeper.ModifyScore(pointsForBugsEaten);
             gameObject.SetActive(false);
             Destroy(gameObject);
-        }
-
-        if (other.CompareTag("Bug"))
-        {
-            // This avoids the object overlapping with itself while spawning. 
-            other.gameObject.SetActive(false);
-            Destroy(other.gameObject);
         }
     }
 }

@@ -1,13 +1,16 @@
 using UnityEngine;
 
-/* Based on, with modifications:
+/* Based on, with modifications and additions:
 // @Credit: https://github.com/zigurous/unity-pacman-tutorial/blob/main/Assets/Scripts/AnimatedSprite.cs
 */
 
 public class AnimatedSprite : MonoBehaviour
 {
+    [Header("Sprites")]
     [SerializeField] SpriteRenderer spriteRenderer;
     [SerializeField] Sprite[] spritesArray;
+
+    [Header("Animation and Duration")]
     [SerializeField] float animationTime = 0.25f;
     [SerializeField] int animationFrame;
     [SerializeField] bool animationShouldLoop = true;

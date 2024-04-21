@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class CatSpawner : MonoBehaviour
 {
+    [Header("Space Cat Game Object")]
     [SerializeField] GameObject spaceCat;
     
     void Start()

@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class SpawnPlanets : MonoBehaviour
 {
+    [Header("List of Planets")]
     [SerializeField] List<GameObject> planets;
     SpawnerHelper _spawnerHelper;
 

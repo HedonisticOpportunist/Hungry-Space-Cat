@@ -1,9 +1,11 @@
 using UnityEngine;
-using static UnityEngine.GraphicsBuffer;
 
 public class FlyingHamburgerController : MonoBehaviour
 {
+    [Header("Speed and Movement")]
     [SerializeField] float speed = 2.5f;
+
+    // OTHER GAME SCRIPTS
     Transform _target;
     GameObject _spaceCat;
     ControllerHelper _controllerHelper;

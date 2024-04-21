@@ -3,13 +3,13 @@ using UnityEngine;
 
 public class ControllerHelper : MonoBehaviour
 {
-    Vector2 minimumBounds;
-    Vector2 maximumBounds;
-    HealthKeeper healthKeeper;
+    Vector2 _minimumBounds;
+    Vector2 _maximumBounds;
+    HealthKeeper _healthKeeper;
 
     void Awake()
     {
-        healthKeeper = FindObjectOfType<HealthKeeper>();
+        _healthKeeper = FindObjectOfType<HealthKeeper>();
     }
 
     public void FlipSprite(Transform transform, Rigidbody2D body)
@@ -25,8 +25,8 @@ public class ControllerHelper : MonoBehaviour
     void InitialiseBounds()
     {
         Camera mainCamera = Camera.main;
-        minimumBounds = mainCamera.ViewportToWorldPoint(new Vector2(0, 0));
-        maximumBounds = mainCamera.ViewportToWorldPoint(new Vector2(1, 1));
+        _minimumBounds = mainCamera.ViewportToWorldPoint(new Vector2(0, 0));
+        _maximumBounds = mainCamera.ViewportToWorldPoint(new Vector2(1, 1));
     }
     public void ClampSpriteMovements(Transform transform)
     {
@@ -37,8 +37,8 @@ public class ControllerHelper : MonoBehaviour
 
         Vector2 newPos = new()
         {
-            x = Mathf.Clamp(transform.position.x, minimumBounds.x, maximumBounds.x),
-            y = Mathf.Clamp(transform.position.y, minimumBounds.y, maximumBounds.y)
+            x = Mathf.Clamp(transform.position.x, _minimumBounds.x, _maximumBounds.x),
+            y = Mathf.Clamp(transform.position.y, _minimumBounds.y, _maximumBounds.y)
         };
 
         transform.position = newPos;

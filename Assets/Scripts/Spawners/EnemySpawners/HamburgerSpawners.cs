@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class SpawnFlyingHamburgers : MonoBehaviour
 {
+    [Header("List of Flying Hamburgers")]
     [SerializeField] List<GameObject> flyingHamburgers;
     SpawnerHelper _spawnerHelper;
 

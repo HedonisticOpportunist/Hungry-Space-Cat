@@ -11,14 +11,16 @@ public class SceneLoaderManager : MonoBehaviour
 { 
     void FixedUpdate()
     {
-        LoadMenuScene();
+        PauseAndReturnToMenu();
     }
         public void LoadUFOGame()
     {
         SceneManager.LoadScene("UFOGame");
     }
 
-    public void LoadMenuScene()
+    #region LoadMenuScenes
+
+    public void PauseAndReturnToMenu()
     {
         int sceneNumber = SceneManager.GetActiveScene().buildIndex;
 
@@ -31,9 +33,9 @@ public class SceneLoaderManager : MonoBehaviour
         }
     }
 
-    public void LoadEasyMode()
+    public void LoadAdoptACatSite()
     {
-        SceneManager.LoadScene("UFOGameEasy");
+        Application.OpenURL("https://hedonisticopportunist.github.io/Cats-in-Neath/");
     }
 
     public void LoadInstructions()
@@ -41,11 +43,10 @@ public class SceneLoaderManager : MonoBehaviour
         SceneManager.LoadScene("Instructions");
     }
 
-    public void ReturnToMenu()
+    public void LoadMenuScene()
     {
-       SceneManager.LoadScene("MenuScene"); 
+        SceneManager.LoadScene("MenuScene");
     }
-
 
     public void LoadSettingsScene()
     {
@@ -57,6 +58,20 @@ public class SceneLoaderManager : MonoBehaviour
         SceneManager.LoadScene("Play");
     }
 
+    public void LoadEndScene()
+    {
+        SceneManager.LoadScene("EndScene");
+    }
+
+    #endregion LoadMenuScenes
+
+    #region LoadGame
+
+    public void LoadEasyMode()
+    {
+        SceneManager.LoadScene("UFOGameEasy");
+    }
+
     public void LoadNextLevel()
     {
         int sceneNumber = SceneManager.GetActiveScene().buildIndex;
@@ -66,20 +81,15 @@ public class SceneLoaderManager : MonoBehaviour
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
 
-        else if (sceneNumber >= 8 && sceneNumber <= 11)
+        else if (sceneNumber >= 8 && sceneNumber <= 10)
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
 
         else
         {
-            LoadMenuScene();
+            PauseAndReturnToMenu();
         }
-    }
-
-    public void LoadAdoptACatSite()
-    {
-        Application.OpenURL("https://hedonisticopportunist.github.io/Cats-in-Neath/");
     }
 
     public void ExitGame()
@@ -94,4 +104,6 @@ public class SceneLoaderManager : MonoBehaviour
         #endif
         Application.Quit();
     }
+
+    #endregion LoadGame
 }

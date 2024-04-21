@@ -8,6 +8,7 @@ using UnityEngine;
 
 public class GhostController : MonoBehaviour
 {
+    // OTHER GAME SCRIPTS
     SpawnGhostDolls _spawnGhostDolls;
     WavesConfig _waveConfig;
     List<Transform> _waypoints;

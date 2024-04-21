@@ -19,9 +19,7 @@ public class UIDisplay : MonoBehaviour
     HealthKeeper _healthKeeper;
     int _lives;
 
-    [Header("GameOver")]
-    [SerializeField] TextMeshProUGUI gameOverText;
-    [SerializeField] TextMeshProUGUI applicationStopText;
+    [Header("New Level")]
     [SerializeField] TextMeshProUGUI newGameText;
 
     void Awake()
@@ -31,9 +29,7 @@ public class UIDisplay : MonoBehaviour
     }
 
     void Start()
-    {
-        gameOverText.text = "";
-        applicationStopText.text = "";
+    { 
         newGameText.text = "";
         DisplayCatLivesSprites();
     }
@@ -43,13 +39,6 @@ public class UIDisplay : MonoBehaviour
 
         scoreText.text = "Score: " + _scoreKeeper.GetScore().ToString("000000000");
         _lives = _healthKeeper.GetLives();
-    }
-
-    public void DisplayGameOverText()
-    {
-        newGameText.text = "";
-        gameOverText.text = "Game over!";
-        applicationStopText.text = "You will be redirected to the menu in five, four, three ...";
     }
 
     public void LoadNextGameText()
@@ -108,7 +97,6 @@ public class UIDisplay : MonoBehaviour
         }
        
     }
-
     void DisplayCatLivesSprites()
     {
         // Based on the below with modifications, additions and deletions: 

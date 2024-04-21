@@ -10,9 +10,11 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "Wave Config", fileName = "New Wave Config")]
 public class WavesConfig : ScriptableObject
 {
+    [Header("Prefabs")]
     [SerializeField] List<GameObject> ghostDollPrefabs;
     [SerializeField] Transform pathPrefab;
 
+    [Header("Speed and Duration")]
     [SerializeField] float moveSpeed = 5f;
     [SerializeField] float timeBetweenEnemySpawns = 1f;
     [SerializeField] float spawnTimeVariance = 0f;

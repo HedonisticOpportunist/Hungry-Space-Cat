@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class SpawnUFOs : MonoBehaviour
 {
+    [Header("UFO Game Object")]
     [SerializeField] GameObject UFO;
     void Start()
     {

@@ -42,7 +42,6 @@ public class HealthKeeper : MonoBehaviour
         }
     }
 
-
     public void ResetLives()
     {
         _lives = 9;
