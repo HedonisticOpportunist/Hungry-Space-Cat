@@ -215,7 +215,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isAlive: 1
   modeEasy: 1
-  speed: 10
-  sleepingCat: {fileID: 8321439424131616243, guid: 0103c3ff42c44ce4480f7b8d8cf7c19f, type: 3}
+  speed: 15
   damageDelay: 2
   thrust: 1
