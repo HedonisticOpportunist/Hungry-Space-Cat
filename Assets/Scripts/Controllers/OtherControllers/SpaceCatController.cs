@@ -9,7 +9,6 @@ public class SpaceCatController : MonoBehaviour
     [Header("Speed and Movement")]
     [SerializeField] float speed = 15.0f;
     [SerializeField] float damageDelay = 1.0f;
-    [SerializeField] float thrust = 1.0f;
 
     readonly float _maxSpeed = 10;
     float _horizontal;
@@ -120,22 +119,22 @@ public class SpaceCatController : MonoBehaviour
 
         if (Input.GetKey(KeyCode.LeftArrow))
         {
-            _body.AddRelativeForce(thrust * Time.deltaTime * Vector2.left);
+            _body.AddRelativeForce(Time.deltaTime * Vector2.left);
         }
 
         else if (Input.GetKey(KeyCode.RightArrow))
         {
-            _body.AddRelativeForce(thrust * Time.deltaTime * Vector2.right);
+            _body.AddRelativeForce(Time.deltaTime * Vector2.right);
         }
 
         else if (Input.GetKey(KeyCode.UpArrow))
         {
-            _body.AddRelativeForce(thrust * Time.deltaTime * Vector2.up);
+            _body.AddRelativeForce(Time.deltaTime * Vector2.up);
         }
 
         else if (Input.GetKey(KeyCode.DownArrow))
         {
-            _body.AddRelativeForce(thrust * Time.deltaTime * Vector2.down);
+            _body.AddRelativeForce(Time.deltaTime * Vector2.down);
         }
 
         else
