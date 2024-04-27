@@ -44,17 +44,18 @@ The tables below list all the sprite assets and where they came from.
 
 #### Buttons 👽
 
-| Sprite Name          | Link                                                |
-| -----------          | -----------                                         |
-| Mute / Unmute Button | https://icons8.com/icon/set/mute-unmute/group-color |
-| Play/ Start Button   | https://icons8.com/icon/set/play/nolan              |
-| Exit Button          | https://icons8.com/icon/set/exit/nolan              |
-| Back Button          | https://icons8.com/icon/set/back-button/nolan       |
-| Settings Button      | https://icons8.com/icon/set/settings-button/nolan   |
-| Instructions Button  | https://icons8.com/icon/set/instructions/nolan      |
-| 'Easy' Play Button   | https://icons8.com/icon/set/play/nolan              |
-| 'Normal' Play Button | https://icons8.com/icon/set/play-button/nolan       |
-| Replay Button        | https://www.flaticon.com/free-icons/play-again      |
+| Sprite Name          | Link                                                   |
+| -----------          | -----------                                            |
+| Mute / Unmute Button | https://icons8.com/icon/set/mute-unmute/group-color    |
+| Play/ Start Button   | https://icons8.com/icon/set/play/nolan                 |
+| Exit Button          | https://icons8.com/icon/set/exit/nolan                 |
+| Back Button          | https://icons8.com/icon/set/back-button/nolan          |
+| Settings Button      | https://icons8.com/icon/set/settings-button/nolan      |
+| Instructions Button  | https://icons8.com/icon/set/instructions/nolan         |
+| 'Easy' Play Button   | https://icons8.com/icon/set/play/nolan                 |
+| 'Normal' Play Button | https://icons8.com/icon/set/play-button/nolan          |
+| Replay Button        | https://www.flaticon.com/free-icons/play-again         |
+| Resume Game Button   | https://www.flaticon.com/free-icon/play-button_3353752 |
 
 ### AUDIO 🐾
 
