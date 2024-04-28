@@ -3,35 +3,24 @@ using UnityEngine.SceneManagement;
 
 /* Based on the below, with minor modifications 
 // @Credit: https://blog.insane.engineer/post/unity_button_load_scene/ for the general scene-loading script
+// @Credit: https://medium.com/geekculture/loading-scenes-in-unity-98e446756497 for reloading a previous scene. 
 // @Credit: https://gitlab.com/GameDevTV/unity2d-v3/laser-defender/-/blob/master/Assets/Scripts/LevelManager.cs for the idea to move all the code to a single script 
 // Part of the https://www.gamedev.tv/p/unity-2d-game-dev-course-2021 course
 */
 
 public class SceneLoaderManager : MonoBehaviour
-{ 
-    void FixedUpdate()
+{
+    // OTHER GAME SCRIPTS 
+    HealthKeeper _healthKeeper;
+    ScoreKeeper _scoreKeeper;
+
+    void Awake()
     {
-        PauseAndReturnToMenu();
-    }
-        public void LoadUFOGame()
-    {
-        SceneManager.LoadScene("UFOGame");
+        _healthKeeper = FindObjectOfType<HealthKeeper>();
+        _scoreKeeper = FindObjectOfType<ScoreKeeper>();
     }
 
     #region LoadMenuScenes
-
-    public void PauseAndReturnToMenu()
-    {
-        int sceneNumber = SceneManager.GetActiveScene().buildIndex;
-
-        if (sceneNumber != 0)
-        {
-            if (Input.GetKey(KeyCode.Escape))
-            { 
-                SceneManager.LoadScene("MenuScene");
-            }
-        }
-    }
 
     public void LoadAdoptACatSite()
     {
@@ -45,6 +34,9 @@ public class SceneLoaderManager : MonoBehaviour
 
     public void LoadMenuScene()
     {
+        Time.timeScale = 1f;
+        _scoreKeeper.ResetScore();
+        _healthKeeper.ResetLives();
         SceneManager.LoadScene("MenuScene");
     }
 
@@ -74,22 +66,39 @@ public class SceneLoaderManager : MonoBehaviour
 
     public void LoadNextLevel()
     {
-        int sceneNumber = SceneManager.GetActiveScene().buildIndex;
+        int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
 
-        if (sceneNumber >= 4 && sceneNumber <= 7)
+        if (currentSceneIndex >= 4 && currentSceneIndex <= 7)
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            SceneManager.LoadScene(currentSceneIndex + 1);
         }
 
-        else if (sceneNumber >= 8 && sceneNumber <= 10)
+        else if (currentSceneIndex >= 8 && currentSceneIndex <= 10)
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            SceneManager.LoadScene(currentSceneIndex + 1);
         }
 
         else
         {
-            PauseAndReturnToMenu();
+            LoadMenuScene();
         }
+    }
+
+    public void ResetGame()
+    {
+        int buildIndex = SceneManager.GetActiveScene().buildIndex;
+
+        if (buildIndex >= 4)
+        {
+            _scoreKeeper.ResetScore();
+            _healthKeeper.ResetLives();
+            SceneManager.LoadScene(buildIndex - 1);
+        }
+    }
+
+    public void LoadUFOGame()
+    {
+        SceneManager.LoadScene("UFOGame");
     }
 
     public void ExitGame()
@@ -99,9 +108,9 @@ public class SceneLoaderManager : MonoBehaviour
         // Prepreprocessor directives allow for the running of different code depending on conditions 
         */
 
-        #if UNITY_EDITOR
+#if UNITY_EDITOR
         UnityEditor.EditorApplication.isPlaying = false;
-        #endif
+#endif
         Application.Quit();
     }
 

@@ -5,22 +5,13 @@ public class ControllerHelper : MonoBehaviour
 {
     Vector2 _minimumBounds;
     Vector2 _maximumBounds;
-    HealthKeeper _healthKeeper;
-
-    void Awake()
-    {
-        _healthKeeper = FindObjectOfType<HealthKeeper>();
-    }
-
-    public void FlipSprite(Transform transform, Rigidbody2D body)
-    {
-        transform.localScale = new Vector2((-Mathf.Sign(body.velocity.x) / 2.0f), 0.4f);
-    }
-
+  
     void Start()
     {
         InitialiseBounds();
     }
+
+    #region Boundaries
 
     void InitialiseBounds()
     {
@@ -28,6 +19,7 @@ public class ControllerHelper : MonoBehaviour
         _minimumBounds = mainCamera.ViewportToWorldPoint(new Vector2(0, 0));
         _maximumBounds = mainCamera.ViewportToWorldPoint(new Vector2(1, 1));
     }
+
     public void ClampSpriteMovements(Transform transform)
     {
         /* Based on the below, with modifications 
@@ -43,6 +35,19 @@ public class ControllerHelper : MonoBehaviour
 
         transform.position = newPos;
     }
+
+    #endregion Boundaries
+
+    #region Sprite Behaviour
+
+    public void FlipSprite(Transform transform, Rigidbody2D body)
+    {
+        transform.localScale = new Vector2((-Mathf.Sign(body.velocity.x) / 2.0f), 0.4f);
+    }
+
+    #endregion Sprite Behaviour
+
+    #region Interactions
 
     public void FollowPlayer(Transform target, Transform transform, float speed, int lives)
     {
@@ -63,4 +68,6 @@ public class ControllerHelper : MonoBehaviour
             return;
         }
     }
+
+    #endregion Interactions
 }

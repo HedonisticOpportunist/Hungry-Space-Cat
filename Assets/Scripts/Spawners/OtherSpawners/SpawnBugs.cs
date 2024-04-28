@@ -17,13 +17,4 @@ public class SpawnBugs : MonoBehaviour
     {
         _spawnerHelper.SpawnObjectsRandomly(bugs);
     }
-
-    void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.CompareTag("Bug"))
-        {
-            // This avoids the object overlapping with itself while spawning. 
-            other.gameObject.transform.position += new Vector3(200, 200);
-        }
-    }
 }

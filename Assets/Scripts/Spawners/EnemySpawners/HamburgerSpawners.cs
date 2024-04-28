@@ -16,12 +16,4 @@ public class SpawnFlyingHamburgers : MonoBehaviour
     {
         _spawnerHelper.SpawnObjectsRandomly(flyingHamburgers);
     }
-    void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.CompareTag("UFO"))
-        {
-            // This avoids the object overlapping with itself while spawning. 
-            other.gameObject.transform.position += new Vector3(200, 200);
-        }
-    }
 }

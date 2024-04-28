@@ -54,5 +54,10 @@ public class BugController : MonoBehaviour
             gameObject.SetActive(false);
             Destroy(gameObject);
         }
+
+        if (other.CompareTag("Bug"))
+        {
+            Destroy(other.gameObject);
+        }
     }
 }

@@ -25,7 +25,4 @@ public class GameOver : MonoBehaviour
             scoreText.text = "You have scored: " + _scoreKeeper.GetScore().ToString();
         }
     }
-
-  
-
 }
