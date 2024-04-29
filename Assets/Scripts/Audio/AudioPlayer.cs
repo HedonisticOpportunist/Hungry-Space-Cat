@@ -70,11 +70,11 @@ public class AudioPlayer : MonoBehaviour
     void HandleBackgroundSound()
     {
         _sceneNumber = SceneManager.GetActiveScene().buildIndex;
-        if (_sceneNumber < 3)
+        if (_sceneNumber < 4)
         {
             audioSource.mute = true;
         }
-        if (_sceneNumber >= 3 && _sceneNumber <= 10)
+        if (_sceneNumber >= 4 && _sceneNumber <= 10)
         {
             audioSource.mute = false;
         }
