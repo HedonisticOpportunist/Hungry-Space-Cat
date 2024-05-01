@@ -13,11 +13,13 @@ public class SceneLoaderManager : MonoBehaviour
     // OTHER GAME SCRIPTS 
     HealthKeeper _healthKeeper;
     ScoreKeeper _scoreKeeper;
+    FadeAnimation _fadeAnimation;
 
     void Awake()
     {
         _healthKeeper = FindObjectOfType<HealthKeeper>();
         _scoreKeeper = FindObjectOfType<ScoreKeeper>();
+        _fadeAnimation = FindObjectOfType<FadeAnimation>();
     }
 
     #region LoadMenuScenes
@@ -53,6 +55,7 @@ public class SceneLoaderManager : MonoBehaviour
 
     public void LoadEndScene()
     {
+        _fadeAnimation.SetUpFadeAnimation();
         SceneManager.LoadScene("EndScene");
     }
 
@@ -112,6 +115,7 @@ public class SceneLoaderManager : MonoBehaviour
 #if UNITY_EDITOR
         UnityEditor.EditorApplication.isPlaying = false;
 #endif
+        _fadeAnimation.SetUpFadeAnimation();
         Application.Quit();
     }
 
