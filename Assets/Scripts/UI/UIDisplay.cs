@@ -17,7 +17,6 @@ public class UIDisplay : MonoBehaviour
     [Header("Lives")]
     [SerializeField] TextMeshProUGUI livesText;
     HealthKeeper _healthKeeper;
-    int _lives;
 
     [Header("New Level")]
     [SerializeField] TextMeshProUGUI newGameText;

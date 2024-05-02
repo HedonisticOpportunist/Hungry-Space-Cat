@@ -15,6 +15,11 @@ public class SceneLoaderManager : MonoBehaviour
     ScoreKeeper _scoreKeeper;
     FadeAnimation _fadeAnimation;
 
+    // SCENES
+    readonly string[] _easyModeScenes = { "UFOGameEasy", "HamburgerGameEasy", "GhostGameEasy" };
+    readonly string[] _normalModeScenes = { "UFOGame", "HamburgerGame", "GhostGame", "PlanetScene" };
+    readonly string[] _menuScenes = { "MenuScene", "Play", "Instructions", "GameSettings", "EndScene" };
+
     void Awake()
     {
         _healthKeeper = FindObjectOfType<HealthKeeper>();
@@ -31,7 +36,7 @@ public class SceneLoaderManager : MonoBehaviour
 
     public void LoadInstructions()
     {
-        SceneManager.LoadScene("Instructions");
+        SceneManager.LoadScene(_menuScenes[1]);
     }
 
     public void LoadMenuScene()
@@ -40,23 +45,23 @@ public class SceneLoaderManager : MonoBehaviour
         Time.timeScale = 1f;
         _scoreKeeper.ResetScore();
         _healthKeeper.ResetLives();
-        SceneManager.LoadScene("MenuScene");
+        SceneManager.LoadScene(_menuScenes[0]);
     }
 
     public void LoadSettingsScene()
     {
-        SceneManager.LoadScene("GameSettings");
+        SceneManager.LoadScene(_menuScenes[3]);
     }
 
     public void LoadPlayScene()
     {
-        SceneManager.LoadScene("Play");
+        SceneManager.LoadScene(_menuScenes[1]);
     }
 
     public void LoadEndScene()
     {
         _fadeAnimation.SetUpFadeAnimation();
-        SceneManager.LoadScene("EndScene");
+        SceneManager.LoadScene(_menuScenes[4]);
     }
 
     #endregion LoadMenuScenes
@@ -65,27 +70,7 @@ public class SceneLoaderManager : MonoBehaviour
 
     public void LoadEasyMode()
     {
-        SceneManager.LoadScene("UFOGameEasy");
-    }
-
-    public void LoadNextLevel()
-    {
-        int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
-
-        if (currentSceneIndex >= 4 && currentSceneIndex <= 7)
-        {
-            SceneManager.LoadScene(currentSceneIndex + 1);
-        }
-
-        else if (currentSceneIndex >= 8 && currentSceneIndex <= 10)
-        {
-            SceneManager.LoadScene(currentSceneIndex + 1);
-        }
-
-        else
-        {
-            LoadMenuScene();
-        }
+        SceneManager.LoadScene(_easyModeScenes[0]);
     }
 
     public void ResetGame()
@@ -102,7 +87,7 @@ public class SceneLoaderManager : MonoBehaviour
 
     public void LoadUFOGame()
     {
-        SceneManager.LoadScene("UFOGame");
+        SceneManager.LoadScene(_normalModeScenes[0]);
     }
 
     public void ExitGame()
@@ -120,4 +105,68 @@ public class SceneLoaderManager : MonoBehaviour
     }
 
     #endregion LoadGame
+
+    #region LoadLevels
+
+    public void LoadNextLevel()
+    {
+        int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+
+        if (currentSceneIndex >= 4 && currentSceneIndex <= 7)
+        {
+            LoadNormalLevels(currentSceneIndex);
+        }
+
+        else if (currentSceneIndex >= 8 && currentSceneIndex <= 10)
+        {
+            LoadEasyLevels(currentSceneIndex);
+        }
+
+        else
+        {
+            LoadMenuScene();
+        }
+        
+    }
+
+    void LoadNormalLevels(int currentSceneIndex)
+    {
+        if (currentSceneIndex == 4)
+        {
+            SceneManager.LoadScene(_normalModeScenes[1]);
+        }
+        else if (currentSceneIndex == 5)
+        {
+            SceneManager.LoadScene(_normalModeScenes[2]);
+        }
+
+        else if (currentSceneIndex == 6)
+        {
+            SceneManager.LoadScene(_normalModeScenes[3]);
+        }
+
+        else
+        {
+            LoadEndScene();
+        }
+    }
+
+    void LoadEasyLevels(int currentSceneIndex)
+    {
+        if (currentSceneIndex == 8)
+        {
+            SceneManager.LoadScene(_easyModeScenes[1]);
+        }
+        else if (currentSceneIndex == 9)
+        {
+            SceneManager.LoadScene(_easyModeScenes[2]);
+        }
+
+        else
+        {
+            LoadEndScene();
+        }
+    }
+
+    #endregion LoadLevels
 }

@@ -21,7 +21,7 @@ public class AudioPlayer : MonoBehaviour
     [SerializeField] AudioSource audioSource;
     int _sceneNumber;
 
-    static AudioPlayer instance;
+    static AudioPlayer instance; 
 
     void Awake()
     {
@@ -72,10 +72,14 @@ public class AudioPlayer : MonoBehaviour
         _sceneNumber = SceneManager.GetActiveScene().buildIndex;
         if (_sceneNumber < 4)
         {
+            Camera.main.GetComponent<AudioListener>().enabled = false;
+            audioSource.Pause();
             audioSource.mute = true;
         }
         if (_sceneNumber >= 4 && _sceneNumber <= 10)
         {
+            Camera.main.GetComponent<AudioListener>().enabled = true; 
+            audioSource.UnPause();
             audioSource.mute = false;
         }
         else

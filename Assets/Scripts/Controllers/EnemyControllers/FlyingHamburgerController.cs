@@ -4,7 +4,8 @@ public class FlyingHamburgerController : MonoBehaviour
 {
     [Header("Speed and Movement")]
     [SerializeField] float speed = 2.5f;
-    Rigidbody2D _body; 
+    GameObject[] _hamburgers;
+    Rigidbody2D _body;
 
     // OTHER GAME SCRIPTS
     Transform _target;
@@ -18,19 +19,25 @@ public class FlyingHamburgerController : MonoBehaviour
         _controllerHelper = FindObjectOfType<ControllerHelper>();
         _healthKeeper = FindObjectOfType<HealthKeeper>();
         _body = GetComponent<Rigidbody2D>();
+
+
     }
 
     void Start()
     {
         _spaceCat = GameObject.FindWithTag("SpaceCat");
         _target = _spaceCat.transform;
+        _hamburgers = GameObject.FindGameObjectsWithTag("UFO");
+
     }
 
     void FixedUpdate()
     {
         if (_target != null)
         {
+            _controllerHelper.AvoidOtherAgents(_hamburgers, this.transform, 2.5f, _body);
             _controllerHelper.FollowPlayer(_target, this.transform, speed, _healthKeeper.GetLives());
+
         }
         else
         {
@@ -42,10 +49,7 @@ public class FlyingHamburgerController : MonoBehaviour
     {
         if (other.CompareTag("UFO"))
         {
-            Rigidbody2D otherBody = other.gameObject.GetComponent<Rigidbody2D>();
-            Vector2 randomVector = new(Random.Range(0.5f, 1f), Random.Range(0.5f, 1f));
-            this._body.position += randomVector; 
-            otherBody.velocity -= randomVector;
+            Destroy(other.gameObject);
         }
     }
 }

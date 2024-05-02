@@ -1,11 +1,13 @@
 
+using Unity.Burst.CompilerServices;
 using UnityEngine;
 
 public class ControllerHelper : MonoBehaviour
 {
     Vector2 _minimumBounds;
     Vector2 _maximumBounds;
-  
+    RaycastHit _hit;
+
     void Start()
     {
         InitialiseBounds();
@@ -66,6 +68,26 @@ public class ControllerHelper : MonoBehaviour
         else
         {
             return;
+        }
+    }
+
+    public void AvoidOtherAgents(GameObject[] otherObjects, Transform target, float spaceBetween, Rigidbody2D body)
+    {
+        /* Based on the below, with modifications, additions and deletions:
+        // @Credit: https://www.youtube.com/watch?v=5ziHg2kO56s&t=349s 
+        */
+
+        foreach (GameObject obj in otherObjects)
+        {
+            float distance = Vector3.Distance(obj.transform.position, target.transform.position);
+
+            if (distance <= spaceBetween && distance != 0)
+            {
+                Vector3 direction = obj.transform.position - target.transform.position; 
+                direction.Normalize();
+                Vector3 newDirection = (direction + Vector3.up + Vector3.down).normalized;
+                body.velocity = 4.5f * body.velocity.magnitude * newDirection;
+            }
         }
     }
 
