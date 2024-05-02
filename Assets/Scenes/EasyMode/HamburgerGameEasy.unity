@@ -1140,10 +1140,26 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2218147711131750058, guid: f5f3a3a33c3f09247b5795be5357a261, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4167077421354878866, guid: f5f3a3a33c3f09247b5795be5357a261, type: 3}
       propertyPath: m_Name
       value: HamburgerSpawnerEasy
       objectReference: {fileID: 0}
+    - target: {fileID: 5156665686823257534, guid: f5f3a3a33c3f09247b5795be5357a261, type: 3}
+      propertyPath: flyingHamburgers.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5156665686823257534, guid: f5f3a3a33c3f09247b5795be5357a261, type: 3}
+      propertyPath: flyingHamburgers.Array.data[0]
+      value: 
+      objectReference: {fileID: 2507550983694276274, guid: 9a3f009c54f273344898ec1e63984177, type: 3}
+    - target: {fileID: 5156665686823257534, guid: f5f3a3a33c3f09247b5795be5357a261, type: 3}
+      propertyPath: flyingHamburgers.Array.data[3]
+      value: 
+      objectReference: {fileID: 2507550983694276274, guid: 9a3f009c54f273344898ec1e63984177, type: 3}
     - target: {fileID: 5220934236888684819, guid: f5f3a3a33c3f09247b5795be5357a261, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
