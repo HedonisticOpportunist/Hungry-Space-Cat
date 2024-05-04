@@ -5,6 +5,9 @@ public class SpawnBugs : MonoBehaviour
 {
     [Header("List of Bugs")]
     [SerializeField] List<GameObject> bugs;
+
+    [Header("SpaceCat")]
+    [SerializeField] GameObject spaceCat; 
     SpawnerHelper _spawnerHelper;
 
     void Awake()
@@ -15,6 +18,6 @@ public class SpawnBugs : MonoBehaviour
 
     void Start()
     {
-        _spawnerHelper.SpawnObjectsRandomly(bugs);
+        _spawnerHelper.SpawnObjectsRandomly(bugs, spaceCat);
     }
 }

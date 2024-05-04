@@ -54,11 +54,18 @@ public class FadeAnimation : MonoBehaviour
 
     public void SetUpFadeAnimation()
     {
+        // Pause game and audio 
+        Time.timeScale = 0f;
+        AudioListener.pause = true;
+
         _texture = new Texture2D(1, 1);
         _texture.SetPixel(0, 0, new Color(fadeColor.r, fadeColor.g, fadeColor.b, _alpha));
         _texture.Apply();
-
         FadeIn();
+
+        // Resume game and audio 
+        Time.timeScale = 1f; 
+        AudioListener.pause = false;
     }
 
     void StartFading(bool isFadingIn, bool isFadingOut, Options options = null)

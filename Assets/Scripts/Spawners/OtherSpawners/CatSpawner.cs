@@ -4,15 +4,15 @@ public class CatSpawner : MonoBehaviour
 {
     [Header("Space Cat Game Object")]
     [SerializeField] GameObject spaceCat;
-    
-    void Start()
+    SpawnerHelper _spawnerHelper;
+
+    private void Awake()
     {
-        SpawnCatRandomly();
+        _spawnerHelper = FindAnyObjectByType<SpawnerHelper>();
     }
 
-    void SpawnCatRandomly()
+    void Start()
     {
-        Vector2 position = Camera.main.ViewportToWorldPoint(new Vector2(Random.value, Random.value));
-        Instantiate(spaceCat, position, Quaternion.identity);
+        _spawnerHelper.SpawnObjectRandomly(spaceCat);
     }
 }

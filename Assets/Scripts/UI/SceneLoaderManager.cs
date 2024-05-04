@@ -133,15 +133,18 @@ public class SceneLoaderManager : MonoBehaviour
     {
         if (currentSceneIndex == 4)
         {
+            _fadeAnimation.SetUpFadeAnimation();
             SceneManager.LoadScene(_normalModeScenes[1]);
         }
         else if (currentSceneIndex == 5)
         {
+            _fadeAnimation.SetUpFadeAnimation();
             SceneManager.LoadScene(_normalModeScenes[2]);
         }
 
         else if (currentSceneIndex == 6)
         {
+            _fadeAnimation.SetUpFadeAnimation();
             SceneManager.LoadScene(_normalModeScenes[3]);
         }
 
@@ -155,10 +158,12 @@ public class SceneLoaderManager : MonoBehaviour
     {
         if (currentSceneIndex == 8)
         {
+            _fadeAnimation.SetUpFadeAnimation();
             SceneManager.LoadScene(_easyModeScenes[1]);
         }
         else if (currentSceneIndex == 9)
         {
+            _fadeAnimation.SetUpFadeAnimation();
             SceneManager.LoadScene(_easyModeScenes[2]);
         }
 
