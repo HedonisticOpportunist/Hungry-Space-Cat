@@ -649,7 +649,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fadeTime: 5
-  fadeColor: {r: 0.6059083, g: 0.48794055, b: 0.8018868, a: 1}
+  fadeColor: {r: 0.46052867, g: 0.6122208, b: 0.745283, a: 1}
   blackScreenDuration: 0
 --- !u!1 &1335474858
 GameObject:

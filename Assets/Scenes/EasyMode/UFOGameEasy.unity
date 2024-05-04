@@ -496,7 +496,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fadeTime: 5
-  fadeColor: {r: 0.6059083, g: 0.48794055, b: 0.8018868, a: 1}
+  fadeColor: {r: 0.4224813, g: 0.7180817, b: 0.8867924, a: 1}
   blackScreenDuration: 0
 --- !u!1 &1776187044
 GameObject:
@@ -989,10 +989,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: UFOGameSpawnerEasy
       objectReference: {fileID: 0}
-    - target: {fileID: 8532878982724918147, guid: 88a4aee1f094de54f953fce16d119583, type: 3}
-      propertyPath: spaceCat
-      value: 
-      objectReference: {fileID: 1602777234211202908, guid: f37b26d09684345428c90c34bc57deb4, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
