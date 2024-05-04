@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 4886729090426247520}
   - component: {fileID: 4459242122739794000}
   - component: {fileID: 3000655371690217204}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: FlyingHamburger
   m_TagString: UFO
   m_Icon: {fileID: 0}
@@ -210,4 +210,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 2.5
-  spaceCat: {fileID: 8360398628935114832, guid: 2fc9a5c4d7c870a4e9431bb63948fabf, type: 3}
