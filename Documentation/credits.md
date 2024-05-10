@@ -81,6 +81,5 @@ The tables below list all the audio assets and where they came from.
 
 | Font Name    | Link                                            |
 | -----------  | -----------                                     |
-| CatCafe      | htps://www.dafont.com/catcafe.font              |
+| CatCafe      | https://www.dafont.com/catcafe.font             |
 | CatMeow      | https://www.fontspace.com/cute-meow-font-f61193 |
- 
