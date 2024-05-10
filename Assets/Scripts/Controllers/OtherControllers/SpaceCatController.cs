@@ -14,8 +14,10 @@ public class SpaceCatController : MonoBehaviour
     readonly float _maxSpeed = 10;
     float _horizontal;
     float _vertical;
+
     float _damageCountDown = 0;
     int _lives = 9;
+    SpriteRenderer _spriteRenderer;
 
     // OTHER GAME SCRIPTS 
     AudioPlayer _audioPlayer;
@@ -32,6 +34,8 @@ public class SpaceCatController : MonoBehaviour
     void Awake()
     {
         _body = GetComponent<Rigidbody2D>();
+        _spriteRenderer = GetComponent<SpriteRenderer>();
+
         _audioPlayer = FindObjectOfType<AudioPlayer>();
         _controllerHelper = FindObjectOfType<ControllerHelper>();
         _uIDisplay = GameObject.Find("GameCanvas").GetComponent<UIDisplay>();
@@ -90,7 +94,7 @@ public class SpaceCatController : MonoBehaviour
 
     void CatDeath()
     {
-        isAlive = false;
+        isAlive = false; 
         _scoreKeeper.ResetScore();
         _healthKeeper.ResetLives();
         StartCoroutine(DelayLoadEndScene());
@@ -110,6 +114,7 @@ public class SpaceCatController : MonoBehaviour
         _damageCountDown = damageDelay;
         _audioPlayer.PlayCatDamageClip();
         _healthKeeper.TakeDamage();
+        StartCoroutine(ChangeColour());
     }
 
     #endregion DamageAndDeath
@@ -192,7 +197,16 @@ public class SpaceCatController : MonoBehaviour
         yield return new WaitForSeconds(2f);
         _sceneLoaderManager.LoadEndScene();
     }
-
     #endregion ReloadScenes
+
+    #region ChangeSpriteColour 
+    IEnumerator ChangeColour()
+    {
+        _spriteRenderer.color = Color.magenta;
+        yield return new WaitForSeconds(0.5f);
+        _spriteRenderer.color = Color.white;
+    }
+    #endregion ChangeSpriteColour
+
 }
 

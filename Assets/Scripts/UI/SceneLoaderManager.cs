@@ -36,7 +36,7 @@ public class SceneLoaderManager : MonoBehaviour
 
     public void LoadInstructions()
     {
-        SceneManager.LoadScene(_menuScenes[1]);
+        SceneManager.LoadScene(_menuScenes[2]);
     }
 
     public void LoadMenuScene()
