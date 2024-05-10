@@ -25,6 +25,15 @@ The tables below list all the sprite assets and where they came from.
 | Hamburger UFO   | https://bevouliin.com/sandwich-alien-game-asset-sprites |
 | Cute Angry UFO  | https://kububbis.itch.io/kawaii-ufo-sprite-pack         |
 | Ghost Doll      | https://bevouliin.com/doll-ghost-game-asset-sprites/    |
+| Green Skull UFO | https://bevouliin.com/flying-heroes-spaceship-attack/   |
+
+#### Enemies - Spaceships 👽
+
+| Sprite Name     | Link                                                                    |
+| -----------     | -----------                                                             |
+| Spaceship A     | https://bevouliin.com/flying-heroes-spaceship-attack/                   |
+| Spaceship B     | https://bevouliin.com/flying-heroes-spaceship-attack/)                  |
+| Lasers          | https://opengameart.org/content/assets-free-laser-bullets-pack-2020)    |
 
 #### Backgrounds / Landscape 👽
 
@@ -40,7 +49,6 @@ The tables below list all the sprite assets and where they came from.
 | -----------     | -----------                              |
 | Sleeping Cat    | https://dribbble.com/catalystvibes/about |
 | Sitting Cat     | https://icons8.com/icon/set/cat/dusk     |
-
 
 #### Buttons 👽
 
@@ -74,6 +82,7 @@ The tables below list all the audio assets and where they came from.
 | -----------     | -----------                                        | -----------                       |
 | SFX-Pickup      | https://mixkit.co/free-sound-effects/arcade/       | Fairy arcade sparkle              |
 | SFX-Damage      | https://mixkit.co/free-sound-effects/arcade/       | Failure arcade alert notification |
+| Laser-SFX       |                                                    |                                   |
 
 ### FONTS 🐾
 
@@ -82,4 +91,3 @@ The tables below list all the audio assets and where they came from.
 | CatCafe      | htps://www.dafont.com/catcafe.font              |
 | CatMeow      | https://www.fontspace.com/cute-meow-font-f61193 |
  
-
