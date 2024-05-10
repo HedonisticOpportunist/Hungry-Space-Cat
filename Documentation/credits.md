@@ -1,10 +1,10 @@
  # GAME ASSET CREDITS 👾
 
-### SPRITES 🐾
+### SPRITES 🐁
 
 The tables below list all the sprite assets and where they came from.
 
-#### Space Cat / Player 
+#### Space Cat / Player 🐈‍⬛
 
 | Sprite Name                  | Link                                                           |
 | -----------                  | -----------                                                    |
@@ -12,13 +12,13 @@ The tables below list all the sprite assets and where they came from.
 | Sleeping Cat                 | https://www.anyrgb.com/en-clipart-22sxz                        |
 | Ghost Cat                    | https://kububbis.itch.io/kawaii-ghost-sprite-pack-neko-edition |
 
-#### Pickups 👽
+#### Pickups 🐛
 
 | Sprite Name  | Link                                                |
 | -----------  | -----------                                         |
 | Bug          | https://bevouliin.com/purple-bug-game-asset-sprites |
 
-#### Enemies 👽
+#### Enemies 👻
 
 | Sprite Name     | Link                                                    |
 | -----------     | -----------                                             |
@@ -35,7 +35,7 @@ The tables below list all the sprite assets and where they came from.
 | Spaceship B     | https://bevouliin.com/flying-heroes-spaceship-attack/)                  |
 | Lasers          | https://opengameart.org/content/assets-free-laser-bullets-pack-2020)    |
 
-#### Backgrounds / Landscape 👽
+#### Backgrounds / Landscape 🌌
 
 | Sprite Name              | Link                                                                    |
 | -----------              | -----------                                                             |
@@ -43,14 +43,7 @@ The tables below list all the sprite assets and where they came from.
 | Menu-Space-Background    | https://free-game-assets.itch.io/free-space-shooter-game-user-interface |
 | Planets                  | https://kenney.nl/assets/planets                                        |
 
-#### Pictures / Images 👽
-
-| Image Name      | Link                                     |
-| -----------     | -----------                              |
-| Sleeping Cat    | https://dribbble.com/catalystvibes/about |
-| Sitting Cat     | https://icons8.com/icon/set/cat/dusk     |
-
-#### Buttons 👽
+#### Buttons 🖰
 
 | Sprite Name          | Link                                                   |
 | -----------          | -----------                                            |
@@ -65,24 +58,24 @@ The tables below list all the sprite assets and where they came from.
 | Replay Button        | https://www.flaticon.com/free-icons/play-again         |
 | Resume Game Button   | https://www.flaticon.com/free-icon/play-button_3353752 |
 
-### AUDIO 🐾
+### AUDIO 🎧
 
 The tables below list all the audio assets and where they came from.
 
-#### Background Music 👽
+#### Background Music 🌠
 
 | Song Name     | Link                                          |
 | -----------   | -----------                                   |
 | Cat in Space  | https://opengameart.org/content/cat-in-space  |
 | Through Space | https://opengameart.org/content/through-space | 
                                    
-#### SFX 👽
+#### SFX 🎮
 
 | Clip            | Link                                               | Other Information                 |
 | -----------     | -----------                                        | -----------                       |
 | SFX-Pickup      | https://mixkit.co/free-sound-effects/arcade/       | Fairy arcade sparkle              |
 | SFX-Damage      | https://mixkit.co/free-sound-effects/arcade/       | Failure arcade alert notification |
-| Laser-SFX       |                                                    |                                   |
+| Laser-SFX       | https://opengameart.org/content/laser-fire         | laser1.wav                        |                                  
 
 ### FONTS 🐾
 
