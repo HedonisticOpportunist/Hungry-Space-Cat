@@ -10,8 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 5220934236888684819}
   - component: {fileID: 4851711838467913177}
-  - component: {fileID: 5156665686823257534}
-  - component: {fileID: 2218147711131750058}
   m_Layer: 0
   m_Name: HamburgerSpawnerEasy
   m_TagString: Untagged
@@ -58,35 +56,4 @@ MonoBehaviour:
   - {fileID: 6756778126985289246, guid: 6579666a8aab26148be77572ba0decfd, type: 3}
   - {fileID: 6756778126985289246, guid: 6579666a8aab26148be77572ba0decfd, type: 3}
   - {fileID: 6756778126985289246, guid: 6579666a8aab26148be77572ba0decfd, type: 3}
-  spaceCat: {fileID: 1602777234211202908, guid: f37b26d09684345428c90c34bc57deb4, type: 3}
---- !u!114 &5156665686823257534
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4167077421354878866}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 611459832f38250409fe31ad1f0f3c94, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  flyingHamburgers:
-  - {fileID: 2507550983694276274, guid: 9a3f009c54f273344898ec1e63984177, type: 3}
-  - {fileID: 2507550983694276274, guid: 9a3f009c54f273344898ec1e63984177, type: 3}
-  - {fileID: 2507550983694276274, guid: 9a3f009c54f273344898ec1e63984177, type: 3}
-  - {fileID: 2507550983694276274, guid: 9a3f009c54f273344898ec1e63984177, type: 3}
-  spaceCat: {fileID: 1602777234211202908, guid: f37b26d09684345428c90c34bc57deb4, type: 3}
---- !u!114 &2218147711131750058
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4167077421354878866}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b931117fb12a0844d8dd77c42ace1fb7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
   spaceCat: {fileID: 1602777234211202908, guid: f37b26d09684345428c90c34bc57deb4, type: 3}

@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 8920812069724433197}
   - component: {fileID: 3722126169214803307}
   - component: {fileID: 3377464475453342910}
-  - component: {fileID: 3638023099222300954}
   - component: {fileID: 474987213219006978}
   - component: {fileID: 3003770649546270964}
   m_Layer: 0
@@ -77,19 +76,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 23c13901c326cb04a803e8bde0dfdc2b, type: 2}
   timeBetweenWaves: 3
   isLooping: 1
---- !u!114 &3638023099222300954
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8573675721655441271}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b931117fb12a0844d8dd77c42ace1fb7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  spaceCat: {fileID: 8360398628935114832, guid: 2fc9a5c4d7c870a4e9431bb63948fabf, type: 3}
 --- !u!114 &474987213219006978
 MonoBehaviour:
   m_ObjectHideFlags: 0
