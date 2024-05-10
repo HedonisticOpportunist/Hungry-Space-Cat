@@ -32,7 +32,7 @@ The tables below list all the sprite assets and where they came from.
 | Sprite Name     | Link                                                                    |
 | -----------     | -----------                                                             |
 | Spaceship A     | https://bevouliin.com/flying-heroes-spaceship-attack/                   |
-| Spaceship B     | https://bevouliin.com/flying-heroes-spaceship-attack/)                  |
+| Spaceship B     | https://bevouliin.com/flying-heroes-spaceship-attack/                   |
 | Lasers          | https://opengameart.org/content/assets-free-laser-bullets-pack-2020     |
 
 #### Backgrounds / Landscape 🌌
