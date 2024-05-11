@@ -7,17 +7,10 @@ public class SpawnPlanets : MonoBehaviour
     [SerializeField] List<GameObject> planets;
 
     [Header("SpaceCat")]
-    [SerializeField] GameObject spaceCat; 
+    [SerializeField] GameObject spaceCat;
     SpawnerHelper _spawnerHelper;
 
-    void Awake()
-    {
-        _spawnerHelper = FindObjectOfType<SpawnerHelper>();
+    void Awake() => _spawnerHelper = FindObjectOfType<SpawnerHelper>();
 
-    }
-
-    void Start()
-    {
-        _spawnerHelper.SpawnObjectsRandomly(planets, spaceCat);
-    }
+    void Start() => _spawnerHelper.SpawnObjectsRandomly(planets, spaceCat);
 }

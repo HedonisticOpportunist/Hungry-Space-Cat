@@ -7,17 +7,10 @@ public class SpawnBugs : MonoBehaviour
     [SerializeField] List<GameObject> bugs;
 
     [Header("SpaceCat")]
-    [SerializeField] GameObject spaceCat; 
+    [SerializeField] GameObject spaceCat;
     SpawnerHelper _spawnerHelper;
 
-    void Awake()
-    {
-        _spawnerHelper = FindObjectOfType<SpawnerHelper>();
+    void Awake() => _spawnerHelper = FindObjectOfType<SpawnerHelper>();
 
-    }
-
-    void Start()
-    {
-        _spawnerHelper.SpawnObjectsRandomly(bugs, spaceCat);
-    }
+    void Start() => _spawnerHelper.SpawnObjectsRandomly(bugs, spaceCat);
 }
