@@ -27,10 +27,7 @@ public class UIDisplay : MonoBehaviour
         _healthKeeper = FindObjectOfType<HealthKeeper>();
     }
 
-    void Start()
-    { 
-        newGameText.text = "";
-    }
+    void Start() => newGameText.text = "";
 
     void FixedUpdate()
     {
@@ -39,8 +36,5 @@ public class UIDisplay : MonoBehaviour
         livesText.text = _healthKeeper.GetLives().ToString();
     }
 
-    public void LoadNextGameText()
-    {
-        newGameText.text = "You will be redirected to the next level in five, four, three ...";
-    }
+    public void LoadNextGameText() => newGameText.text = "You will be redirected to the next level in five, four, three ...";
 }

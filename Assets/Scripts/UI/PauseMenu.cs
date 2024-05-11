@@ -10,20 +10,14 @@ public class PauseMenu : MonoBehaviour
     [SerializeField] GameObject pauseMenu;
     public static bool isPaused;
 
-    void Start()
-    {
-        pauseMenu.SetActive(false);
-    }
+    void Start() => pauseMenu.SetActive(false);
 
-    void Update()
-    {
-        ActivatePause();
-    }
+    void Update() => ActivatePause();
 
     void ActivatePause()
     {
-       if (Input.GetKeyDown(KeyCode.Escape))
-       {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
             if (isPaused)
             {
                 ResumeGame();
@@ -32,7 +26,7 @@ public class PauseMenu : MonoBehaviour
             {
                 PauseGame();
             }
-       }  
+        }
     }
 
     void PauseGame()

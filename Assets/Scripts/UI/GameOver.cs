@@ -32,7 +32,7 @@ public class GameOver : MonoBehaviour
             scoreText.text = "You died! You scored: " + _scoreKeeper.GetScore().ToString() + " points.";
         }
 
-        if (_scoreKeeper != null && _healthKeeper.GetLives() > 0) 
+        if (_scoreKeeper != null && _healthKeeper.GetLives() > 0)
         {
             scoreText.text = "Congrats! You have scored: " + _scoreKeeper.GetScore().ToString() + " points.";
         }

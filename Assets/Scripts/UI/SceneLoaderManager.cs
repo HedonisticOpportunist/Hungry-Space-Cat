@@ -16,9 +16,25 @@ public class SceneLoaderManager : MonoBehaviour
     FadeAnimation _fadeAnimation;
 
     // SCENES
-    readonly string[] _easyModeScenes = { "UFOGameEasy", "HamburgerGameEasy", "GhostGameEasy" };
-    readonly string[] _normalModeScenes = { "UFOGame", "HamburgerGame", "GhostGame", "PlanetScene" };
-    readonly string[] _menuScenes = { "MenuScene", "Play", "Instructions", "GameSettings", "EndScene" };
+    readonly string[] _easyModeScenes = {
+    "UFOGameEasy",
+    "HamburgerGameEasy",
+    "GhostGameEasy"
+  };
+    readonly string[] _normalModeScenes = {
+    "UFOGame",
+    "HamburgerGame",
+    "GhostGame",
+    "PlanetGame",
+    "FollowingSpaceshipGame"
+  };
+    readonly string[] _menuScenes = {
+    "MainMenu",
+    "Play",
+    "Instructions",
+    "GameSettings",
+    "GameOver"
+  };
 
     void Awake()
     {
@@ -29,15 +45,9 @@ public class SceneLoaderManager : MonoBehaviour
 
     #region LoadMenuScenes
 
-    public void LoadAdoptACatSite()
-    {
-        Application.OpenURL("https://hedonisticopportunist.github.io/Cats-in-Neath/");
-    }
+    public void LoadAdoptACatSite() => Application.OpenURL("https://hedonisticopportunist.github.io/Cats-in-Neath/");
 
-    public void LoadInstructions()
-    {
-        SceneManager.LoadScene(_menuScenes[2]);
-    }
+    public void LoadInstructions() => SceneManager.LoadScene(_menuScenes[2]);
 
     public void LoadMenuScene()
     {
@@ -48,15 +58,9 @@ public class SceneLoaderManager : MonoBehaviour
         SceneManager.LoadScene(_menuScenes[0]);
     }
 
-    public void LoadSettingsScene()
-    {
-        SceneManager.LoadScene(_menuScenes[3]);
-    }
+    public void LoadSettingsScene() => SceneManager.LoadScene(_menuScenes[3]);
 
-    public void LoadPlayScene()
-    {
-        SceneManager.LoadScene(_menuScenes[1]);
-    }
+    public void LoadPlayScene() => SceneManager.LoadScene(_menuScenes[1]);
 
     public void LoadEndScene()
     {
@@ -68,10 +72,7 @@ public class SceneLoaderManager : MonoBehaviour
 
     #region LoadGame
 
-    public void LoadEasyMode()
-    {
-        SceneManager.LoadScene(_easyModeScenes[0]);
-    }
+    public void LoadEasyMode() => SceneManager.LoadScene(_easyModeScenes[0]);
 
     public void ResetGame()
     {
@@ -83,12 +84,10 @@ public class SceneLoaderManager : MonoBehaviour
             _healthKeeper.ResetLives();
             SceneManager.LoadScene(buildIndex - 1);
         }
+
     }
 
-    public void LoadUFOGame()
-    {
-        SceneManager.LoadScene(_normalModeScenes[0]);
-    }
+    public void LoadUFOGame() => SceneManager.LoadScene(_normalModeScenes[0]);
 
     public void ExitGame()
     {
@@ -112,21 +111,19 @@ public class SceneLoaderManager : MonoBehaviour
     {
         int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
 
-        if (currentSceneIndex >= 4 && currentSceneIndex <= 7)
+        if (currentSceneIndex >= 4 && currentSceneIndex <= 8)
         {
             LoadNormalLevels(currentSceneIndex);
         }
-
-        else if (currentSceneIndex >= 8 && currentSceneIndex <= 10)
+        else if (currentSceneIndex >= 9 && currentSceneIndex <= 11)
         {
             LoadEasyLevels(currentSceneIndex);
         }
-
         else
         {
             LoadMenuScene();
         }
-        
+
     }
 
     void LoadNormalLevels(int currentSceneIndex)
@@ -141,13 +138,16 @@ public class SceneLoaderManager : MonoBehaviour
             _fadeAnimation.SetUpFadeAnimation();
             SceneManager.LoadScene(_normalModeScenes[2]);
         }
-
         else if (currentSceneIndex == 6)
         {
             _fadeAnimation.SetUpFadeAnimation();
             SceneManager.LoadScene(_normalModeScenes[3]);
         }
-
+        else if (currentSceneIndex == 7)
+        {
+            _fadeAnimation.SetUpFadeAnimation();
+            SceneManager.LoadScene(_normalModeScenes[4]);
+        }
         else
         {
             LoadEndScene();
@@ -156,17 +156,16 @@ public class SceneLoaderManager : MonoBehaviour
 
     void LoadEasyLevels(int currentSceneIndex)
     {
-        if (currentSceneIndex == 8)
+        if (currentSceneIndex == 9)
         {
             _fadeAnimation.SetUpFadeAnimation();
             SceneManager.LoadScene(_easyModeScenes[1]);
         }
-        else if (currentSceneIndex == 9)
+        else if (currentSceneIndex == 10)
         {
             _fadeAnimation.SetUpFadeAnimation();
             SceneManager.LoadScene(_easyModeScenes[2]);
         }
-
         else
         {
             LoadEndScene();
