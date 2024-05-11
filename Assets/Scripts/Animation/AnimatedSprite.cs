@@ -21,15 +21,9 @@ public class AnimatedSprite : MonoBehaviour
         MoveAnimationForward();
     }
 
-    void Awake()
-    {
-        spriteRenderer = GetComponent<SpriteRenderer>();
-    }
+    void Awake() => spriteRenderer = GetComponent<SpriteRenderer>();
 
-    void Start()
-    {
-        InvokeRepeating(nameof(MoveAnimationForward), animationTime, animationTime);  
-    }
+    void Start() => InvokeRepeating(nameof(MoveAnimationForward), animationTime, animationTime);
 
     void MoveAnimationForward()
     {
@@ -37,7 +31,6 @@ public class AnimatedSprite : MonoBehaviour
         {
             return;
         }
-
         else
         {
             animationFrame++;
@@ -58,5 +51,3 @@ public class AnimatedSprite : MonoBehaviour
         }
     }
 }
-
-

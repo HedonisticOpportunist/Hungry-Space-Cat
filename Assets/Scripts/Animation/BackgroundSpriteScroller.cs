@@ -11,11 +11,7 @@ public class BackgroundSpriteScroller : MonoBehaviour
     Vector2 _offset;
     Material _backgroundMaterial;
 
-    void Awake()
-    {
-        _backgroundMaterial = GetComponent<SpriteRenderer>().material;
-
-    }
+    void Awake() => _backgroundMaterial = GetComponent<SpriteRenderer>().material;
     void Update()
     {
         _offset = moveSpeed * Time.deltaTime;

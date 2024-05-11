@@ -1,4 +1,3 @@
-
 using System;
 using UnityEngine;
 
@@ -26,10 +25,7 @@ public class FadeAnimation : MonoBehaviour
     Texture2D _texture;
     static public FadeAnimation instance;
 
-    private void Awake()
-    {
-        ManageSingleton();
-    }
+    private void Awake() => ManageSingleton();
 
     void ManageSingleton()
     {
@@ -64,7 +60,7 @@ public class FadeAnimation : MonoBehaviour
         FadeIn();
 
         // Resume game and audio 
-        Time.timeScale = 1f; 
+        Time.timeScale = 1f;
         AudioListener.pause = false;
     }
 
@@ -110,8 +106,7 @@ public class FadeAnimation : MonoBehaviour
 
     void ShowBlackScreen()
     {
-        if (_isFadingIn && _alpha <= 0.0f)
-        {
+        if (_isFadingIn && _alpha <= 0.0f) {
             _isFadingIn = false;
 
             return;
@@ -126,8 +121,7 @@ public class FadeAnimation : MonoBehaviour
             return;
         }
 
-        if (_isFadingOut && _alpha >= 1.0f)
-        {
+        if (_isFadingOut && _alpha >= 1.0f) {
             return;
         }
 
