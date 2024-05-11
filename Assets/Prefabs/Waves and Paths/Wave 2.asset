@@ -12,10 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7744e2f27386a147adcec6f4a0a715d, type: 3}
   m_Name: Wave 2
   m_EditorClassIdentifier: 
-  ghostDollPrefabs:
-  - {fileID: 5128528164242818374, guid: 249229e51585cfd4daac93b31680b30b, type: 3}
-  - {fileID: 5128528164242818374, guid: 249229e51585cfd4daac93b31680b30b, type: 3}
-  pathPrefab: {fileID: 6345400981061744941, guid: c1759ddc866c2b64291ebbaddb22871c, type: 3}
+  enemyPrefabs:
+  - {fileID: 3162247025356070930, guid: 8ed97a668f7c34047a55bafcaf1c0308, type: 3}
+  - {fileID: 3162247025356070930, guid: 8ed97a668f7c34047a55bafcaf1c0308, type: 3}
+  - {fileID: 3162247025356070930, guid: 8ed97a668f7c34047a55bafcaf1c0308, type: 3}
+  - {fileID: 3162247025356070930, guid: 8ed97a668f7c34047a55bafcaf1c0308, type: 3}
+  - {fileID: 3162247025356070930, guid: 8ed97a668f7c34047a55bafcaf1c0308, type: 3}
+  pathPrefab: {fileID: 4410492012515176562, guid: 3053017244d05954e82021bf32477629, type: 3}
   moveSpeed: 5
   timeBetweenEnemySpawns: 1
   spawnTimeVariance: 0
