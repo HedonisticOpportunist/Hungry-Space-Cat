@@ -8,7 +8,7 @@ public class BugController : MonoBehaviour
     [SerializeField] float floatStrength = 0.6f;
     [SerializeField] float speed = 2.4f;
 
-    [Header("Points for Eating Bugs")]
+  [Header("Points for Eating Bugs")]
     [SerializeField] int pointsForBugsEaten = 10;
     bool _wasEaten = false;
 
@@ -22,21 +22,16 @@ public class BugController : MonoBehaviour
         _scoreKeeper = FindObjectOfType<ScoreKeeper>();
     }
 
-    void Start()
-    {
-        yPosition = transform.position.y;
-    }
+    void Start() => yPosition = transform.position.y;
 
-    void Update()
-    {
+    void Update() =>
         /* Based on the following, with modifications:
-        // @Credit: https://gamedev.stackexchange.com/questions/96878/how-to-animate-objects-with-bobbing-up-and-down-motion-in-unity
-        */
+// @Credit: https://gamedev.stackexchange.com/questions/96878/how-to-animate-objects-with-bobbing-up-and-down-motion-in-unity
+*/
 
         transform.position = new Vector3(transform.position.x,
-            yPosition + ((float)Math.Sin(Time.time * speed) * floatStrength),
-            transform.position.z);
-    }
+          yPosition + ((float)Math.Sin(Time.time * speed) * floatStrength),
+          transform.position.z);
 
     void OnTriggerEnter2D(Collider2D other)
     {

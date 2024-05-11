@@ -11,7 +11,7 @@ public class SpaceCatController : MonoBehaviour
     [SerializeField] float damageDelay = 1.0f;
     [SerializeField] float thrust = 2.0f;
 
-    readonly float _maxSpeed = 10;
+  readonly float _maxSpeed = 10;
     float _horizontal;
     float _vertical;
 
@@ -69,7 +69,6 @@ public class SpaceCatController : MonoBehaviour
             if (_damageCountDown > 0)
                 _damageCountDown -= Time.deltaTime;
         }
-
         else
         {
             return;
@@ -94,7 +93,7 @@ public class SpaceCatController : MonoBehaviour
 
     void CatDeath()
     {
-        isAlive = false; 
+        isAlive = false;
         _scoreKeeper.ResetScore();
         _healthKeeper.ResetLives();
         StartCoroutine(DelayLoadEndScene());
@@ -128,22 +127,18 @@ public class SpaceCatController : MonoBehaviour
         {
             _body.AddRelativeForce(thrust * -1 * Time.deltaTime * Vector2.right);
         }
-
         else if (Input.GetKey(KeyCode.RightArrow))
         {
             _body.AddRelativeForce(thrust * Time.deltaTime * Vector2.right);
         }
-
         else if (Input.GetKey(KeyCode.UpArrow))
         {
             _body.AddRelativeForce(thrust * Time.deltaTime * Vector2.up);
         }
-
         else if (Input.GetKey(KeyCode.DownArrow))
         {
             _body.AddRelativeForce(thrust * Time.deltaTime * Vector2.down);
         }
-
         else
         {
             return;
@@ -160,7 +155,6 @@ public class SpaceCatController : MonoBehaviour
         {
             _body.velocity = new Vector2(_horizontal * speed, _vertical * speed);
         }
-
         else
         {
             ApplyRelativeForce();
@@ -188,25 +182,27 @@ public class SpaceCatController : MonoBehaviour
 
     IEnumerator DelayReloadScene()
     {
-        yield return new WaitForSeconds(2f);
+        yield
+        return new WaitForSeconds(2f);
         _sceneLoaderManager.LoadNextLevel();
     }
 
     IEnumerator DelayLoadEndScene()
     {
-        yield return new WaitForSeconds(2f);
+        yield
+        return new WaitForSeconds(2f);
         _sceneLoaderManager.LoadEndScene();
     }
     #endregion ReloadScenes
 
-    #region ChangeSpriteColour 
+    #region ChangeSpriteColour
     IEnumerator ChangeColour()
     {
         _spriteRenderer.color = Color.magenta;
-        yield return new WaitForSeconds(0.5f);
+        yield
+        return new WaitForSeconds(0.5f);
         _spriteRenderer.color = Color.white;
     }
     #endregion ChangeSpriteColour
 
 }
-
