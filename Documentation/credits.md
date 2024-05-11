@@ -11,6 +11,7 @@ The tables below list all the sprite assets and where they came from.
 | Green Astronaut Cat          | https://bevouliin.com/green-cat-astronaut-game-asset-sprites/  |
 | Sleeping Cat                 | https://www.anyrgb.com/en-clipart-22sxz                        |
 | Ghost Cat                    | https://kububbis.itch.io/kawaii-ghost-sprite-pack-neko-edition |
+| Sitting Cat                  | https://icons8.com/icon/set/cat/dusk                           |
 
 #### Pickups 🐛
 
