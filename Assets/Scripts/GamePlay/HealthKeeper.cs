@@ -7,13 +7,10 @@ using UnityEngine;
 
 public class HealthKeeper : MonoBehaviour
 {
-   private int _lives = 9;
-   static HealthKeeper instance;
+    private int _lives = 9;
+    static HealthKeeper instance;
 
-    void Awake()
-    {
-        ManageSingleton();
-    }
+    void Awake() => ManageSingleton();
 
     void ManageSingleton()
     {
@@ -29,10 +26,7 @@ public class HealthKeeper : MonoBehaviour
         }
     }
 
-    public int GetLives()
-    {
-        return _lives;
-    }
+    public int GetLives() => _lives;
 
     public void TakeDamage()
     {
@@ -42,10 +36,7 @@ public class HealthKeeper : MonoBehaviour
         }
     }
 
-    public void ResetLives()
-    {
-        _lives = 9;
-    }
+    public void ResetLives() => _lives = 9;
 
     int CalculateDamagePoints()
     {

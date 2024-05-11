@@ -10,10 +10,7 @@ public class ScoreKeeper : MonoBehaviour
     private int score = 0;
     static ScoreKeeper instance;
 
-    void Awake()
-    {
-        ManageSingleton();
-    }
+    void Awake() => ManageSingleton();
 
     void ManageSingleton()
     {
@@ -29,10 +26,7 @@ public class ScoreKeeper : MonoBehaviour
         }
     }
 
-    public int GetScore()
-    {
-        return score;
-    }
+    public int GetScore() => score;
 
     public void ModifyScore(int value)
     {
@@ -40,8 +34,5 @@ public class ScoreKeeper : MonoBehaviour
         Mathf.Clamp(score, 0, int.MaxValue);
     }
 
-    public void ResetScore()
-    {
-        score = 0;
-    }
+    public void ResetScore() => score = 0;
 }
