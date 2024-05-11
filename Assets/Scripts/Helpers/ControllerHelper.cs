@@ -1,4 +1,3 @@
-
 using Unity.Burst.CompilerServices;
 using UnityEngine;
 
@@ -6,12 +5,8 @@ public class ControllerHelper : MonoBehaviour
 {
     Vector2 _minimumBounds;
     Vector2 _maximumBounds;
-    RaycastHit _hit;
 
-    void Start()
-    {
-        InitialiseBounds();
-    }
+    void Start() => InitialiseBounds();
 
     #region Boundaries
 
@@ -42,10 +37,7 @@ public class ControllerHelper : MonoBehaviour
 
     #region Sprite Behaviour
 
-    public void FlipSprite(Transform transform, Rigidbody2D body)
-    {
-        transform.localScale = new Vector2((-Mathf.Sign(body.velocity.x) / 2.0f), 0.4f);
-    }
+    public void FlipSprite(Transform transform, Rigidbody2D body) => transform.localScale = new Vector2((-Mathf.Sign(body.velocity.x) / 2.0f), 0.4f);
 
     #endregion Sprite Behaviour
 
@@ -64,7 +56,6 @@ public class ControllerHelper : MonoBehaviour
             float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg; // This allows for smoother rotation. 
             transform.SetPositionAndRotation(Vector2.MoveTowards(transform.position, target.transform.position, speed * Time.deltaTime), Quaternion.Euler(Vector3.forward * angle));
         }
-
         else
         {
             return;
@@ -83,7 +74,7 @@ public class ControllerHelper : MonoBehaviour
 
             if (distance <= spaceBetween && distance != 0)
             {
-                Vector3 direction = obj.transform.position - target.transform.position; 
+                Vector3 direction = obj.transform.position - target.transform.position;
                 direction.Normalize();
                 Vector3 newDirection = (direction + Vector3.up + Vector3.down).normalized;
                 body.velocity = 4.5f * body.velocity.magnitude * newDirection;

@@ -6,12 +6,11 @@ using UnityEngine;
 // Part of the https://www.gamedev.tv/p/unity-2d-game-dev-course-2021 course
 */
 
-
 [CreateAssetMenu(menuName = "Wave Config", fileName = "New Wave Config")]
 public class WavesConfig : ScriptableObject
 {
     [Header("Prefabs")]
-    [SerializeField] List<GameObject> ghostDollPrefabs;
+    [SerializeField] List<GameObject> enemyPrefabs;
     [SerializeField] Transform pathPrefab;
 
     [Header("Speed and Duration")]
@@ -20,20 +19,11 @@ public class WavesConfig : ScriptableObject
     [SerializeField] float spawnTimeVariance = 0f;
     [SerializeField] float minimumSpawnTime = 0.2f;
 
-    public int GetEnemyCount()
-    {
-        return ghostDollPrefabs.Count;
-    }
+    public int GetEnemyCount() => enemyPrefabs.Count;
 
-    public GameObject GetEnemyPrefab(int index)
-    {
-        return ghostDollPrefabs[index];
-    }
+    public GameObject GetEnemyPrefab(int index) => enemyPrefabs[index];
 
-    public Transform GetStartingWaypoint()
-    {
-        return pathPrefab.GetChild(0);
-    }
+    public Transform GetStartingWaypoint() => pathPrefab.GetChild(0);
 
     public List<Transform> GetWaypoints()
     {
@@ -45,15 +35,12 @@ public class WavesConfig : ScriptableObject
         return waypoints;
     }
 
-    public float GetMoveSpeed()
-    {
-        return moveSpeed;
-    }
+    public float GetMoveSpeed() => moveSpeed;
 
     public float GetRandomSpawnTime()
     {
         float spawnTime = Random.Range(timeBetweenEnemySpawns - spawnTimeVariance,
-                                        timeBetweenEnemySpawns + spawnTimeVariance);
+          timeBetweenEnemySpawns + spawnTimeVariance);
         return Mathf.Clamp(spawnTime, minimumSpawnTime, float.MaxValue);
     }
 }

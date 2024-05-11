@@ -23,7 +23,6 @@ public class SpawnerHelper : MonoBehaviour
                     Instantiate(objects[i], spawnPosition, Quaternion.identity);
                 }
             }
-
             else
             {
                 return;
@@ -31,10 +30,7 @@ public class SpawnerHelper : MonoBehaviour
         }
     }
 
-    public int GetNumberOfObjectsInScene(string objectTag)
-    {
-        return GameObject.FindGameObjectsWithTag(objectTag).Length;
-    }
+    public int GetNumberOfObjectsInScene(string objectTag) => GameObject.FindGameObjectsWithTag(objectTag).Length;
 
     public void SpawnObjectRandomly(GameObject gameObject)
     {
@@ -48,9 +44,5 @@ public class SpawnerHelper : MonoBehaviour
         }
     }
 
-    float GetDistanceFromPlayer(GameObject gameObject, GameObject target)
-    {
-        return Vector3.Distance(gameObject.transform.position, target.transform.position);
-
-    }
+    float GetDistanceFromPlayer(GameObject gameObject, GameObject target) => Vector3.Distance(gameObject.transform.position, target.transform.position);
 }
