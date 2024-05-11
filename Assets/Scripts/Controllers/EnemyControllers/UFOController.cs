@@ -19,6 +19,7 @@ public class UFOController : MonoBehaviour
         _body = GetComponent<Rigidbody2D>();
         _controllerHelper = FindObjectOfType<ControllerHelper>();
     }
+    
     void Update() => MoveUFO();
 
     void OnTriggerExit2D(Collider2D other)
