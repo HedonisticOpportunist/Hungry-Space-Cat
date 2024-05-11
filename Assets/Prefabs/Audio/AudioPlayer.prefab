@@ -46,9 +46,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pickupClip: {fileID: 8300000, guid: 2bea8a1e6aeabe1489aef4f88ead7840, type: 3}
-  pickupVolume: 1
+  _pickupVolume: 1
   catDamageClip: {fileID: 8300000, guid: 48257db415bb5224abe5e60d68886352, type: 3}
-  catDamageVolume: 1
+  _catDamageVolume: 1
+  laserClip: {fileID: 8300000, guid: f692268ca93bad345a62ee8fd511f336, type: 3}
+  _laserVolume: 1
+  audioSource: {fileID: 0}
 --- !u!82 &6688734223780562349
 AudioSource:
   m_ObjectHideFlags: 0
