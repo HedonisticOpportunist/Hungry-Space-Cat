@@ -1,6 +1,6 @@
 using UnityEngine;
 
-/* Based on the below, with minor modifications 
+/* Based on the below, with minor modifications:
 // @Credit: https://www.youtube.com/watch?v=9dYDBomQpBQ
 // @Credit: https://gamedevbeginner.com/the-right-way-to-pause-the-game-in-unity/ for pausing the audio. 
 */

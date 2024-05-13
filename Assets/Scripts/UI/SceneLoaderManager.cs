@@ -1,10 +1,10 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-/* Based on the below, with minor modifications 
-// @Credit: https://blog.insane.engineer/post/unity_button_load_scene/ for the general scene-loading script
+/* Based on the below, with minor modifications:  
+// @Credit: https://blog.insane.engineer/post/unity_button_load_scene/ for the general scene-loading script. 
 // @Credit: https://medium.com/geekculture/loading-scenes-in-unity-98e446756497 for reloading a previous scene. 
-// @Credit: https://gitlab.com/GameDevTV/unity2d-v3/laser-defender/-/blob/master/Assets/Scripts/LevelManager.cs for the idea to move all the code to a single script 
+// @Credit: https://gitlab.com/GameDevTV/unity2d-v3/laser-defender/-/blob/master/Assets/Scripts/LevelManager.cs for the idea to move all the code to a single script. 
 // Part of the https://www.gamedev.tv/p/unity-2d-game-dev-course-2021 course
 */
 
