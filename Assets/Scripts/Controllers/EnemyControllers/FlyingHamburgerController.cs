@@ -44,7 +44,7 @@ public class FlyingHamburgerController : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("UFO"))
+        if (other.CompareTag("UFO") && !PauseMenu.isPaused)
         {
             Destroy(other.gameObject);
         }

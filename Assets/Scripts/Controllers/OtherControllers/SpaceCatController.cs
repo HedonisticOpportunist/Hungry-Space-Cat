@@ -79,7 +79,7 @@ public class SpaceCatController : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("UFO"))
+        if (other.CompareTag("UFO") && !PauseMenu.isPaused)
         {
             OnPlayerDamage();
 
@@ -125,7 +125,7 @@ public class SpaceCatController : MonoBehaviour
 
         if (Input.GetKey(KeyCode.LeftArrow))
         {
-            _body.AddRelativeForce(thrust * -1 * Time.deltaTime * Vector2.right);
+            _body.AddRelativeForce((thrust * -1) * Time.deltaTime * Vector2.right);
         }
         else if (Input.GetKey(KeyCode.RightArrow))
         {

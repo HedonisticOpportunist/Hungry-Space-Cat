@@ -1,9 +1,7 @@
 using System.Collections;
-using TMPro;
 using UnityEngine;
-using static UnityEngine.GraphicsBuffer;
 
-/* Based on the below, with minor modifications and deletions
+/* Based on the below, with minor modifications and deletions: 
 // @Credit: https://gitlab.com/GameDevTV/unity2d-v3/laser-defender/-/blob/master/Assets/Scripts/Shooter.cs?ref_type=heads
 // Part of the https://www.gamedev.tv/p/unity-2d-game-dev-course-2021 course
 */
@@ -20,16 +18,13 @@ public class ShooterController : MonoBehaviour
     [SerializeField] float firingRateVariance = 0f;
     [SerializeField] float minimumFiringRate = 0.1f;
 
-  readonly bool _isFiring = true;
+    readonly bool _isFiring = true;
     Coroutine _firingCoroutine;
     Transform _target;
     AudioPlayer _audioPlayer;
     GameObject _spaceCat;
 
-    void Awake()
-    {
-        _audioPlayer = FindObjectOfType<AudioPlayer>();
-    }
+    void Awake() => _audioPlayer = FindObjectOfType<AudioPlayer>();
 
     void Start()
     {
@@ -51,7 +46,7 @@ public class ShooterController : MonoBehaviour
 
     void FireProjectiles()
     {
-        if (_isFiring && _firingCoroutine == null)
+        if (_isFiring && _firingCoroutine == null && !PauseMenu.isPaused)
         {
             _firingCoroutine = StartCoroutine(FireContinuously());
         }
@@ -81,8 +76,7 @@ public class ShooterController : MonoBehaviour
 
             _audioPlayer.PlayLaserClip();
 
-            yield
-            return new WaitForSeconds(timeToNextProjectile);
+            yield return new WaitForSeconds(timeToNextProjectile);
         }
     }
 }

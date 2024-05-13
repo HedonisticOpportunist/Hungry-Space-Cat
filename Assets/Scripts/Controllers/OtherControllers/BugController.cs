@@ -26,8 +26,8 @@ public class BugController : MonoBehaviour
 
     void Update() =>
         /* Based on the following, with modifications:
-// @Credit: https://gamedev.stackexchange.com/questions/96878/how-to-animate-objects-with-bobbing-up-and-down-motion-in-unity
-*/
+        // @Credit: https://gamedev.stackexchange.com/questions/96878/how-to-animate-objects-with-bobbing-up-and-down-motion-in-unity
+        */
 
         transform.position = new Vector3(transform.position.x,
           yPosition + ((float)Math.Sin(Time.time * speed) * floatStrength),
@@ -41,7 +41,7 @@ public class BugController : MonoBehaviour
         // Part of the https://www.gamedev.tv/p/unity-2d-game-dev-course-2021 course
         */
 
-        if (other.CompareTag("SpaceCat") && !_wasEaten)
+        if (other.CompareTag("SpaceCat") && !_wasEaten && !PauseMenu.isPaused)
         {
             _wasEaten = true;
             _audioPlayer.PlayPickupClip();
@@ -50,7 +50,7 @@ public class BugController : MonoBehaviour
             Destroy(gameObject);
         }
 
-        if (other.CompareTag("Bug"))
+        if (other.CompareTag("Bug") && !PauseMenu.isPaused)
         {
             Destroy(other.gameObject);
         }
