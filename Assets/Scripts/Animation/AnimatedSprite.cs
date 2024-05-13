@@ -40,12 +40,12 @@ public class AnimatedSprite : MonoBehaviour
 
     void CheckAnimationFrameConditions()
     {
-        if (animationFrame >= spritesArray.Length && animationShouldLoop)
+        if (animationFrame >= spritesArray.Length && animationShouldLoop && !PauseMenu.isPaused)
         {
             animationFrame = 0;
         }
 
-        if (animationFrame >= 0 && animationFrame < spritesArray.Length)
+        if (animationFrame >= 0 && animationFrame < spritesArray.Length && !PauseMenu.isPaused)
         {
             spriteRenderer.sprite = spritesArray[animationFrame];
         }
