@@ -15,7 +15,10 @@ public class BackgroundSpriteScroller : MonoBehaviour
 
     void Update()
     {
-        _offset = moveSpeed * Time.deltaTime;
-        _backgroundMaterial.mainTextureOffset += _offset;
+        if (Effects.backgroundEffectEnabled)
+        {
+            _offset = moveSpeed * Time.deltaTime;
+            _backgroundMaterial.mainTextureOffset += _offset;
+        }
     }
 }
