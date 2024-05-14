@@ -59,6 +59,7 @@ public class SpaceCatController : MonoBehaviour
         if (isAlive)
         {
             DealWithNumberOfBugs();
+
             MoveCat();
 
             if (_controllerHelper != null)
@@ -150,19 +151,19 @@ public class SpaceCatController : MonoBehaviour
         /* Based on the below, with modifications and deletions:
         // @Credit: https://forum.unity.com/threads/limit-the-velocity-of-an-object-after-addforce.531229/ for slowing down the force movement. 
         */
-
-        if (modeEasy)
         {
-            _body.velocity = new Vector2(_horizontal * speed, _vertical * speed);
-        }
-        else
-        {
-            ApplyRelativeForce();
-            _body.velocity = Vector3.ClampMagnitude(_body.velocity, _maxSpeed);
-        }
+            if (modeEasy)
+            {
+                _body.velocity = new Vector2(_horizontal * speed, _vertical * speed);
+            }
+            else
+            {
+                ApplyRelativeForce();
+                _body.velocity = Vector3.ClampMagnitude(_body.velocity, _maxSpeed);
+            }
 
-        _controllerHelper.ClampSpriteMovements(transform);
-
+            _controllerHelper.ClampSpriteMovements(transform);
+        }
     }
 
     #endregion CatMovement
@@ -176,7 +177,7 @@ public class SpaceCatController : MonoBehaviour
         if (numberOfBugs == 0 && _healthKeeper.GetLives() != 0)
         {
             _uIDisplay.LoadNextGameText();
-            StartCoroutine(DelayReloadScene());
+            StartCoroutine(DelayReloadScene()); 
         }
     }
 
