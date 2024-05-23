@@ -17,6 +17,7 @@ public class SpaceCatController : MonoBehaviour
 
     float _damageCountDown = 0;
     int _lives = 9;
+    bool _bugsEaten;  
     SpriteRenderer _spriteRenderer;
 
     // OTHER GAME SCRIPTS 
@@ -35,6 +36,7 @@ public class SpaceCatController : MonoBehaviour
     {
         _body = GetComponent<Rigidbody2D>();
         _spriteRenderer = GetComponent<SpriteRenderer>();
+        _bugsEaten = false; 
 
         _audioPlayer = FindObjectOfType<AudioPlayer>();
         _controllerHelper = FindObjectOfType<ControllerHelper>();
@@ -80,7 +82,7 @@ public class SpaceCatController : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("UFO") && !PauseMenu.isPaused)
+        if (other.CompareTag("UFO") && !PauseMenu.isPaused && !_bugsEaten)
         {
             OnPlayerDamage();
 
@@ -177,7 +179,8 @@ public class SpaceCatController : MonoBehaviour
         if (numberOfBugs == 0 && _healthKeeper.GetLives() != 0)
         {
             _uIDisplay.LoadNextGameText();
-            StartCoroutine(DelayReloadScene()); 
+            StartCoroutine(DelayReloadScene());
+            _bugsEaten = true;
         }
     }
 
@@ -201,7 +204,7 @@ public class SpaceCatController : MonoBehaviour
     {
         _spriteRenderer.color = Color.magenta;
         yield
-        return new WaitForSeconds(0.5f);
+        return new WaitForSeconds(damageDelay); 
         _spriteRenderer.color = Color.white;
     }
     #endregion ChangeSpriteColour
