@@ -64,6 +64,7 @@ public class SceneLoaderManager : MonoBehaviour
 
     public void LoadEndScene()
     {
+        PlayerPrefs.SetInt("PreviousScene", SceneManager.GetActiveScene().buildIndex); 
         _fadeAnimation.SetUpFadeAnimation();
         SceneManager.LoadScene(_menuScenes[4]);
     }
@@ -82,7 +83,8 @@ public class SceneLoaderManager : MonoBehaviour
         {
             _scoreKeeper.ResetScore();
             _healthKeeper.ResetLives();
-            SceneManager.LoadScene(buildIndex - 1);
+            // @Credit: https://www.youtube.com/watch?v=faYY3BNmAeA for using player prefs to load a previous scene 
+            SceneManager.LoadScene(PlayerPrefs.GetInt("PreviousScene"));
         }
 
     }
