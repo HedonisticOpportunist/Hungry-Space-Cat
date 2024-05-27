@@ -1337,6 +1337,11 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 773796308}
+    - target: {fileID: 7928182897206324444, guid: 24ec3d32980027d4d8737540f1322881, type: 3}
+      propertyPath: m_text
+      value: 'Click the first button on the left to play in easy mode -- which contains
+        fewer levels and arcade/instant movement. '
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
