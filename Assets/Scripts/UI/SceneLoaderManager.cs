@@ -83,7 +83,7 @@ public class SceneLoaderManager : MonoBehaviour
         {
             _scoreKeeper.ResetScore();
             _healthKeeper.ResetLives();
-            // @Credit: https://www.youtube.com/watch?v=faYY3BNmAeA for using player prefs to load a previous scene 
+            // @Credit: https://www.youtube.com/watch?v=faYY3BNmAeA for using player prefs to load a previous scene. 
             SceneManager.LoadScene(PlayerPrefs.GetInt("PreviousScene"));
         }
 
