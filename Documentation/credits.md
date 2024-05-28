@@ -2,8 +2,6 @@
 
 ### SPRITES 🐁
 
-The tables below list all the sprite assets and where they came from.
-
 #### Space Cat / Player 🐈‍⬛
 
 | Sprite Name                  | Link                                                           |
@@ -60,14 +58,14 @@ The tables below list all the sprite assets and where they came from.
 
 #### Game Buttons 🕹️
 
+| Sprite Name          | Link                                                   |
+| -----------          | -----------                                            |
 | Exit Button          | https://icons8.com/icon/set/exit/nolan                 |
 | Back Button          | https://icons8.com/icon/set/back-button/nolan          |
 | Replay Button        | https://www.flaticon.com/free-icons/play-again         |
 | Resume Game Button   | https://www.flaticon.com/free-icon/play-button_3353752 |
 
 ### AUDIO 🎧
-
-The tables below list all the audio assets and where they came from.
 
 #### Background Music 🌠
 
