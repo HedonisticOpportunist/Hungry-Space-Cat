@@ -51,6 +51,7 @@ public class SceneLoaderManager : MonoBehaviour
 
     public void LoadMenuScene()
     {
+        PauseMenu.isPaused = false; 
         AudioListener.pause = false;
         Time.timeScale = 1f;
         _scoreKeeper.ResetScore();

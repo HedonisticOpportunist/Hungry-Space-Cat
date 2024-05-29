@@ -31,17 +31,17 @@ public class PauseMenu : MonoBehaviour
 
     void PauseGame()
     {
+        isPaused = true;
         pauseMenu.SetActive(true);
         Time.timeScale = 0f;
-        isPaused = true;
         AudioListener.pause = true;
     }
 
     public void ResumeGame()
     {
+        isPaused = false;
         pauseMenu.SetActive(false);
         Time.timeScale = 1f;
-        isPaused = false;
         AudioListener.pause = false;
     }
 }
