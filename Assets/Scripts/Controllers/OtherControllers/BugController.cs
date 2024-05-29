@@ -43,6 +43,7 @@ public class BugController : MonoBehaviour
 
         if (other.CompareTag("SpaceCat") && !_wasEaten && !PauseMenu.isPaused)
         {
+            
             _wasEaten = true;
             _audioPlayer.PlayPickupClip();
             _scoreKeeper.ModifyScore(pointsForBugsEaten);
