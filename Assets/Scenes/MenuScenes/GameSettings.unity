@@ -807,6 +807,7 @@ Transform:
   - {fileID: 1508117494}
   - {fileID: 99113798}
   - {fileID: 1978755782}
+  - {fileID: 1760560620}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1508117493
@@ -1022,11 +1023,11 @@ Transform:
   m_GameObject: {fileID: 1760560618}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.14, y: -3.62, z: 0}
+  m_LocalPosition: {x: 1.81, y: 11.27, z: 0.24849823}
   m_LocalScale: {x: 0.2, y: 0.2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1412173833}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1807379958
 GameObject:
@@ -1391,6 +1392,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1213198693}
+    - target: {fileID: 4024979747929397409, guid: 75b7b8b5585cb4e4ca1a768ed5a43993, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 268606014}
     - target: {fileID: 5275799570250605530, guid: 75b7b8b5585cb4e4ca1a768ed5a43993, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -1403,14 +1408,6 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 268606014}
-    - target: {fileID: 7556716903938163988, guid: 75b7b8b5585cb4e4ca1a768ed5a43993, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: DisableMovingBackgroundEffect
-      objectReference: {fileID: 0}
-    - target: {fileID: 7556716903938163988, guid: 75b7b8b5585cb4e4ca1a768ed5a43993, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: Effects, Assembly-CSharp
-      objectReference: {fileID: 0}
     - target: {fileID: 8412764217659597709, guid: 75b7b8b5585cb4e4ca1a768ed5a43993, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -1489,6 +1486,5 @@ SceneRoots:
   - {fileID: 2084027333328511928}
   - {fileID: 589559484}
   - {fileID: 5528474651342392785}
-  - {fileID: 1760560620}
   - {fileID: 1412173833}
   - {fileID: 1118179821}
