@@ -35,6 +35,13 @@
 | Spaceship B     | https://bevouliin.com/flying-heroes-spaceship-attack/                   |
 | Lasers          | https://opengameart.org/content/assets-free-laser-bullets-pack-2020     |
 
+#### Enemies - Asteroids ☄️
+
+| Sprite Name     | Link                                                                    |
+| -----------     | -----------                                                             |
+| Asteroids       | https://opengameart.org/content/2d-asteroid-sprite)                     |
+
+
 #### Backgrounds / Landscape 🌌
 
 | Sprite Name              | Link                                                                    |
