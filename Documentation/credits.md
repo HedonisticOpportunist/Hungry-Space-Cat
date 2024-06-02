@@ -39,7 +39,7 @@
 
 | Sprite Name     | Link                                                                    |
 | -----------     | -----------                                                             |
-| Asteroids       | https://opengameart.org/content/2d-asteroid-sprite)                     |
+| Asteroids       | https://opengameart.org/content/2d-asteroid-sprite                      |
 
 
 #### Backgrounds / Landscape 🌌
