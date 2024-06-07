@@ -128,7 +128,7 @@ public class SpaceCatController : MonoBehaviour
 
         if (Input.GetKey(KeyCode.LeftArrow))
         {
-            _body.AddRelativeForce((thrust * -1) * Time.deltaTime * Vector2.right);
+            _body.AddRelativeForce((thrust) * Time.deltaTime * Vector2.left);
         }
         else if (Input.GetKey(KeyCode.RightArrow))
         {
