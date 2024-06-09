@@ -1308,6 +1308,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 213039302502082912, guid: 75b7b8b5585cb4e4ca1a768ed5a43993, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -40
+      objectReference: {fileID: 0}
+    - target: {fileID: 501237757474247324, guid: 75b7b8b5585cb4e4ca1a768ed5a43993, type: 3}
+      propertyPath: m_text
+      value: Disable Moving Background and Other Effects
+      objectReference: {fileID: 0}
     - target: {fileID: 947449027468962849, guid: 75b7b8b5585cb4e4ca1a768ed5a43993, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -1392,10 +1400,26 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1213198693}
+    - target: {fileID: 3548731599421495168, guid: 75b7b8b5585cb4e4ca1a768ed5a43993, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -35
+      objectReference: {fileID: 0}
+    - target: {fileID: 3790665257324204834, guid: 75b7b8b5585cb4e4ca1a768ed5a43993, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 40
+      objectReference: {fileID: 0}
     - target: {fileID: 4024979747929397409, guid: 75b7b8b5585cb4e4ca1a768ed5a43993, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 268606014}
+    - target: {fileID: 4611251724647649317, guid: 75b7b8b5585cb4e4ca1a768ed5a43993, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -150
+      objectReference: {fileID: 0}
+    - target: {fileID: 4623274732215529451, guid: 75b7b8b5585cb4e4ca1a768ed5a43993, type: 3}
+      propertyPath: m_text
+      value: 'Add Moving Background and Other Effects '
+      objectReference: {fileID: 0}
     - target: {fileID: 5275799570250605530, guid: 75b7b8b5585cb4e4ca1a768ed5a43993, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -1408,6 +1432,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 268606014}
+    - target: {fileID: 7756394945772089189, guid: 75b7b8b5585cb4e4ca1a768ed5a43993, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 40
+      objectReference: {fileID: 0}
     - target: {fileID: 8412764217659597709, guid: 75b7b8b5585cb4e4ca1a768ed5a43993, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
