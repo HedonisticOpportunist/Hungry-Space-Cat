@@ -76,7 +76,7 @@ public class AudioPlayer : MonoBehaviour
             audioSource.Pause();
             audioSource.mute = true;
         }
-        if (_sceneNumber >= 4 && _sceneNumber <= 11)
+        if (_sceneNumber >= 4 && _sceneNumber <= 12)
         {
             Camera.main.GetComponent<AudioListener>().enabled = true;
             audioSource.UnPause();

@@ -26,7 +26,8 @@ public class SceneLoaderManager : MonoBehaviour
     "HamburgerGame",
     "GhostGame",
     "PlanetGame",
-    "FollowingSpaceshipGame"
+    "FollowingSpaceshipGame",
+    "AsteroidsGame"
   };
     readonly string[] _menuScenes = {
     "MainMenu",
@@ -114,11 +115,11 @@ public class SceneLoaderManager : MonoBehaviour
     {
         int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
 
-        if (currentSceneIndex >= 4 && currentSceneIndex <= 8)
+        if (currentSceneIndex >= 4 && currentSceneIndex <= 9)
         {
             LoadNormalLevels(currentSceneIndex);
         }
-        else if (currentSceneIndex >= 9 && currentSceneIndex <= 11)
+        else if (currentSceneIndex >= 10 && currentSceneIndex <= 12)
         {
             LoadEasyLevels(currentSceneIndex);
         }
@@ -150,6 +151,11 @@ public class SceneLoaderManager : MonoBehaviour
         {
             _fadeAnimation.SetUpFadeAnimation();
             SceneManager.LoadScene(_normalModeScenes[4]);
+        }
+        else if (currentSceneIndex == 8)
+        {
+            _fadeAnimation.SetUpFadeAnimation();
+            SceneManager.LoadScene(_normalModeScenes[5]);
         }
         else
         {
