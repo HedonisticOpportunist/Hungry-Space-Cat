@@ -1,5 +1,6 @@
-using System.Collections;
+using System;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class ControllerHelper : MonoBehaviour
 {
@@ -81,6 +82,15 @@ public class ControllerHelper : MonoBehaviour
             }
         }
     }
-
     #endregion Interactions
+
+    #region Movement 
+
+    /* Based on the following, with modifications:
+    // @Credit: https://gamedev.stackexchange.com/questions/96878/how-to-animate-objects-with-bobbing-up-and-down-motion-in-unity
+    */
+    public void MoveUpAndDown(Transform transform, float yPosition, float speed, float floatStrength) => transform.position = new Vector3(transform.position.x, yPosition + ((float)Math.Sin(Time.time * speed) * floatStrength), z: transform.position.z);
+
+    #endregion Movement
+
 }
