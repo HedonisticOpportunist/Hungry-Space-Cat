@@ -11,7 +11,7 @@ public class SpaceCatController : MonoBehaviour
     [SerializeField] float damageDelay = 1.0f;
     [SerializeField] float thrust = 2.0f;
 
-  readonly float _maxSpeed = 10;
+    readonly float _maxSpeed = 10;
     float _horizontal;
     float _vertical;
 
@@ -31,6 +31,7 @@ public class SpaceCatController : MonoBehaviour
 
     ScoreKeeper _scoreKeeper;
     UIDisplay _uIDisplay;
+    SpriteEffects _spriteEffects; 
 
     void Awake()
     {
@@ -45,7 +46,9 @@ public class SpaceCatController : MonoBehaviour
         _healthKeeper = FindObjectOfType<HealthKeeper>();
         _sceneLoaderManager = FindObjectOfType<SceneLoaderManager>();
         _spawnerHelper = FindObjectOfType<SpawnerHelper>();
+        
         _scoreKeeper = FindObjectOfType<ScoreKeeper>();
+        _spriteEffects = FindObjectOfType<SpriteEffects>();
     }
 
     void Update()
@@ -78,7 +81,7 @@ public class SpaceCatController : MonoBehaviour
         }
     }
 
-    #region DamageAndDeath
+    #region Collisions
 
     void OnTriggerEnter2D(Collider2D other)
     {
@@ -90,6 +93,14 @@ public class SpaceCatController : MonoBehaviour
             {
                 CatDeath();
 
+            }
+        }
+
+        if (other.CompareTag("Bug") && !_bugsEaten && !PauseMenu.isPaused)
+        {
+            if (Effects.effectsEnabled)
+            {
+                StartCoroutine(_spriteEffects.DisplayScoreEffect(_spriteRenderer));
             }
         }
     }
@@ -116,10 +127,14 @@ public class SpaceCatController : MonoBehaviour
         _damageCountDown = damageDelay;
         _audioPlayer.PlayCatDamageClip();
         _healthKeeper.TakeDamage();
-        StartCoroutine(ChangeColour());
+
+        if (Effects.effectsEnabled)
+        {
+            StartCoroutine(_spriteEffects.DisplayDeathEffect(_spriteRenderer, damageDelay));
+        }
     }
 
-    #endregion DamageAndDeath
+    #endregion Collisions
 
     #region CatMovement
 
@@ -198,15 +213,4 @@ public class SpaceCatController : MonoBehaviour
         _sceneLoaderManager.LoadEndScene();
     }
     #endregion ReloadScenes
-
-    #region ChangeSpriteColour
-    IEnumerator ChangeColour()
-    {
-        _spriteRenderer.color = Color.magenta;
-        yield
-        return new WaitForSeconds(damageDelay); 
-        _spriteRenderer.color = Color.white;
-    }
-    #endregion ChangeSpriteColour
-
 }

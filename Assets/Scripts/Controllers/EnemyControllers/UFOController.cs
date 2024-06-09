@@ -32,7 +32,6 @@ public class UFOController : MonoBehaviour
             {
                 _controllerHelper.FlipSprite(transform, _body);
             }
-
         }
     }
     void MoveUFO() => _body.velocity = new Vector2(speed, 0);

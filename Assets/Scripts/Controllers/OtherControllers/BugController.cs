@@ -8,30 +8,26 @@ public class BugController : MonoBehaviour
     [SerializeField] float floatStrength = 0.6f;
     [SerializeField] float speed = 2.4f;
 
-  [Header("Points for Eating Bugs")]
+    [Header("Points for Eating Bugs")]
     [SerializeField] int pointsForBugsEaten = 10;
     bool _wasEaten = false;
 
     // OTHER GAME SCRIPTS
     AudioPlayer _audioPlayer;
     ScoreKeeper _scoreKeeper;
+    ControllerHelper _controllerHelper;
 
     void Awake()
     {
         _audioPlayer = FindObjectOfType<AudioPlayer>();
         _scoreKeeper = FindObjectOfType<ScoreKeeper>();
+        _controllerHelper = FindObjectOfType<ControllerHelper>();
     }
 
     void Start() => yPosition = transform.position.y;
 
-    void Update() =>
-        /* Based on the following, with modifications:
-        // @Credit: https://gamedev.stackexchange.com/questions/96878/how-to-animate-objects-with-bobbing-up-and-down-motion-in-unity
-        */
-
-        transform.position = new Vector3(transform.position.x,
-          yPosition + ((float)Math.Sin(Time.time * speed) * floatStrength),
-          transform.position.z);
+    void Update() => _controllerHelper.MoveUpAndDown(transform, yPosition, speed, floatStrength);
+       
 
     void OnTriggerEnter2D(Collider2D other)
     {
@@ -43,7 +39,7 @@ public class BugController : MonoBehaviour
 
         if (other.CompareTag("SpaceCat") && !_wasEaten && !PauseMenu.isPaused)
         {
-            
+
             _wasEaten = true;
             _audioPlayer.PlayPickupClip();
             _scoreKeeper.ModifyScore(pointsForBugsEaten);
