@@ -38,7 +38,7 @@ public class ControllerHelper : MonoBehaviour
 
     #region Sprite Behaviour
 
-    public void FlipSprite(Transform transform, Rigidbody2D body) => transform.localScale = new Vector2((-Mathf.Sign(body.velocity.x) / 2.0f), 0.4f);
+    public void FlipSprite(Transform transform, Rigidbody2D body, float scale) => transform.localScale = new Vector2((-Mathf.Sign(body.velocity.x) / 2.0f), scale);
 
     #endregion Sprite Behaviour
 
