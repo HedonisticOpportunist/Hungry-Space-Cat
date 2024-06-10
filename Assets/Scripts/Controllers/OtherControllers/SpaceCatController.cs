@@ -69,7 +69,7 @@ public class SpaceCatController : MonoBehaviour
 
             if (_controllerHelper != null)
             {
-                _controllerHelper.FlipSprite(transform, _body);
+                _controllerHelper.FlipSprite(transform, _body, 0.4f);
             }
 
             if (_damageCountDown > 0)

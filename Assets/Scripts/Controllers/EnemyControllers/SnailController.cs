@@ -1,11 +1,8 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
-/* Based on the below, with modifications, additions and deletions:
-// @Credit: https://gitlab.com/GameDevTV/unity2d-v3/tilevania/-/blob/master/Assets/Scripts/EnemyMovement.cs for the flip UFO code. 
-// Part of the https://www.gamedev.tv/p/unity-2d-game-dev-course-2021 course
-*/
-
-public class UFOController : MonoBehaviour
+public class SnailController : MonoBehaviour
 {
     [Header("Speed and Movmenet")]
     [SerializeField] float speed = 2.5f;
@@ -20,7 +17,7 @@ public class UFOController : MonoBehaviour
         _controllerHelper = FindObjectOfType<ControllerHelper>();
     }
 
-    void Update() => MoveUFO();
+    void Update() => MoveSnail();
 
     void OnTriggerExit2D(Collider2D other)
     {
@@ -34,5 +31,6 @@ public class UFOController : MonoBehaviour
             }
         }
     }
-    void MoveUFO() => _body.velocity = new Vector2(speed, 0);
+    void MoveSnail() => _body.velocity = new Vector2(speed * 0.5f, speed);
 }
+
