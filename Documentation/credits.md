@@ -26,6 +26,7 @@
 | Cute Angry UFO  | https://kububbis.itch.io/kawaii-ufo-sprite-pack         |
 | Ghost Doll      | https://bevouliin.com/doll-ghost-game-asset-sprites/    |
 | Green Skull UFO | https://bevouliin.com/flying-heroes-spaceship-attack/   |
+| Snails          | https://bevouliin.com/snail-tail-game-asset-sprites/    |
 
 #### Enemies - Spaceships 👽
 
