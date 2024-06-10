@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 3377464475453342910}
   - component: {fileID: 474987213219006978}
   - component: {fileID: 3003770649546270964}
+  - component: {fileID: 8725303106289470855}
   m_Layer: 0
   m_Name: PlanetSpawner
   m_TagString: Untagged
@@ -106,3 +107,16 @@ MonoBehaviour:
   - {fileID: 136326156369000648, guid: e2e4fd53495479d4bbb9115b2c94c701, type: 3}
   - {fileID: 2164365862071677076, guid: cfc98b3a084e46440bf0248dba1baa4d, type: 3}
   spaceCat: {fileID: 8360398628935114832, guid: 2fc9a5c4d7c870a4e9431bb63948fabf, type: 3}
+--- !u!114 &8725303106289470855
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8573675721655441271}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 111a6badd86b5064c9447b99cff7d9f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UFO: {fileID: 9121526995515121370, guid: 9e0af988036a89e4a8b98fafc1ceef27, type: 3}
