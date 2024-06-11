@@ -51,7 +51,7 @@ MonoBehaviour:
   _catDamageVolume: 1
   laserClip: {fileID: 8300000, guid: f692268ca93bad345a62ee8fd511f336, type: 3}
   _laserVolume: 1
-  audioSource: {fileID: 0}
+  audioSource: {fileID: 6688734223780562349}
 --- !u!82 &6688734223780562349
 AudioSource:
   m_ObjectHideFlags: 0
@@ -62,7 +62,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 67cebba087fb7fb4e9c0c8623ebd1a69, type: 3}
+  m_audioClip: {fileID: 8300000, guid: a2bfcc86e37134f4fb5fa0add21fe0e6, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
