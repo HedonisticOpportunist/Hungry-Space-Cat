@@ -63,6 +63,8 @@
 | Instructions Button  | https://icons8.com/icon/set/instructions/nolan         |
 | 'Easy' Play Button   | https://icons8.com/icon/set/play/nolan                 |
 | 'Normal' Play Button | https://icons8.com/icon/set/play-button/nolan          |
+| Disable 'Pink'       | https://www.flaticon.com/free-icon/cancel_7422275      |
+| Enable 'Pink'        | https://www.flaticon.com/free-icon/check-mark_1443000  |
 
 #### Game Buttons 🕹️
 
