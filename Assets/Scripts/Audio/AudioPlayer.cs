@@ -39,6 +39,7 @@ public class AudioPlayer : MonoBehaviour
 
     void ManageSingleton()
     {
+
         if (instance != null)
         {
             gameObject.SetActive(false);
