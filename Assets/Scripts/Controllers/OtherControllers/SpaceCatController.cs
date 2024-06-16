@@ -17,12 +17,13 @@ public class SpaceCatController : MonoBehaviour
 
     float _damageCountDown = 0;
     int _lives = 9;
-    bool _bugsEaten;  
+    bool _bugsEaten; 
+    
     SpriteRenderer _spriteRenderer;
+    Rigidbody2D _body;
 
     // OTHER GAME SCRIPTS 
     AudioPlayer _audioPlayer;
-    Rigidbody2D _body;
     ControllerHelper _controllerHelper;
 
     HealthKeeper _healthKeeper;
@@ -69,7 +70,7 @@ public class SpaceCatController : MonoBehaviour
 
             if (_controllerHelper != null)
             {
-                _controllerHelper.FlipSprite(transform, _body, 0.4f);
+                _controllerHelper.FlipSprite(_spriteRenderer);
             }
 
             if (_damageCountDown > 0)
@@ -98,7 +99,7 @@ public class SpaceCatController : MonoBehaviour
 
         if (other.CompareTag("Bug") && !_bugsEaten && !PauseMenu.isPaused)
         {
-            if (Effects.effectsEnabled)
+            if (DealWithEffects.spriteEffectsEnabled)
             {
                 StartCoroutine(_spriteEffects.DisplayScoreEffect(_spriteRenderer));
             }
@@ -128,7 +129,7 @@ public class SpaceCatController : MonoBehaviour
         _audioPlayer.PlayCatDamageClip();
         _healthKeeper.TakeDamage();
 
-        if (Effects.effectsEnabled)
+        if (DealWithEffects.spriteEffectsEnabled)
         {
             StartCoroutine(_spriteEffects.DisplayDeathEffect(_spriteRenderer, damageDelay));
         }

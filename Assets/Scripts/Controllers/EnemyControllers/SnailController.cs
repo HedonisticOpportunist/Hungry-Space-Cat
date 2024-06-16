@@ -7,12 +7,15 @@ public class SnailController : MonoBehaviour
     [Header("Speed and Movmenet")]
     [SerializeField] float speed = 2.5f;
 
-    // OTHER GAME SCRIPTS 
+    SpriteRenderer _spriteRenderer;
     Rigidbody2D _body;
+
+    // OTHER GAME SCRIPTS 
     ControllerHelper _controllerHelper;
 
     void Awake()
     {
+        _spriteRenderer = GetComponent<SpriteRenderer>();
         _body = GetComponent<Rigidbody2D>();
         _controllerHelper = FindObjectOfType<ControllerHelper>();
     }
@@ -27,7 +30,7 @@ public class SnailController : MonoBehaviour
 
             if (_controllerHelper != null)
             {
-                _controllerHelper.FlipSprite(transform, _body, 0.4f);
+                _controllerHelper.FlipSprite(_spriteRenderer);
             }
         }
     }
