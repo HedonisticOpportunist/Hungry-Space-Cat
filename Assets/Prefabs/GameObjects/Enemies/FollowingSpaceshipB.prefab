@@ -13,12 +13,24 @@ PrefabInstance:
       value: FollowingSpaceshipB
       objectReference: {fileID: 0}
     - target: {fileID: 4394443112803520264, guid: 6edf2239352fb8c42a7f174fd22ee30a, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4394443112803520264, guid: 6edf2239352fb8c42a7f174fd22ee30a, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4394443112803520264, guid: 6edf2239352fb8c42a7f174fd22ee30a, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4394443112803520264, guid: 6edf2239352fb8c42a7f174fd22ee30a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 4.94
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4394443112803520264, guid: 6edf2239352fb8c42a7f174fd22ee30a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.36
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4394443112803520264, guid: 6edf2239352fb8c42a7f174fd22ee30a, type: 3}
       propertyPath: m_LocalPosition.z

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2834185021068553968}
   - component: {fileID: 7058788651492243433}
   - component: {fileID: 3168520037091279374}
-  - component: {fileID: 7342388484385651590}
+  - component: {fileID: 4279525757319493497}
   - component: {fileID: -3882374088453045159}
   m_Layer: 0
   m_Name: rock4
@@ -30,7 +30,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
+  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -114,8 +114,8 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!61 &7342388484385651590
-BoxCollider2D:
+--- !u!70 &4279525757319493497
+CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -146,19 +146,9 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.48384452, y: -1.031353}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 8.48, y: 8.33}
-    newSize: {x: 8.48, y: 8.33}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 2.967689, y: 4.062706}
-  m_EdgeRadius: 0
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 3, y: 5}
+  m_Direction: 0
 --- !u!114 &-3882374088453045159
 MonoBehaviour:
   m_ObjectHideFlags: 0
