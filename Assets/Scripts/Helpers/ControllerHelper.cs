@@ -1,6 +1,5 @@
 using System;
 using UnityEngine;
-using UnityEngine.UIElements;
 
 public class ControllerHelper : MonoBehaviour
 {
@@ -38,7 +37,19 @@ public class ControllerHelper : MonoBehaviour
 
     #region Sprite Behaviour
 
-    public void FlipSprite(Transform transform, Rigidbody2D body, float scale) => transform.localScale = new Vector2((-Mathf.Sign(body.velocity.x) / 2.0f), scale);
+    public void FlipSprite(SpriteRenderer spriteRenderer)
+    {
+        float horizontal = Input.GetAxis("Horizontal"); 
+
+        if (horizontal > 0f)
+        {
+            spriteRenderer.flipX = false; 
+        }
+        else
+        {
+            spriteRenderer.flipX = true;
+        }
+    }
 
     #endregion Sprite Behaviour
 
