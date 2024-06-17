@@ -74,6 +74,38 @@ public class ControllerHelper : MonoBehaviour
         }
     }
 
+    public void FollowTarget(Transform target, Transform transform, float speed, int lives)
+    {
+        /* Based on the below, with modifications, additions and deletions:
+        // @Credit: https://www.youtube.com/watch?v=2SXa10ILJms for the AI follow player movement. 
+        // @Credit: https://discussions.unity.com/t/gameobject1-move-away-when-gameobject2-gets-close/158522 for moving target away from player if too close. 
+        */
+
+        if (target != null && lives != 0)
+        {
+            Vector2 direction = target.position - transform.position;
+            float minDistance = 3f;
+
+            if (direction.sqrMagnitude > minDistance)
+            {
+                direction.Normalize(); // Keeps the length of the direction to one, thus constant. 
+                float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg; // This allows for smoother rotation. 
+                transform.SetPositionAndRotation(Vector2.MoveTowards(transform.position, target.transform.position, speed * Time.deltaTime), Quaternion.Euler(Vector3.forward * angle));
+            }
+            else
+            {
+                transform.position = Vector2.MoveTowards(transform.position, target.position, -1 * speed * Time.deltaTime);
+            }
+
+
+           
+        }
+        else
+        {
+            return;
+        }
+    }
+
     public void AvoidOtherAgents(GameObject[] otherObjects, Transform target, float spaceBetween, Rigidbody2D body)
     {
         /* Based on the below, with modifications, additions and deletions:

@@ -91,7 +91,7 @@ public class SceneLoaderManager : MonoBehaviour
 
     }
 
-    public void LoadUFOGame() => SceneManager.LoadScene(_normalModeScenes[0]);
+    public void LoadNormalMode() => SceneManager.LoadScene(_normalModeScenes[0]);
 
     public void ExitGame()
     {
@@ -165,12 +165,12 @@ public class SceneLoaderManager : MonoBehaviour
 
     void LoadEasyLevels(int currentSceneIndex)
     {
-        if (currentSceneIndex == 9)
+        if (currentSceneIndex == 10)
         {
             _fadeAnimation.SetUpFadeAnimation();
             SceneManager.LoadScene(_easyModeScenes[1]);
         }
-        else if (currentSceneIndex == 10)
+        else if (currentSceneIndex == 11)
         {
             _fadeAnimation.SetUpFadeAnimation();
             SceneManager.LoadScene(_easyModeScenes[2]);
