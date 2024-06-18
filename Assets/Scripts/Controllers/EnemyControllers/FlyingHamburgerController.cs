@@ -34,7 +34,7 @@ public class FlyingHamburgerController : MonoBehaviour
         if (_target != null)
         {
             _controllerHelper.AvoidOtherAgents(_hamburgers, this.transform, 2.5f, _body);
-            _controllerHelper.FollowPlayer(_target, this.transform, speed, _healthKeeper.GetLives());
+            _controllerHelper.FollowPlayer(_target, this.transform, speed, _healthKeeper.GetLives(), false);
         }
         else
         {

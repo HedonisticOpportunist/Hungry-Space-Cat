@@ -30,7 +30,7 @@ public class FollowingSpaceshipController : MonoBehaviour
     {
         if (_target != null)
         {
-            _controllerHelper.FollowTarget(_target, this.transform, speed, _healthKeeper.GetLives());
+            _controllerHelper.FollowPlayer(_target, this.transform, speed, _healthKeeper.GetLives(), true);
         }
         else
         {
