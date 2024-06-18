@@ -6,7 +6,6 @@ graphics = ["lovely", "good", "cartoony", "nice", "cute"]
 
 # join the array with any empty spaces 
 graphics = " ".join(graphics)
-# print(words)
 
 # set stopwords 
 stopwords = set(STOPWORDS)
