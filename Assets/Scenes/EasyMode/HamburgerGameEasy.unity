@@ -304,17 +304,27 @@ MonoBehaviour:
   m_GameObject: {fileID: 597306630}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4f231c4fb786f3946a6b90b886c48677, type: 3}
+  m_Script: {fileID: 11500000, guid: 01614664b831546d2ae94a42149d80ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_SendPointerHoverToParent: 1
-  m_HorizontalAxis: Horizontal
-  m_VerticalAxis: Vertical
-  m_SubmitButton: Submit
-  m_CancelButton: Cancel
-  m_InputActionsPerSecond: 10
-  m_RepeatDelay: 0.5
-  m_ForceModuleActive: 0
+  m_MoveRepeatDelay: 0.5
+  m_MoveRepeatRate: 0.1
+  m_XRTrackingOrigin: {fileID: 0}
+  m_ActionsAsset: {fileID: -944628639613478452, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
+  m_PointAction: {fileID: -1654692200621890270, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
+  m_MoveAction: {fileID: -8784545083839296357, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
+  m_SubmitAction: {fileID: 392368643174621059, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
+  m_CancelAction: {fileID: 7727032971491509709, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
+  m_LeftClickAction: {fileID: 3001919216989983466, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
+  m_MiddleClickAction: {fileID: -2185481485913320682, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
+  m_RightClickAction: {fileID: -4090225696740746782, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
+  m_ScrollWheelAction: {fileID: 6240969308177333660, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
+  m_TrackedDevicePositionAction: {fileID: 6564999863303420839, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
+  m_TrackedDeviceOrientationAction: {fileID: 7970375526676320489, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
+  m_DeselectOnBackgroundClick: 1
+  m_PointerBehavior: 0
+  m_CursorLockBehavior: 0
 --- !u!1 &650362841
 GameObject:
   m_ObjectHideFlags: 0
@@ -325,7 +335,7 @@ GameObject:
   m_Component:
   - component: {fileID: 650362842}
   m_Layer: 0
-  m_Name: Space Cat Position Spawner
+  m_Name: SpaceCat
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -496,7 +506,7 @@ GameObject:
   m_Component:
   - component: {fileID: 759218038}
   m_Layer: 0
-  m_Name: Other Scripts
+  m_Name: OtherScripts
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -517,6 +527,7 @@ Transform:
   m_Children:
   - {fileID: 1185048071}
   - {fileID: 7345584264062485935}
+  - {fileID: 1395725537}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &918235567
@@ -735,7 +746,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 759218038}
     m_Modifications:
     - target: {fileID: 3849156744098185669, guid: a5bb5079a58ee65408d0169847591d8c, type: 3}
       propertyPath: scoreText
@@ -763,15 +774,15 @@ PrefabInstance:
       objectReference: {fileID: 1742040018}
     - target: {fileID: 5004826749162117692, guid: a5bb5079a58ee65408d0169847591d8c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 11.204244
       objectReference: {fileID: 0}
     - target: {fileID: 5004826749162117692, guid: a5bb5079a58ee65408d0169847591d8c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 1.5896537
       objectReference: {fileID: 0}
     - target: {fileID: 5004826749162117692, guid: a5bb5079a58ee65408d0169847591d8c, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 0.112290144
       objectReference: {fileID: 0}
     - target: {fileID: 5004826749162117692, guid: a5bb5079a58ee65408d0169847591d8c, type: 3}
       propertyPath: m_LocalRotation.w
@@ -821,6 +832,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b566adb43ff0ea943b93aa8c6e115f38, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!4 &1395725537 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5004826749162117692, guid: a5bb5079a58ee65408d0169847591d8c, type: 3}
+  m_PrefabInstance: {fileID: 1395725535}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1495477641
 GameObject:
   m_ObjectHideFlags: 0
@@ -1671,6 +1687,5 @@ SceneRoots:
   - {fileID: 918235568}
   - {fileID: 759218038}
   - {fileID: 2484462292745739399}
-  - {fileID: 1395725535}
-  - {fileID: 1994862007}
   - {fileID: 665809344}
+  - {fileID: 1994862007}
