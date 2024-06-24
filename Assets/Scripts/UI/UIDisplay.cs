@@ -18,6 +18,7 @@ public class UIDisplay : MonoBehaviour
     HealthKeeper _healthKeeper;
 
     [Header("New Level")]
+    [SerializeField] TextMeshProUGUI loadGameText; 
     [SerializeField] TextMeshProUGUI newGameText;
 
     void Awake()
@@ -26,13 +27,23 @@ public class UIDisplay : MonoBehaviour
         _healthKeeper = FindObjectOfType<HealthKeeper>();
     }
 
-    void Start() => newGameText.text = "";
+    void Start()
+    {
+        newGameText.text = "";
+        loadGameText.text = "Wait for the game to load ...";
+
+    }
 
     void FixedUpdate()
     {
-
         scoreText.text = "Score: " + _scoreKeeper.GetScore().ToString("000000000");
         livesText.text = _healthKeeper.GetLives().ToString();
+
+        if (Timer.timerFinished)
+        {
+            loadGameText.text = "";
+        }
+
     }
 
     public void LoadNextGameText() => newGameText.text = "You will be redirected to the next level in five, four, three ...";
