@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-/* Based on the below, with minor modifications: 
+/* Based on the below, with modifications, deletions and additions: 
 // @Credit: https://gitlab.com/GameDevTV/unity2d-v3/laser-defender/-/blob/master/Assets/Scripts/Pathfinder.cs
 // Part of the https://www.gamedev.tv/p/unity-2d-game-dev-course-2021 course
 */
@@ -11,10 +11,15 @@ public class WaveEnemyController : MonoBehaviour
     // OTHER GAME SCRIPTS
     SpawnWaveEnemies _spawnWaveEnemies;
     WavesConfig _waveConfig;
+
+    // PRIVATE VARIABLES
     List<Transform> _waypoints;
     int _waypointIndex = 0;
 
-    void Awake() => _spawnWaveEnemies = FindObjectOfType<SpawnWaveEnemies>();
+    void Awake()
+    {
+        _spawnWaveEnemies = FindObjectOfType<SpawnWaveEnemies>();
+    }
 
     void Start()
     {
@@ -27,7 +32,7 @@ public class WaveEnemyController : MonoBehaviour
 
     void FollowWavePath()
     {
-        if (_waypointIndex < _waypoints.Count)
+        if (_waypointIndex < _waypoints.Count && Timer.timerFinished)
         {
             Vector3 targetPosition = _waypoints[_waypointIndex].position;
             float delta = _waveConfig.GetMoveSpeed() * Time.deltaTime;

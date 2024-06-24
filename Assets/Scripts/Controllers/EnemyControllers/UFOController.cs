@@ -15,19 +15,17 @@ public class UFOController : MonoBehaviour
 
     // OTHER GAME SCRIPTS 
     ControllerHelper _controllerHelper;
-
     void Awake()
     {
         _spriteRenderer = GetComponent<SpriteRenderer>();
         _body = GetComponent<Rigidbody2D>();
         _controllerHelper = FindObjectOfType<ControllerHelper>();
     }
-
     void Update() => MoveUFO();
 
     void OnTriggerExit2D(Collider2D other)
     {
-        if (other.CompareTag("Boundary") && !PauseMenu.isPaused)
+        if (other.CompareTag("Boundary") && !PauseMenu.isPaused && Timer.timerFinished)
         {
             speed = -speed;
 
@@ -37,5 +35,11 @@ public class UFOController : MonoBehaviour
             }
         }
     }
-    void MoveUFO() => _body.velocity = new Vector2(speed, 0);
+    void MoveUFO()
+    {
+        if (_body != null && Timer.timerFinished)
+        {
+            _body.velocity = new Vector2(speed, 0);
+        }
+    }
 }

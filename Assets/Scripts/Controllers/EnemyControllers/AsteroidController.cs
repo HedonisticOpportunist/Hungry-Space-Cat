@@ -14,7 +14,7 @@ public class AsteroidController : MonoBehaviour
     Rigidbody2D _body;
 
     // OTHER GAME SCRIPTS
-    ControllerHelper _controllerHelper; 
+    ControllerHelper _controllerHelper;
 
 
     void Awake()
@@ -25,7 +25,7 @@ public class AsteroidController : MonoBehaviour
     }
     void Update()
     {
-        if (_body != null)
+        if (_body != null && Timer.timerFinished)
         {
             RotateAsteroid();
             MoveAsteroid();
@@ -34,7 +34,7 @@ public class AsteroidController : MonoBehaviour
 
     void OnTriggerExit2D(Collider2D other)
     {
-        if (other.CompareTag("Boundary") && !PauseMenu.isPaused)
+        if (other.CompareTag("Boundary") && !PauseMenu.isPaused && Timer.timerFinished)
         {
             speed = -speed;
 

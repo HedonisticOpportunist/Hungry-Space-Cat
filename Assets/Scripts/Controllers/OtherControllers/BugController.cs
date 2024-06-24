@@ -26,8 +26,7 @@ public class BugController : MonoBehaviour
 
     void Start() => yPosition = transform.position.y;
 
-    void Update() => _controllerHelper.MoveUpAndDown(transform, yPosition, speed, floatStrength);
-       
+    void Update() => MoveBugs();
 
     void OnTriggerEnter2D(Collider2D other)
     {
@@ -37,7 +36,7 @@ public class BugController : MonoBehaviour
         // Part of the https://www.gamedev.tv/p/unity-2d-game-dev-course-2021 course
         */
 
-        if (other.CompareTag("SpaceCat") && !_wasEaten && !PauseMenu.isPaused)
+        if (other.CompareTag("SpaceCat") && !_wasEaten && !PauseMenu.isPaused && Timer.timerFinished)
         {
 
             _wasEaten = true;
@@ -47,9 +46,17 @@ public class BugController : MonoBehaviour
             Destroy(gameObject);
         }
 
-        if (other.CompareTag("Bug") && !PauseMenu.isPaused)
+        if (other.CompareTag("Bug") && !PauseMenu.isPaused && Timer.timerFinished)
         {
             Destroy(other.gameObject);
+        }
+    }
+
+    void MoveBugs()
+    {
+        if (Timer.timerFinished)
+        {
+            _controllerHelper.MoveUpAndDown(transform, yPosition, speed, floatStrength);
         }
     }
 }

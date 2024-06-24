@@ -17,28 +17,27 @@ public class SpaceCatController : MonoBehaviour
 
     float _damageCountDown = 0;
     int _lives = 9;
-    bool _bugsEaten; 
-    
+    bool _bugsEaten;
+
     SpriteRenderer _spriteRenderer;
     Rigidbody2D _body;
 
     // OTHER GAME SCRIPTS 
     AudioPlayer _audioPlayer;
     ControllerHelper _controllerHelper;
-
     HealthKeeper _healthKeeper;
     SceneLoaderManager _sceneLoaderManager;
-    SpawnerHelper _spawnerHelper;
 
+    SpawnerHelper _spawnerHelper;
     ScoreKeeper _scoreKeeper;
     UIDisplay _uIDisplay;
-    SpriteEffects _spriteEffects; 
+    SpriteEffects _spriteEffects;
 
     void Awake()
     {
         _body = GetComponent<Rigidbody2D>();
         _spriteRenderer = GetComponent<SpriteRenderer>();
-        _bugsEaten = false; 
+        _bugsEaten = false;
 
         _audioPlayer = FindObjectOfType<AudioPlayer>();
         _controllerHelper = FindObjectOfType<ControllerHelper>();
@@ -47,7 +46,7 @@ public class SpaceCatController : MonoBehaviour
         _healthKeeper = FindObjectOfType<HealthKeeper>();
         _sceneLoaderManager = FindObjectOfType<SceneLoaderManager>();
         _spawnerHelper = FindObjectOfType<SpawnerHelper>();
-        
+
         _scoreKeeper = FindObjectOfType<ScoreKeeper>();
         _spriteEffects = FindObjectOfType<SpriteEffects>();
     }
@@ -62,7 +61,7 @@ public class SpaceCatController : MonoBehaviour
     void FixedUpdate()
     {
 
-        if (isAlive)
+        if (isAlive && Timer.timerFinished)
         {
             DealWithNumberOfBugs();
 
@@ -86,7 +85,7 @@ public class SpaceCatController : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("UFO") && !PauseMenu.isPaused && !_bugsEaten)
+        if (other.CompareTag("UFO") && !PauseMenu.isPaused && !_bugsEaten && Timer.timerFinished)
         {
             OnPlayerDamage();
 
@@ -97,7 +96,7 @@ public class SpaceCatController : MonoBehaviour
             }
         }
 
-        if (other.CompareTag("Bug") && !_bugsEaten && !PauseMenu.isPaused)
+        if (other.CompareTag("Bug") && !_bugsEaten && !PauseMenu.isPaused && Timer.timerFinished)
         {
             if (DealWithEffects.spriteEffectsEnabled)
             {

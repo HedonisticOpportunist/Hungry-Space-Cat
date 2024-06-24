@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class SnailController : MonoBehaviour
@@ -12,6 +10,7 @@ public class SnailController : MonoBehaviour
 
     // OTHER GAME SCRIPTS 
     ControllerHelper _controllerHelper;
+    Timer _timer;
 
     void Awake()
     {
@@ -24,7 +23,7 @@ public class SnailController : MonoBehaviour
 
     void OnTriggerExit2D(Collider2D other)
     {
-        if (other.CompareTag("Boundary") && !PauseMenu.isPaused)
+        if (other.CompareTag("Boundary") && !PauseMenu.isPaused && Timer.timerFinished)
         {
             speed = -speed;
 
@@ -34,6 +33,12 @@ public class SnailController : MonoBehaviour
             }
         }
     }
-    void MoveSnail() => _body.velocity = new Vector2(speed * 0.5f, speed);
+    void MoveSnail()
+    {
+        if (_body != null && Timer.timerFinished)
+        {
+            _body.velocity = new Vector2(speed * 0.5f, speed);
+        }
+    }
 }
 

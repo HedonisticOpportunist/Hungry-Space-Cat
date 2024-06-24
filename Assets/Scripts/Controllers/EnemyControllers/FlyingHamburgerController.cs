@@ -19,6 +19,7 @@ public class FlyingHamburgerController : MonoBehaviour
         _controllerHelper = FindObjectOfType<ControllerHelper>();
         _healthKeeper = FindObjectOfType<HealthKeeper>();
         _body = GetComponent<Rigidbody2D>();
+        
     }
 
     void Start()
@@ -26,12 +27,11 @@ public class FlyingHamburgerController : MonoBehaviour
         _spaceCat = GameObject.FindWithTag("SpaceCat");
         _target = _spaceCat.transform;
         _hamburgers = GameObject.FindGameObjectsWithTag("UFO");
-
     }
 
     void FixedUpdate()
     {
-        if (_target != null)
+        if (_target != null && Timer.timerFinished && _body != null)
         {
             _controllerHelper.AvoidOtherAgents(_hamburgers, this.transform, 2.5f, _body);
             _controllerHelper.FollowPlayer(_target, this.transform, speed, _healthKeeper.GetLives(), false);
@@ -44,7 +44,7 @@ public class FlyingHamburgerController : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("UFO") && !PauseMenu.isPaused)
+        if (other.CompareTag("UFO") && !PauseMenu.isPaused && Timer.timerFinished)
         {
             Destroy(other.gameObject);
         }

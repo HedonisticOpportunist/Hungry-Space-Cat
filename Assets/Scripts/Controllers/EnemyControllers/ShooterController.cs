@@ -21,10 +21,15 @@ public class ShooterController : MonoBehaviour
     readonly bool _isFiring = true;
     Coroutine _firingCoroutine;
     Transform _target;
-    AudioPlayer _audioPlayer;
     GameObject _spaceCat;
 
-    void Awake() => _audioPlayer = FindObjectOfType<AudioPlayer>();
+    // OTHER GAME SCRIPTS
+    AudioPlayer _audioPlayer;
+
+    void Awake()
+    {
+        _audioPlayer = FindObjectOfType<AudioPlayer>();
+    }
 
     void Start()
     {
@@ -34,7 +39,7 @@ public class ShooterController : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (_target != null)
+        if (_target != null && Timer.timerFinished)
         {
             FireProjectiles();
         }
@@ -46,7 +51,7 @@ public class ShooterController : MonoBehaviour
 
     void FireProjectiles()
     {
-        if (_isFiring && _firingCoroutine == null && !PauseMenu.isPaused)
+        if (_isFiring && _firingCoroutine == null && !PauseMenu.isPaused && Timer.timerFinished)
         {
             _firingCoroutine = StartCoroutine(FireContinuously());
         }

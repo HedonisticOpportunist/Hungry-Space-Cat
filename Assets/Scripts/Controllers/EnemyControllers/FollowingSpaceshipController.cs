@@ -9,7 +9,6 @@ public class FollowingSpaceshipController : MonoBehaviour
     // OTHER GAME SCRIPTS
     Transform _target;
     GameObject _spaceCat;
-
     ControllerHelper _controllerHelper;
     HealthKeeper _healthKeeper;
 
@@ -21,14 +20,14 @@ public class FollowingSpaceshipController : MonoBehaviour
     }
 
     void Start()
-    {
+    {   
         _spaceCat = GameObject.FindWithTag("SpaceCat");
         _target = _spaceCat.transform;
     }
 
     void FixedUpdate()
     {
-        if (_target != null)
+        if (_target != null && Timer.timerFinished)
         {
             _controllerHelper.FollowPlayer(_target, this.transform, speed, _healthKeeper.GetLives(), true);
         }
