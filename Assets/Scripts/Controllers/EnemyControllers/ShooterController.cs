@@ -14,8 +14,7 @@ public class ShooterController : MonoBehaviour
     [SerializeField] float lifeTime = 5f;
     [SerializeField] float firingRate = 0.2f;
 
-    [Header("Firing Variance")]
-    [SerializeField] float firingRateVariance = 0f;
+    [Header("Firing Variance")][SerializeField] float firingRateVariance = 0f;
     [SerializeField] float minimumFiringRate = 0.1f;
 
     readonly bool _isFiring = true;
@@ -69,7 +68,7 @@ public class ShooterController : MonoBehaviour
             GameObject instance = Instantiate(projectilePrefab, transform.position, Quaternion.Euler(_target.position.x, _target.position.y, 90));
 
             if (instance.TryGetComponent<Rigidbody2D>(out
-                var _body))
+            var _body))
             {
                 _body.velocity = transform.right * speed;
             }
@@ -81,7 +80,8 @@ public class ShooterController : MonoBehaviour
 
             _audioPlayer.PlayLaserClip();
 
-            yield return new WaitForSeconds(timeToNextProjectile);
+            yield
+            return new WaitForSeconds(timeToNextProjectile);
         }
     }
 }

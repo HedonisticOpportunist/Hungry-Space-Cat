@@ -2,8 +2,7 @@ using System.Collections;
 using UnityEngine;
 public class SpaceCatController : MonoBehaviour
 {
-    [Header("Boolean Variables")]
-    [SerializeField] bool isAlive = true;
+    [Header("Boolean Variables")][SerializeField] bool isAlive = true;
     [SerializeField] bool modeEasy = true;
 
     [Header("Speed and Movement")]
@@ -72,8 +71,7 @@ public class SpaceCatController : MonoBehaviour
                 _controllerHelper.FlipSprite(_spriteRenderer);
             }
 
-            if (_damageCountDown > 0)
-                _damageCountDown -= Time.deltaTime;
+            if (_damageCountDown > 0) _damageCountDown -= Time.deltaTime;
         }
         else
         {

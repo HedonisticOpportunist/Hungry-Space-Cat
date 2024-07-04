@@ -20,7 +20,7 @@ public class FollowingSpaceshipController : MonoBehaviour
     }
 
     void Start()
-    {   
+    {
         _spaceCat = GameObject.FindWithTag("SpaceCat");
         _target = _spaceCat.transform;
     }

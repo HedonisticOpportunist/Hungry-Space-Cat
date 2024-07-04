@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class SnailController : MonoBehaviour
 {
-    [Header("Speed and Movmenet")]
+    [Header("Speed and Movement")]
     [SerializeField] float speed = 2.5f;
 
     SpriteRenderer _spriteRenderer;
@@ -41,4 +41,3 @@ public class SnailController : MonoBehaviour
         }
     }
 }
-

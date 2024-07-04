@@ -19,7 +19,7 @@ public class FlyingHamburgerController : MonoBehaviour
         _controllerHelper = FindObjectOfType<ControllerHelper>();
         _healthKeeper = FindObjectOfType<HealthKeeper>();
         _body = GetComponent<Rigidbody2D>();
-        
+
     }
 
     void Start()

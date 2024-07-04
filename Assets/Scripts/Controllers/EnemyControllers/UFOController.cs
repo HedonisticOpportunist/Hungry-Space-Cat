@@ -7,7 +7,7 @@ using UnityEngine;
 
 public class UFOController : MonoBehaviour
 {
-    [Header("Speed and Movmenet")]
+    [Header("Speed and Movement")]
     [SerializeField] float speed = 2.5f;
 
     SpriteRenderer _spriteRenderer;
@@ -35,6 +35,7 @@ public class UFOController : MonoBehaviour
             }
         }
     }
+
     void MoveUFO()
     {
         if (_body != null && Timer.timerFinished)

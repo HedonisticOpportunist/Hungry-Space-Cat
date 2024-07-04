@@ -6,16 +6,14 @@ using UnityEngine;
 
 public class AsteroidController : MonoBehaviour
 {
-    [Header("Speed and Rotation")]
-    [SerializeField] float speed = 2.4f;
+    [Header("Speed and Rotation")][SerializeField] float speed = 2.4f;
     [SerializeField] float rotationSpeed = 1.5f;
 
-    SpriteRenderer _spriteRenderer; 
+    SpriteRenderer _spriteRenderer;
     Rigidbody2D _body;
 
     // OTHER GAME SCRIPTS
     ControllerHelper _controllerHelper;
-
 
     void Awake()
     {
@@ -23,13 +21,14 @@ public class AsteroidController : MonoBehaviour
         _body = GetComponent<Rigidbody2D>();
         _controllerHelper = GetComponent<ControllerHelper>();
     }
+
     void Update()
     {
         if (_body != null && Timer.timerFinished)
         {
             RotateAsteroid();
             MoveAsteroid();
-        }   
+        }
     }
 
     void OnTriggerExit2D(Collider2D other)
