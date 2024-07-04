@@ -1,24 +1,58 @@
 from wordcloud import WordCloud, STOPWORDS
 import matplotlib.pyplot as plt
 
-# create an array of adjectives
-words = ["lovely", "good", "cartoony", "nice", "cute", "great", "nice", "nice", "accessible", "fun", "playable", "challenging", "good", "mature", "fun", 
-"alright", "unique", "good", "playable", "good", "fast-paced", "good", "responsive", "challenging", "right", "fine", "good", "good"]
+# create an array of adjectives and word types that describe the game
+words = [
+    "lovely",
+    "palette feels like velvet",
+    "good",
+    "cartoony",
+    "nice",
+    "cute",
+    "great",
+    "nice",
+    "nice",
+    "accessible",
+    "fun",
+    "playable",
+    "challenging",
+    "good",
+    "mature",
+    "fun",
+    "better gameplay experience and challenge",
+    "nice variety of enemies to face",
+    "feels like a prototype",
+    "alright",
+    "excellent job showing damage",
+    "game idea itself is excellent",
+    "unique",
+    "good",
+    "playable",
+    "good",
+    "fast-paced",
+    "good",
+    "responsive",
+    "challenging",
+    "right",
+    "fine",
+    "good",
+    "good",
+]
 
-# join the array with any empty spaces 
+# join the array with any empty spaces
 words = " ".join(words)
 # print(words)
 
-# set stopwords 
+# set stopwords
 stopwords = set(STOPWORDS)
 
-# set up the word cloud 
-wordcloud = WordCloud(background_color ='beige', stopwords = stopwords).generate(words)
- 
-# plot the word cloud image                       
-plt.figure(figsize = (8, 8), facecolor = None)
-plt.imshow(wordcloud, interpolation='bilinear')
+# set up the word cloud
+wordcloud = WordCloud(background_color="beige", stopwords=stopwords).generate(words)
+
+# plot the word cloud image
+plt.figure(figsize=(8, 8), facecolor=None)
+plt.imshow(wordcloud, interpolation="bilinear")
 plt.axis("off")
-plt.tight_layout(pad = 0)
- 
+plt.tight_layout(pad=0)
+
 plt.show()
