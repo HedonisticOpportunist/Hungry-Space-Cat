@@ -11,6 +11,7 @@ words = [
     "cute",
     "great",
     "nice",
+    "good",
     "nice",
     "accessible",
     "fun",
