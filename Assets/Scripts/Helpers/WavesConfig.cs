@@ -39,8 +39,7 @@ public class WavesConfig : ScriptableObject
 
     public float GetRandomSpawnTime()
     {
-        float spawnTime = Random.Range(timeBetweenEnemySpawns - spawnTimeVariance,
-          timeBetweenEnemySpawns + spawnTimeVariance);
+        float spawnTime = Random.Range(timeBetweenEnemySpawns - spawnTimeVariance, timeBetweenEnemySpawns + spawnTimeVariance);
         return Mathf.Clamp(spawnTime, minimumSpawnTime, float.MaxValue);
     }
 }

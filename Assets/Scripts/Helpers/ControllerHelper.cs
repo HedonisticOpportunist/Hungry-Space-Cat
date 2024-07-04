@@ -39,11 +39,11 @@ public class ControllerHelper : MonoBehaviour
 
     public void FlipSprite(SpriteRenderer spriteRenderer)
     {
-        float horizontal = Input.GetAxis("Horizontal"); 
+        float horizontal = Input.GetAxis("Horizontal");
 
         if (horizontal > 0f)
         {
-            spriteRenderer.flipX = false; 
+            spriteRenderer.flipX = false;
         }
         else
         {
@@ -106,7 +106,7 @@ public class ControllerHelper : MonoBehaviour
     }
     #endregion Interactions
 
-    #region Movement 
+    #region Movement
 
     /* Based on the following, with modifications:
     // @Credit: https://gamedev.stackexchange.com/questions/96878/how-to-animate-objects-with-bobbing-up-and-down-motion-in-unity
