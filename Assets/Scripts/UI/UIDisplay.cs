@@ -18,7 +18,7 @@ public class UIDisplay : MonoBehaviour
     HealthKeeper _healthKeeper;
 
     [Header("New Level")]
-    [SerializeField] TextMeshProUGUI loadGameText; 
+    [SerializeField] TextMeshProUGUI loadGameText;
     [SerializeField] TextMeshProUGUI newGameText;
 
     void Awake()

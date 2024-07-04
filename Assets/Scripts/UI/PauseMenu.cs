@@ -6,8 +6,8 @@ using UnityEngine;
 */
 public class PauseMenu : MonoBehaviour
 {
-    [Header("Pause Menu")]
-    [SerializeField] GameObject pauseMenu;
+
+    [Header("Pause Menu")][SerializeField] GameObject pauseMenu;
     public static bool isPaused;
 
     void Start() => pauseMenu.SetActive(false);

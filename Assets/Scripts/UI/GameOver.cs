@@ -4,6 +4,7 @@ using UnityEngine.SceneManagement;
 
 public class GameOver : MonoBehaviour
 {
+
     [Header("GameOver")]
     [SerializeField] TextMeshProUGUI scoreText;
     ScoreKeeper _scoreKeeper;
@@ -52,9 +53,9 @@ public class GameOver : MonoBehaviour
 
         if (previousSceneIndex == 9 || previousSceneIndex == 12)
         {
-           
+
             gameEnded = true;
-        } 
+        }
         else
         {
             gameEnded = false;
