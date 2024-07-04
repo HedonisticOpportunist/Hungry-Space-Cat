@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Timer: MonoBehaviour
+public class Timer : MonoBehaviour
 {
     [Header("Pause Player and Enemy Movement Time")]
     [SerializeField] float timeLeft = 3.0f;

@@ -50,11 +50,13 @@ public class SceneLoaderManager : MonoBehaviour
 
     public void LoadAdoptACatSite() => Application.OpenURL("https://hedonisticopportunist.github.io/Cats-in-Neath/");
 
+    public void LeaveFeedback() => Application.OpenURL("https://github.com/HedonisticOpportunist");
+
     public void LoadInstructions() => SceneManager.LoadScene(_menuScenes[2]);
 
     public void LoadMenuScene()
     {
-        PauseMenu.isPaused = false; 
+        PauseMenu.isPaused = false;
         AudioListener.pause = false;
         Time.timeScale = 1f;
         _scoreKeeper.ResetScore();
@@ -68,7 +70,7 @@ public class SceneLoaderManager : MonoBehaviour
 
     public void LoadEndScene()
     {
-        PlayerPrefs.SetInt("PreviousScene", SceneManager.GetActiveScene().buildIndex); 
+        PlayerPrefs.SetInt("PreviousScene", SceneManager.GetActiveScene().buildIndex);
         _fadeAnimation.SetUpFadeAnimation();
         SceneManager.LoadScene(_menuScenes[4]);
     }
@@ -106,13 +108,13 @@ public class SceneLoaderManager : MonoBehaviour
     public void ExitGame()
     {
         /* Based on with modifications: 
-        // @Credit: https://gamedevbeginner.com/how-to-quit-the-game-in-unity/ 
-        // Prepreprocessor directives allow for the running of different code depending on conditions 
-        */
+            // @Credit: https://gamedevbeginner.com/how-to-quit-the-game-in-unity/ 
+            // Prepreprocessor directives allow for the running of different code depending on conditions 
+            */
 
-#if UNITY_EDITOR
+        #if UNITY_EDITOR
         UnityEditor.EditorApplication.isPlaying = false;
-#endif
+        #endif
         _fadeAnimation.SetUpFadeAnimation();
         Application.Quit();
     }
