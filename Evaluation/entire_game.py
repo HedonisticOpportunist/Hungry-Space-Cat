@@ -2,8 +2,8 @@ from wordcloud import WordCloud, STOPWORDS
 import matplotlib.pyplot as plt
 
 # create an array of adjectives
-words = ["lovely", "good", "cartoony", "nice", "cute", "great", "nice", "nice", "fun", "playable", "challenging", "good", "mature", "fun", 
-"unique", "good", "playable", "good", "fast-paced", "good", "responsive", "challenging", "right"]
+words = ["lovely", "good", "cartoony", "nice", "cute", "great", "nice", "nice", "accessible", "fun", "playable", "challenging", "good", "mature", "fun", 
+"alright", "unique", "good", "playable", "good", "fast-paced", "good", "responsive", "challenging", "right", "fine", "good", "good"]
 
 # join the array with any empty spaces 
 words = " ".join(words)
