@@ -6,6 +6,7 @@ using UnityEngine;
 */
 public class BackgroundSpriteScroller : MonoBehaviour
 {
+
     [Header("Movement Speed")]
     [SerializeField] Vector2 moveSpeed;
     Vector2 _offset;

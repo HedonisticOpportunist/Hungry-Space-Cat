@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 
 /* Based on the below, with minor modifications, additions and deletions:
@@ -9,12 +8,9 @@ using UnityEngine;
 public class FadeAnimation : MonoBehaviour
 {
     [Header("Fade In/Out Time, Colour and Duration Settings")]
-    [SerializeField]
-    float fadeTime = 5.0f;
-    [SerializeField]
-    Color fadeColor = new(255.0f, 255.0f, 255.0f, 1.0f);
-    [SerializeField]
-    float blackScreenDuration;
+    [SerializeField] float fadeTime = 5.0f;
+    [SerializeField] Color fadeColor = new(255.0f, 255.0f, 255.0f, 1.0f);
+    [SerializeField] float blackScreenDuration;
 
     // STATES
     bool _isFadingIn = false;
@@ -106,7 +102,8 @@ public class FadeAnimation : MonoBehaviour
 
     void ShowBlackScreen()
     {
-        if (_isFadingIn && _alpha <= 0.0f) {
+        if (_isFadingIn && _alpha <= 0.0f)
+        {
             _isFadingIn = false;
 
             return;
@@ -121,7 +118,8 @@ public class FadeAnimation : MonoBehaviour
             return;
         }
 
-        if (_isFadingOut && _alpha >= 1.0f) {
+        if (_isFadingOut && _alpha >= 1.0f)
+        {
             return;
         }
 
