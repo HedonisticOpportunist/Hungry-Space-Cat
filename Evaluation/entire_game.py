@@ -22,7 +22,6 @@ words = [
     "fun",
     "better gameplay experience and challenge",
     "nice variety of enemies to face",
-    "feels like a prototype",
     "alright",
     "excellent job showing damage",
     "game idea itself is excellent",
@@ -37,6 +36,11 @@ words = [
     "right",
     "fine",
     "good",
+    "good",
+    "simple",
+    "fun",
+    "good variety of enemy types",
+    "fun game to play",
     "good",
 ]
 
