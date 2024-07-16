@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 /* Based on the below, with modifications, additions and deletions:
 // @Credit: https://gitlab.com/GameDevTV/unity2d-v3/laser-defender/-/blob/master/Assets/Scripts/AudioPlayer.cs
@@ -22,7 +21,6 @@ public class AudioPlayer : MonoBehaviour
 
     [Header("Background")]
     [SerializeField] AudioSource audioSource;
-    int _sceneNumber;
 
     static AudioPlayer instance;
 
@@ -31,12 +29,6 @@ public class AudioPlayer : MonoBehaviour
         ManageSingleton();
         audioSource = GetComponent<AudioSource>();
     }
-
-    void Update()
-    {
-        HandleBackgroundSound();
-    }
-
     void ManageSingleton()
     {
 
@@ -64,28 +56,6 @@ public class AudioPlayer : MonoBehaviour
         {
             Vector3 cameraPosition = Camera.main.transform.position;
             AudioSource.PlayClipAtPoint(audioClip, cameraPosition, volume);
-        }
-    }
-
-    void HandleBackgroundSound()
-    {
-        _sceneNumber = SceneManager.GetActiveScene().buildIndex;
-
-        if (_sceneNumber < 4)
-        {
-            Camera.main.GetComponent<AudioListener>().enabled = false;
-            audioSource.Pause();
-            audioSource.mute = true;
-        }
-        if (_sceneNumber >= 4 && _sceneNumber <= 12)
-        {
-            Camera.main.GetComponent<AudioListener>().enabled = true;
-            audioSource.UnPause();
-            audioSource.mute = false;
-        }
-        else
-        {
-            return;
         }
     }
 }
