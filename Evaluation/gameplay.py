@@ -1,7 +1,7 @@
 from wordcloud import WordCloud, STOPWORDS
 import matplotlib.pyplot as plt
 
-# create an array of adjectives and other descriptive words
+# create an array of adjectives
 gameplay = [
     "accessible",
     "fun",
@@ -10,12 +10,9 @@ gameplay = [
     "good",
     "mature",
     "fun",
-    "better gameplay experience and challenge",
-    "nice variety of enemies to face",
     "alright",
-    "excellent job showing damage",
-    "game idea itself is excellent",
     "unique",
+    "charming",
     "good",
     "playable",
     "good",
@@ -23,15 +20,20 @@ gameplay = [
     "good",
     "responsive",
     "challenging",
-    "right",
     "fine",
     "good",
-    "good",
+    "purposeful",
     "simple",
     "fun",
-    "good variety of enemy types",
-    "fun game to play",
+    "fun",
     "good",
+    "easy",
+    "understandable",
+    "good",
+    "simple",
+    "functional",
+    "well-developed",
+    "interactive" "enjoyable",
 ]
 
 # join the array with any empty spaces
@@ -50,3 +52,4 @@ plt.axis("off")
 plt.tight_layout(pad=0)
 
 plt.show()
+
