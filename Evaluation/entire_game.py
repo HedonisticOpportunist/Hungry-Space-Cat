@@ -41,6 +41,7 @@ words = [
     "simple",
     "fun",
     "fun",
+    "good",
     "easy",
     "understandable",
     "good",
