@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 /* Based on the below, with minor modifications:
 // @Credit: https://www.youtube.com/watch?v=9dYDBomQpBQ
@@ -11,7 +10,6 @@ public class PauseMenu : MonoBehaviour
     [Header("Pause Menu")]
     [SerializeField] GameObject pauseMenu;
     public static bool isPaused;
-    int _sceneNumber;
 
     void Start() => pauseMenu.SetActive(false);
 
@@ -37,13 +35,7 @@ public class PauseMenu : MonoBehaviour
         isPaused = true;
         pauseMenu.SetActive(true);
         Time.timeScale = 0f;
-
-        _sceneNumber = SceneManager.GetActiveScene().buildIndex;
-
-        if (_sceneNumber != 0)
-        {
-            AudioListener.pause = true;
-        }
+        AudioListener.pause = true;
     }
 
     public void ResumeGame()
