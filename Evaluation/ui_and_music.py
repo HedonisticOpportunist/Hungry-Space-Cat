@@ -1,8 +1,16 @@
 from wordcloud import WordCloud, STOPWORDS
 import matplotlib.pyplot as plt
 
-# create an array of adjectives and other descriptive words 
-ui_and_music = ["great", "nice", "good", "nice"]
+# create an array of adjectives
+ui_and_music = [
+    "great",
+    "nice",
+    "good",
+    "awesome",
+    "straightforward",
+    "customisable",
+    "nice",
+]
 
 # join the array with any empty spaces
 ui_and_music = " ".join(ui_and_music)
