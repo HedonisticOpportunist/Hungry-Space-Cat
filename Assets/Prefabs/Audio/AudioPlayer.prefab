@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1077991818636143845}
   - component: {fileID: 1938646425153345294}
-  - component: {fileID: 6688734223780562349}
+  - component: {fileID: 4058811366401771590}
   m_Layer: 0
   m_Name: AudioPlayer
   m_TagString: Untagged
@@ -51,8 +51,8 @@ MonoBehaviour:
   _catDamageVolume: 1
   laserClip: {fileID: 8300000, guid: f692268ca93bad345a62ee8fd511f336, type: 3}
   _laserVolume: 1
-  audioSource: {fileID: 6688734223780562349}
---- !u!82 &6688734223780562349
+  audioSource: {fileID: 4058811366401771590}
+--- !u!82 &4058811366401771590
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
