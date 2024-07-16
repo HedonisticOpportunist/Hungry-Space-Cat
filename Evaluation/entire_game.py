@@ -10,6 +10,7 @@ words = [
     "nice",
     "cute",
     "nice",
+    "nice",
     "great",
     "nice",
     "good",
