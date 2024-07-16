@@ -1,14 +1,15 @@
 from wordcloud import WordCloud, STOPWORDS
 import matplotlib.pyplot as plt
 
-# create an array of adjectives and word types that describe the game
+# create an array of adjectives to describe the game
 words = [
     "lovely",
-    "palette feels like velvet",
+    "velvety",
     "good",
     "cartoony",
     "nice",
     "cute",
+    "nice",
     "great",
     "nice",
     "good",
