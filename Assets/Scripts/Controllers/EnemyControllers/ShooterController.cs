@@ -38,7 +38,7 @@ public class ShooterController : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (_target != null && Timer.timerFinished)
+        if (_target != null && Timer.timerFinished && !PauseMenu.isPaused)
         {
             FireProjectiles();
         }

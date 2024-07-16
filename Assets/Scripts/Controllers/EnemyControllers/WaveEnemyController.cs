@@ -32,7 +32,7 @@ public class WaveEnemyController : MonoBehaviour
 
     void FollowWavePath()
     {
-        if (_waypointIndex < _waypoints.Count && Timer.timerFinished)
+        if (_waypointIndex < _waypoints.Count && Timer.timerFinished && !PauseMenu.isPaused)
         {
             Vector3 targetPosition = _waypoints[_waypointIndex].position;
             float delta = _waveConfig.GetMoveSpeed() * Time.deltaTime;

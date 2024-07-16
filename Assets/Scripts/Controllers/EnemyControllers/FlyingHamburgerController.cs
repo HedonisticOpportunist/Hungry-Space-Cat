@@ -31,7 +31,7 @@ public class FlyingHamburgerController : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (_target != null && Timer.timerFinished && _body != null)
+        if (_target != null && Timer.timerFinished && _body != null && !PauseMenu.isPaused)
         {
             _controllerHelper.AvoidOtherAgents(_hamburgers, this.transform, 2.5f, _body);
             _controllerHelper.FollowPlayer(_target, this.transform, speed, _healthKeeper.GetLives(), false);

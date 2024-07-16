@@ -52,7 +52,7 @@ public class BugController : MonoBehaviour
 
     void MoveBugs()
     {
-        if (Timer.timerFinished)
+        if (Timer.timerFinished && !PauseMenu.isPaused)
         {
             _controllerHelper.MoveUpAndDown(transform, yPosition, speed, floatStrength);
         }

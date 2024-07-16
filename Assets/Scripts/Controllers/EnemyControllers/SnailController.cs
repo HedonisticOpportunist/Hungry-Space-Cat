@@ -35,7 +35,7 @@ public class SnailController : MonoBehaviour
     }
     void MoveSnail()
     {
-        if (_body != null && Timer.timerFinished)
+        if (_body != null && Timer.timerFinished && !PauseMenu.isPaused)
         {
             _body.velocity = new Vector2(speed * 0.5f, speed);
         }

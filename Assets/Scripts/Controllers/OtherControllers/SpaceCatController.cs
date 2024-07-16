@@ -6,14 +6,12 @@ public class SpaceCatController : MonoBehaviour
     [SerializeField] bool modeEasy = true;
 
     [Header("Speed and Movement")]
-    [SerializeField] float speed = 15.0f;
     [SerializeField] float damageDelay = 1.0f;
     [SerializeField] float thrust = 2.0f;
 
-    readonly float _maxSpeed = 10;
+
     float _horizontal;
     float _vertical;
-
     float _damageCountDown = 0;
     int _lives = 9;
     bool _bugsEaten;
@@ -52,15 +50,18 @@ public class SpaceCatController : MonoBehaviour
 
     void Update()
     {
-        _horizontal = Input.GetAxisRaw("Horizontal");
-        _vertical = Input.GetAxisRaw("Vertical");
-        _lives = _healthKeeper.GetLives();
+        if (isAlive && !PauseMenu.isPaused && Timer.timerFinished)
+        {
+            _horizontal = Input.GetAxisRaw("Horizontal");
+            _vertical = Input.GetAxisRaw("Vertical");
+            _lives = _healthKeeper.GetLives();
+        }
     }
 
     void FixedUpdate()
     {
 
-        if (isAlive && Timer.timerFinished)
+        if (isAlive && !PauseMenu.isPaused && Timer.timerFinished)
         {
             DealWithNumberOfBugs();
 
@@ -169,12 +170,12 @@ public class SpaceCatController : MonoBehaviour
         {
             if (modeEasy)
             {
-                _body.velocity = new Vector2(_horizontal * speed, _vertical * speed);
+                _body.velocity = new Vector2(_horizontal * AdjustSpeed.speed, _vertical * AdjustSpeed.speed);
             }
             else
             {
                 ApplyRelativeForce();
-                _body.velocity = Vector3.ClampMagnitude(_body.velocity, _maxSpeed);
+                _body.velocity = Vector3.ClampMagnitude(_body.velocity, AdjustSpeed.speed);
             }
 
             _controllerHelper.ClampSpriteMovements(transform);

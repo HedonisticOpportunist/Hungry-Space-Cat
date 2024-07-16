@@ -24,7 +24,7 @@ public class AsteroidController : MonoBehaviour
 
     void Update()
     {
-        if (_body != null && Timer.timerFinished)
+        if (_body != null && Timer.timerFinished && !PauseMenu.isPaused)
         {
             RotateAsteroid();
             MoveAsteroid();

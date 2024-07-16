@@ -27,7 +27,7 @@ public class FollowingSpaceshipController : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (_target != null && Timer.timerFinished)
+        if (_target != null && Timer.timerFinished && !PauseMenu.isPaused)
         {
             _controllerHelper.FollowPlayer(_target, this.transform, speed, _healthKeeper.GetLives(), true);
         }
