@@ -33,7 +33,8 @@ gameplay = [
     "simple",
     "functional",
     "well-developed",
-    "interactive" "enjoyable",
+    "interactive",
+    "enjoyable",
 ]
 
 # join the array with any empty spaces
