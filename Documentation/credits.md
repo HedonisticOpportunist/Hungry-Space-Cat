@@ -50,6 +50,7 @@
 | Space-Themed-Backgrounds | https://screamingbrainstudios.itch.io/seamless-space-backgrounds        |
 | Menu-Space-Background    | https://free-game-assets.itch.io/free-space-shooter-game-user-interface |
 | Planets                  | https://kenney.nl/assets/planets                                        |
+| Space Background         | https://opengameart.org/content/space-background                        |
 
 #### Menu Buttons 🖰
 
