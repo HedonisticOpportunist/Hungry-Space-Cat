@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class ControllerHelper : MonoBehaviour
 {
@@ -55,29 +56,16 @@ public class ControllerHelper : MonoBehaviour
 
     #region Interactions
 
-    public void FollowPlayer(Transform target, Transform transform, float speed, int lives, bool moveAwayFromPlayer)
+    public void MoveAwayFromPlayer(Transform target, Transform transform, float speed, int lives)
     {
         /* Based on the below, with modifications, additions and deletions:
-        // @Credit: https://www.youtube.com/watch?v=2SXa10ILJms for the AI follow player movement. 
         // @Credit: https://discussions.unity.com/t/gameobject1-move-away-when-gameobject2-gets-close/158522 for moving target away from player if too close. 
         */
 
         if (target != null && lives != 0)
         {
-            Vector2 direction = target.position - transform.position;
-            float minDistance = 3f;
-            float range = direction.sqrMagnitude;
+            transform.position = Vector2.MoveTowards(transform.position, target.position, -1 * speed * Time.deltaTime);
 
-            if (moveAwayFromPlayer && range > minDistance || !moveAwayFromPlayer)
-            {
-                direction.Normalize(); // Keeps the length of the direction to one, thus constant. 
-                float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg; // This allows for smoother rotation. 
-                transform.SetPositionAndRotation(Vector2.MoveTowards(transform.position, target.transform.position, speed * Time.deltaTime), Quaternion.Euler(Vector3.forward * angle));
-            }
-            else
-            {
-                transform.position = Vector2.MoveTowards(transform.position, target.position, -1 * speed * Time.deltaTime);
-            }
         }
         else
         {
@@ -85,25 +73,22 @@ public class ControllerHelper : MonoBehaviour
         }
     }
 
-    public void AvoidOtherAgents(GameObject[] otherObjects, Transform target, float spaceBetween, Rigidbody2D body)
+    public void FollowPlayer(NavMeshAgent agent, Transform target)
     {
-        /* Based on the below, with modifications, additions and deletions:
-        // @Credit: https://www.youtube.com/watch?v=5ziHg2kO56s&t=349s 
+        /* Based on the below, with minor modifications:
+        // @Credit:https://www.youtube.com/watch?v=HRX0pUSucW4&t=221s 
         */
 
-        foreach (GameObject obj in otherObjects)
+        if (agent != null)
         {
-            float distance = Vector3.Distance(obj.transform.position, target.transform.position);
-
-            if (distance <= spaceBetween && distance != 0)
-            {
-                Vector3 direction = obj.transform.position - target.transform.position;
-                direction.Normalize();
-                Vector3 newDirection = (direction + Vector3.up + Vector3.down).normalized;
-                body.velocity = 4.5f * body.velocity.magnitude * newDirection;
-            }
+            agent.SetDestination(target.position);
+        }
+        else
+        {
+            return;
         }
     }
+
     #endregion Interactions
 
     #region Movement
