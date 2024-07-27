@@ -50,7 +50,7 @@ stopwords = set(STOPWORDS)
 wordcloud = WordCloud(background_color="beige", stopwords=stopwords).generate(gameplay)
 
 # plot the WordCloud image
-plt.figure(figsize=(7, 7), facecolor="beige")
+plt.figure(figsize=(7, 7), facecolor="yellow")
 plt.imshow(wordcloud, interpolation="bilinear")
 plt.axis("off")
 plt.tight_layout(pad=0)
