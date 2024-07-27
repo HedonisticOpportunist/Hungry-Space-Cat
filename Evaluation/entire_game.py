@@ -66,7 +66,7 @@ stopwords = set(STOPWORDS)
 wordcloud = WordCloud(background_color="beige", stopwords=stopwords).generate(words)
 
 # plot the word cloud image
-plt.figure(figsize=(8, 8), facecolor=None)
+plt.figure(figsize=(8, 8), facecolor="pink")
 plt.imshow(wordcloud, interpolation="bilinear")
 plt.axis("off")
 plt.tight_layout(pad=0)
