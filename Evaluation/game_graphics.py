@@ -24,7 +24,7 @@ wordcloud = WordCloud(background_color="lightblue", stopwords=stopwords).generat
 )
 
 # plot the WordCloud image
-plt.figure(figsize=(6, 6), facecolor=None)
+plt.figure(figsize=(6, 6), facecolor="violet")
 plt.imshow(wordcloud, interpolation="bilinear")
 plt.axis("off")
 plt.tight_layout(pad=0)
