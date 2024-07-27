@@ -1492,6 +1492,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SpaceCat
       objectReference: {fileID: 0}
+    - target: {fileID: 8973300992348093397, guid: 2fc9a5c4d7c870a4e9431bb63948fabf, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
