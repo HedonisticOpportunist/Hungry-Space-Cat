@@ -14,14 +14,7 @@ public class LoadMainMenuTests
         yield
         return null;
 
-        string[] buttonNames = {
-      "PlayButton",
-      "InstructionsButton",
-      "ExitGameButton",
-      "SettingsButton",
-      "AdoptACat",
-      "LeaveFeedback"
-    };
+        string[] buttonNames = {"PlayButton", "InstructionsButton", "ExitGameButton","SettingsButton","AdoptACat","LeaveFeedback" };
 
         // Act 
         for (int i = 0; i < buttonNames.Length; i++)
@@ -41,14 +34,7 @@ public class LoadMainMenuTests
         yield
         return null;
 
-        string[] textElements = {
-      "MainTitle",
-      "SecondaryText",
-      "PlayGameText",
-      "SettingsText",
-      "AdoptACatText",
-      "LeaveFeedbackText"
-    };
+        string[] textElements = { "MainTitle", "SecondaryText", "PlayGameText", "SettingsText", "AdoptACatText", "LeaveFeedbackText" };
 
         // Act 
         for (int i = 0; i < textElements.Length; i++)
