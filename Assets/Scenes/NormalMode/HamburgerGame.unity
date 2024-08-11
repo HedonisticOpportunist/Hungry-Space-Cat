@@ -526,7 +526,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2507550983694276274, guid: 9a3f009c54f273344898ec1e63984177, type: 3}
       propertyPath: m_Name
-      value: FlyingHamburger (1)
+      value: FlyingHamburger2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -588,7 +588,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2507550983694276274, guid: 9a3f009c54f273344898ec1e63984177, type: 3}
       propertyPath: m_Name
-      value: FlyingHamburger (2)
+      value: FlyingHamburger3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -907,7 +907,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2507550983694276274, guid: 9a3f009c54f273344898ec1e63984177, type: 3}
       propertyPath: m_Name
-      value: FlyingHamburger (3)
+      value: FlyingHamburger4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -969,7 +969,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8164485491094820427, guid: 64a407e2931f10941932f50b9491e723, type: 3}
       propertyPath: m_Name
-      value: SpawnBugsNormal
+      value: SpawnFlyingHamburgers
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
