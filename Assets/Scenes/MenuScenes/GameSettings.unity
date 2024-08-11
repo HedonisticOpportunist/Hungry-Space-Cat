@@ -134,7 +134,7 @@ GameObject:
   - component: {fileID: 99113798}
   - component: {fileID: 99113797}
   m_Layer: 0
-  m_Name: 2 (1)
+  m_Name: minicat
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -797,7 +797,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1412173833}
   m_Layer: 0
-  m_Name: Environment
+  m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1069,7 +1069,7 @@ GameObject:
   - component: {fileID: 1760560620}
   - component: {fileID: 1760560619}
   m_Layer: 0
-  m_Name: 2
+  m_Name: minicat3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1356,7 +1356,7 @@ GameObject:
   - component: {fileID: 1978755782}
   - component: {fileID: 1978755781}
   m_Layer: 0
-  m_Name: 2 (2)
+  m_Name: minicat2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1529,6 +1529,10 @@ PrefabInstance:
       propertyPath: m_text
       value: 15
       objectReference: {fileID: 0}
+    - target: {fileID: 2618593050609420115, guid: 75b7b8b5585cb4e4ca1a768ed5a43993, type: 3}
+      propertyPath: m_Name
+      value: EnableEffectText
+      objectReference: {fileID: 0}
     - target: {fileID: 3705779817848693389, guid: 75b7b8b5585cb4e4ca1a768ed5a43993, type: 3}
       propertyPath: m_Value
       value: 15
@@ -1597,6 +1601,10 @@ PrefabInstance:
       propertyPath: m_AnchorMin.x
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7216609044909034460, guid: 75b7b8b5585cb4e4ca1a768ed5a43993, type: 3}
+      propertyPath: m_Name
+      value: EnableSpriteEffect
+      objectReference: {fileID: 0}
     - target: {fileID: 7353440030222714022, guid: 75b7b8b5585cb4e4ca1a768ed5a43993, type: 3}
       propertyPath: m_Name
       value: SettingsCanvas
@@ -1609,6 +1617,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 268606014}
+    - target: {fileID: 7867219180772019435, guid: 75b7b8b5585cb4e4ca1a768ed5a43993, type: 3}
+      propertyPath: m_Name
+      value: EnableSpriteEffectText
+      objectReference: {fileID: 0}
     - target: {fileID: 8412764217659597709, guid: 75b7b8b5585cb4e4ca1a768ed5a43993, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
