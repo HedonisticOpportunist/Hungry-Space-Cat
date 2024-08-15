@@ -9,7 +9,12 @@ import numpy as np
 
 # Credit: https://www.w3schools.com/python/matplotlib_pie_charts.asp
 
-y = np.array([4, 3])
+# Week 14
+# y = np.array([4, 5, 1, 1]) 
+# mylabels = ["Memorable", "Partially Memorable", "N/A", "Partially Unmemorable"]
+
+# Week 18 
+y = np.array([4, 3]) 
 mylabels = ["Memorable", "Partially Memorable"]
 
 plt.pie(y, labels=mylabels, startangle=90)
