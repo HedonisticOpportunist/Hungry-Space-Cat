@@ -30,7 +30,7 @@ public class UIDisplay : MonoBehaviour
     void Start()
     {
         newGameText.text = "";
-        loadGameText.text = "Wait for the game to load ...";
+        loadGameText.text = "Grab a catnip. Game Loading ...";
 
     }
 
