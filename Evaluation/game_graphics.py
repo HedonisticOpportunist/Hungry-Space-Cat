@@ -10,7 +10,7 @@ graphics = [
     "nice",
     "cute",
     "nice",
-    "great
+    "great"
 ]
 
 # join the array with any empty spaces
