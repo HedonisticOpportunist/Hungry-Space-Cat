@@ -52,7 +52,9 @@ words = [
     "enjoyable"
     "fun",
     "complete",
-    "fun"
+    "fun",
+    "great,
+    "short
 ]
 
 # join the array with any empty spaces
