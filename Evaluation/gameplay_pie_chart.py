@@ -9,8 +9,8 @@ import numpy as np
 
 # Credit: https://www.w3schools.com/python/matplotlib_pie_charts.asp
 
-y = np.array([8, 3, 2])
-mylabels = ["Playable", "Partially Playable", "N/A"]
+y = np.array([3, 4])
+mylabels = ["Partially Playable", "Playable"]
 
 plt.pie(y, labels=mylabels, startangle=90)
 plt.show()
