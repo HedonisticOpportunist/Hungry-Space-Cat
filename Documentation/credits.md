@@ -56,8 +56,6 @@
 
 | Sprite Name          | Link                                                   |
 | -----------          | -----------                                            |
-| Mute / Unmute Button | https://icons8.com/icon/set/mute-unmute/group-color    |
-| Play/ Start Button   | https://icons8.com/icon/set/play/nolan                 |
 | Add Effects          | https://www.flaticon.com/free-icon/add_7422370         |
 | Disable Effects      | https://www.flaticon.com/free-icon/cancel_7422387      |
 | Settings Button      | https://icons8.com/icon/set/settings-button/nolan      |
