@@ -38,7 +38,7 @@ gameplay = [
     "fun",
     "complete",
     "fun",
-    "short
+    "short"
 ]
 
 # join the array with any empty spaces
