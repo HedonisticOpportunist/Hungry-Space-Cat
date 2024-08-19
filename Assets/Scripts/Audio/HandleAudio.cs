@@ -9,7 +9,7 @@ public class HandleAudio : MonoBehaviour
 {
     [SerializeField] Slider sliderVolume;
 
-    private void Start()
+    void Start()
     {
         if (PlayerPrefs.HasKey("audioVolume"))
         {
