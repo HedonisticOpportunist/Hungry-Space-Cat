@@ -41,7 +41,6 @@ public class BugController : MonoBehaviour
             _audioPlayer.PlayPickupClip();
             _scoreKeeper.ModifyScore(pointsForBugsEaten);
             gameObject.SetActive(false);
-            Destroy(gameObject);
         }
 
         if (other.CompareTag("Bug") && !PauseMenu.isPaused && Timer.timerFinished)

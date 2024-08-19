@@ -2,12 +2,17 @@ using System.Collections;
 using UnityEngine;
 public class SpaceCatController : MonoBehaviour
 {
-    [Header("Boolean Variables")][SerializeField] bool isAlive = true;
+    [Header("Boolean Variables")]
+    [SerializeField] bool isAlive = true;
     [SerializeField] bool modeEasy = true;
 
     [Header("Speed and Movement")]
     [SerializeField] float damageDelay = 1.0f;
     [SerializeField] float thrust = 2.0f;
+
+    [Header("Player Shooting")]
+    [SerializeField] GameObject playerLaser;
+    [SerializeField] float shootingSpeed = 2.5f; 
 
 
     float _horizontal;
@@ -55,6 +60,7 @@ public class SpaceCatController : MonoBehaviour
             _horizontal = Input.GetAxisRaw("Horizontal");
             _vertical = Input.GetAxisRaw("Vertical");
             _lives = _healthKeeper.GetLives();
+            ShootAtEnemy();
         }
     }
 
@@ -64,7 +70,6 @@ public class SpaceCatController : MonoBehaviour
         if (isAlive && !PauseMenu.isPaused && Timer.timerFinished)
         {
             DealWithNumberOfBugs();
-
             MoveCat();
 
             if (_controllerHelper != null)
@@ -179,6 +184,23 @@ public class SpaceCatController : MonoBehaviour
             }
 
             _controllerHelper.ClampSpriteMovements(transform);
+        }
+    }
+
+    void ShootAtEnemy()
+    {
+        /* Based on the below, with modifications and deletions:
+        // @Credit: https://dotnetfiddle.net/8aQNri for shooting at the enemy.  
+        */
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            GameObject instance = Instantiate(playerLaser, transform.position, transform.rotation);
+            if (instance.TryGetComponent<Rigidbody2D>(out var _body))
+            {
+                    _body.velocity = transform.position * shootingSpeed;
+            }
+
+            Destroy(instance, 2f);
         }
     }
 
