@@ -215,6 +215,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isAlive: 1
   modeEasy: 1
-  speed: 15
   damageDelay: 2
   thrust: 1
+  playerLaser: {fileID: 2996997848985239380, guid: 9b3a2bb334290ce4596c5fae5f2b4bab, type: 3}
+  shootingSpeed: 2.5
