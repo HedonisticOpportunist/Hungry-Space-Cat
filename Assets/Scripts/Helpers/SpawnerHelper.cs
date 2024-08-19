@@ -4,6 +4,26 @@ using Random = UnityEngine.Random;
 
 public class SpawnerHelper : MonoBehaviour
 {
+    public void SpawnObjectsRandomly(GameObject target)
+    {
+
+        for (int i = 0; i < 10; i++)
+        {
+            float buffer = 50f;
+            Vector2 minPosition = Camera.main.ScreenToWorldPoint(new Vector2(buffer, buffer));
+            Vector2 maxPosition = Camera.main.ScreenToWorldPoint(new Vector2(Screen.width - buffer, Screen.height - buffer));
+
+            if (target != null)
+            {
+                SpawnObjectRandomly();
+            }
+            else
+            {
+                return;
+            }
+        }
+    }
+
     public void SpawnObjectsRandomly(List<GameObject> objects, GameObject target)
     {
 
@@ -30,7 +50,23 @@ public class SpawnerHelper : MonoBehaviour
         }
     }
 
+
     public int GetNumberOfObjectsInScene(string objectTag) => GameObject.FindGameObjectsWithTag(objectTag).Length;
+
+    public void SpawnObjectRandomly()
+    {
+        float buffer = 50f;
+        Vector2 minPosition = Camera.main.ScreenToWorldPoint(new Vector2(buffer, buffer));
+        Vector2 maxPosition = Camera.main.ScreenToWorldPoint(new Vector2(Screen.width - buffer, Screen.height - buffer));
+        Vector2 position = new(Random.Range(minPosition.x, maxPosition.x), Random.Range(minPosition.y, maxPosition.y));
+        GameObject gameObject = ObjectPool.objectPool.GetPooledObjects();
+
+        if (gameObject != null)
+        {
+            gameObject.transform.SetPositionAndRotation(position, Quaternion.identity);
+        }
+
+    }
 
     public void SpawnObjectRandomly(GameObject gameObject)
     {
