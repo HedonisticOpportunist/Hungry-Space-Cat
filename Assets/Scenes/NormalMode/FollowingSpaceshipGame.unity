@@ -1306,21 +1306,9 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 583527921}
     m_Modifications:
-    - target: {fileID: -8662402404417694565, guid: 6edf2239352fb8c42a7f174fd22ee30a, type: 3}
-      propertyPath: speed
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: -8662402404417694565, guid: 6edf2239352fb8c42a7f174fd22ee30a, type: 3}
-      propertyPath: firingRate
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 2361352965739033856, guid: 6edf2239352fb8c42a7f174fd22ee30a, type: 3}
       propertyPath: m_Name
       value: FollowingSpaceship
-      objectReference: {fileID: 0}
-    - target: {fileID: 2361352965739033856, guid: 6edf2239352fb8c42a7f174fd22ee30a, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4394443112803520264, guid: 6edf2239352fb8c42a7f174fd22ee30a, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1361,10 +1349,6 @@ PrefabInstance:
     - target: {fileID: 4394443112803520264, guid: 6edf2239352fb8c42a7f174fd22ee30a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6341284778683939128, guid: 6edf2239352fb8c42a7f174fd22ee30a, type: 3}
-      propertyPath: m_Enabled
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
