@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 1027264685199341894}
   - component: {fileID: 4979285238421503590}
   - component: {fileID: 1125948076766244926}
+  - component: {fileID: -4377611186072094398}
   m_Layer: 0
   m_Name: PlanetSpawnerEasy
   m_TagString: Untagged
@@ -47,17 +48,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3ca9ed04d28b7948b229f864f2254d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bugs:
-  - {fileID: 6756778126985289246, guid: 6579666a8aab26148be77572ba0decfd, type: 3}
-  - {fileID: 6756778126985289246, guid: 6579666a8aab26148be77572ba0decfd, type: 3}
-  - {fileID: 6756778126985289246, guid: 6579666a8aab26148be77572ba0decfd, type: 3}
-  - {fileID: 6756778126985289246, guid: 6579666a8aab26148be77572ba0decfd, type: 3}
-  - {fileID: 6756778126985289246, guid: 6579666a8aab26148be77572ba0decfd, type: 3}
-  - {fileID: 6756778126985289246, guid: 6579666a8aab26148be77572ba0decfd, type: 3}
-  - {fileID: 6756778126985289246, guid: 6579666a8aab26148be77572ba0decfd, type: 3}
-  - {fileID: 6756778126985289246, guid: 6579666a8aab26148be77572ba0decfd, type: 3}
-  - {fileID: 6756778126985289246, guid: 6579666a8aab26148be77572ba0decfd, type: 3}
-  - {fileID: 6756778126985289246, guid: 6579666a8aab26148be77572ba0decfd, type: 3}
   spaceCat: {fileID: 1602777234211202908, guid: f37b26d09684345428c90c34bc57deb4, type: 3}
 --- !u!114 &1027264685199341894
 MonoBehaviour:
@@ -106,3 +96,16 @@ MonoBehaviour:
   - {fileID: 136326156369000648, guid: e2e4fd53495479d4bbb9115b2c94c701, type: 3}
   - {fileID: 2164365862071677076, guid: cfc98b3a084e46440bf0248dba1baa4d, type: 3}
   spaceCat: {fileID: 1602777234211202908, guid: f37b26d09684345428c90c34bc57deb4, type: 3}
+--- !u!114 &-4377611186072094398
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3662373627783741585}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e8f1da58ee8d7444b5f6d44e4d3ab9a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectPrefab: {fileID: 6756778126985289246, guid: 6579666a8aab26148be77572ba0decfd, type: 3}

@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8199034918137848019}
   - component: {fileID: 1247689583157973703}
   - component: {fileID: 1008526002571665306}
+  - component: {fileID: 6400858713994860164}
   m_Layer: 0
   m_Name: AsteroidGameSpawner
   m_TagString: Untagged
@@ -45,21 +46,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3ca9ed04d28b7948b229f864f2254d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bugs:
-  - {fileID: 6756778126985289246, guid: 6579666a8aab26148be77572ba0decfd, type: 3}
-  - {fileID: 6756778126985289246, guid: 6579666a8aab26148be77572ba0decfd, type: 3}
-  - {fileID: 6756778126985289246, guid: 6579666a8aab26148be77572ba0decfd, type: 3}
-  - {fileID: 6756778126985289246, guid: 6579666a8aab26148be77572ba0decfd, type: 3}
-  - {fileID: 6756778126985289246, guid: 6579666a8aab26148be77572ba0decfd, type: 3}
-  - {fileID: 6756778126985289246, guid: 6579666a8aab26148be77572ba0decfd, type: 3}
-  - {fileID: 6756778126985289246, guid: 6579666a8aab26148be77572ba0decfd, type: 3}
-  - {fileID: 6756778126985289246, guid: 6579666a8aab26148be77572ba0decfd, type: 3}
-  - {fileID: 6756778126985289246, guid: 6579666a8aab26148be77572ba0decfd, type: 3}
-  - {fileID: 6756778126985289246, guid: 6579666a8aab26148be77572ba0decfd, type: 3}
-  - {fileID: 6756778126985289246, guid: 6579666a8aab26148be77572ba0decfd, type: 3}
-  - {fileID: 6756778126985289246, guid: 6579666a8aab26148be77572ba0decfd, type: 3}
-  - {fileID: 6756778126985289246, guid: 6579666a8aab26148be77572ba0decfd, type: 3}
-  - {fileID: 6756778126985289246, guid: 6579666a8aab26148be77572ba0decfd, type: 3}
   spaceCat: {fileID: 8360398628935114832, guid: 2fc9a5c4d7c870a4e9431bb63948fabf, type: 3}
 --- !u!114 &1008526002571665306
 MonoBehaviour:
@@ -88,3 +74,16 @@ MonoBehaviour:
   - {fileID: 6106769857310105603, guid: fac44f88004f3a24fa43dc6343f00403, type: 3}
   - {fileID: 6106769857310105603, guid: fac44f88004f3a24fa43dc6343f00403, type: 3}
   spaceCat: {fileID: 0}
+--- !u!114 &6400858713994860164
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3439977323635944111}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e8f1da58ee8d7444b5f6d44e4d3ab9a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectPrefab: {fileID: 6756778126985289246, guid: 6579666a8aab26148be77572ba0decfd, type: 3}
