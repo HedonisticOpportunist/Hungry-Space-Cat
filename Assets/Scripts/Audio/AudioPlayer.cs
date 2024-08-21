@@ -19,6 +19,10 @@ public class AudioPlayer : MonoBehaviour
     [SerializeField] AudioClip laserClip;
     [SerializeField][Range(0f, 1f)] float _laserVolume = 1f;
 
+    [Header("Player Laser")]
+    [SerializeField] AudioClip laserFireClip;
+    [SerializeField][Range(0f, 1f)] float _laserFireVolume = 1f;
+
     [Header("Background")]
     [SerializeField] AudioSource audioSource;
 
@@ -49,6 +53,8 @@ public class AudioPlayer : MonoBehaviour
     public void PlayCatDamageClip() => PlayAudioClip(catDamageClip, _catDamageVolume);
 
     public void PlayLaserClip() => PlayAudioClip(laserClip, _laserVolume);
+
+    public void PlayerLaserFireClip() => PlayAudioClip(laserFireClip, _laserFireVolume);
 
     void PlayAudioClip(AudioClip audioClip, float volume)
     {
