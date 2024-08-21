@@ -86,11 +86,12 @@
                                    
 #### SFX 🎮
 
-| Clip            | Link                                               | Other Information                 |
-| -----------     | -----------                                        | -----------                       |
-| SFX-Pickup      | https://mixkit.co/free-sound-effects/arcade/       | Fairy arcade sparkle              |
-| SFX-Damage      | https://mixkit.co/free-sound-effects/arcade/       | Failure arcade alert notification |
-| Laser-SFX       | https://opengameart.org/content/laser-fire         | laser1.wav                        |                                  
+| Clip             | Link                                                  | Other Information                 |
+| -----------      | -----------                                           | -----------                       |
+| SFX-Pickup       | https://mixkit.co/free-sound-effects/arcade/          | Fairy arcade sparkle              |
+| SFX-Damage       | https://mixkit.co/free-sound-effects/arcade/          | Failure arcade alert notification |
+| Laser-SFX        | https://opengameart.org/content/laser-fire            | laser1.wav                        |  
+| Player-Laser-SFX | https://opengameart.org/content/sci-fi-laser-fire-sfx | laserfire01.ogg                   |
 
 ### FONTS 🐾
 
