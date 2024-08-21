@@ -880,6 +880,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1938646425153345294, guid: 50c905f8fff67c149a8a851600ed2f19, type: 3}
+      propertyPath: laserFireClip
+      value: 
+      objectReference: {fileID: 8300000, guid: c495596a33fcdca4f84d55aa696ba22a, type: 3}
     - target: {fileID: 2632428209850011981, guid: 50c905f8fff67c149a8a851600ed2f19, type: 3}
       propertyPath: m_Name
       value: AudioPlayer
