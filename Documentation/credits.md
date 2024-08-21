@@ -64,7 +64,8 @@
 | 'Normal' Play Button | https://icons8.com/icon/set/play-button/nolan          |
 | Disable 'Pink'       | https://www.flaticon.com/free-icon/cancel_7422275      |
 | Enable 'Pink'        | https://www.flaticon.com/free-icon/check-mark_1443000  |
-| Black 'Disable'      | https://www.flaticon.com/free-icon/cancel_7469151      |
+| Enable 'Black'       | https://www.flaticon.com/free-icon/check-mark_1442912  |
+| Disable 'Black'      | https://www.flaticon.com/free-icon/cancel_7469151      |
 
 #### Game Buttons 🕹️
 
