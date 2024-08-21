@@ -6,20 +6,26 @@ using UnityEngine;
 
 public class AsteroidController : MonoBehaviour
 {
-    [Header("Speed and Rotation")][SerializeField] float speed = 2.4f;
+    [Header("Speed and Rotation")]
+    [SerializeField] float speed = 2.4f;
     [SerializeField] float rotationSpeed = 1.5f;
+
+    [Header("Points for Shooting Asteroids")]
+    [SerializeField] int pointsForShootingAsteroids = 5;
 
     SpriteRenderer _spriteRenderer;
     Rigidbody2D _body;
 
     // OTHER GAME SCRIPTS
     ControllerHelper _controllerHelper;
+    ScoreKeeper _scoreKeeper;
 
     void Awake()
     {
         _spriteRenderer = GetComponent<SpriteRenderer>();
         _body = GetComponent<Rigidbody2D>();
         _controllerHelper = GetComponent<ControllerHelper>();
+        _scoreKeeper = FindObjectOfType<ScoreKeeper>();
     }
 
     void Update()
@@ -44,7 +50,16 @@ public class AsteroidController : MonoBehaviour
         }
     }
 
-    private void RotateAsteroid()
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("PlayerWeapon") && !PauseMenu.isPaused && Timer.timerFinished && DealWithPlayerShooting.playerShootingEnabled)
+        {
+            _scoreKeeper.ModifyScore(pointsForShootingAsteroids);
+            Destroy(gameObject);
+        }
+    }
+
+    void RotateAsteroid()
     {
         float zRotation = transform.rotation.eulerAngles.z + (rotationSpeed * Time.deltaTime);
         Vector3 newRotation = new(0, 0, zRotation);

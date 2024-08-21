@@ -12,7 +12,7 @@ public class SpaceCatController : MonoBehaviour
 
     [Header("Player Shooting")]
     [SerializeField] GameObject playerLaser;
-    [SerializeField] float shootingSpeed = 2.5f; 
+    [SerializeField] float shootingSpeed = 2.5f;
 
 
     float _horizontal;
@@ -60,6 +60,7 @@ public class SpaceCatController : MonoBehaviour
             _horizontal = Input.GetAxisRaw("Horizontal");
             _vertical = Input.GetAxisRaw("Vertical");
             _lives = _healthKeeper.GetLives();
+
             ShootAtEnemy();
         }
     }
@@ -189,18 +190,24 @@ public class SpaceCatController : MonoBehaviour
 
     void ShootAtEnemy()
     {
-        /* Based on the below, with modifications and deletions:
+        /* Based on the below, with modifications, additions and deletions:
         // @Credit: https://dotnetfiddle.net/8aQNri for shooting at the enemy.  
         */
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            GameObject instance = Instantiate(playerLaser, transform.position, transform.rotation);
-            if (instance.TryGetComponent<Rigidbody2D>(out var _body))
-            {
-                    _body.velocity = transform.position * shootingSpeed;
-            }
 
-            Destroy(instance, 2f);
+        if (DealWithPlayerShooting.playerShootingEnabled)
+        {
+
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                GameObject instance = Instantiate(playerLaser, transform.position, transform.rotation);
+                if (instance.TryGetComponent<Rigidbody2D>(out var _body))
+                {
+                    _body.velocity = transform.position * shootingSpeed;
+                }
+
+                Destroy(instance, 2f);
+                _audioPlayer.PlayerLaserFireClip();
+            }
         }
     }
 

@@ -7,7 +7,8 @@ public class BugController : MonoBehaviour
     [SerializeField] float floatStrength = 0.6f;
     [SerializeField] float speed = 2.4f;
 
-    [Header("Points for Eating Bugs")][SerializeField] int pointsForBugsEaten = 10;
+    [Header("Points for Eating Bugs")]
+    [SerializeField] int pointsForBugsEaten = 10;
     bool _wasEaten = false;
 
     // OTHER GAME SCRIPTS

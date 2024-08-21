@@ -10,16 +10,22 @@ public class UFOController : MonoBehaviour
     [Header("Speed and Movement")]
     [SerializeField] float speed = 2.5f;
 
+    [Header("Points for Shooting UFOs")]
+    [SerializeField] int pointsForShootingUFOs = 2;
+
     SpriteRenderer _spriteRenderer;
     Rigidbody2D _body;
 
     // OTHER GAME SCRIPTS 
     ControllerHelper _controllerHelper;
+    ScoreKeeper _scoreKeeper;
+
     void Awake()
     {
         _spriteRenderer = GetComponent<SpriteRenderer>();
         _body = GetComponent<Rigidbody2D>();
         _controllerHelper = FindObjectOfType<ControllerHelper>();
+        _scoreKeeper = FindObjectOfType<ScoreKeeper>();
     }
     void Update() => MoveUFO();
 
@@ -41,6 +47,15 @@ public class UFOController : MonoBehaviour
         if (_body != null && Timer.timerFinished && !PauseMenu.isPaused)
         {
             _body.velocity = new Vector2(speed, 0);
+        }
+    }
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("PlayerWeapon") && !PauseMenu.isPaused && Timer.timerFinished && DealWithPlayerShooting.playerShootingEnabled)
+        {
+            _scoreKeeper.ModifyScore(pointsForShootingUFOs);
+            Destroy(gameObject);
         }
     }
 }

@@ -8,9 +8,13 @@ using UnityEngine;
 
 public class WaveEnemyController : MonoBehaviour
 {
+    [Header("Points for Shooting Asteroids")]
+    [SerializeField] int pointsForShootingWaveObjects = 3;
+
     // OTHER GAME SCRIPTS
     SpawnWaveEnemies _spawnWaveEnemies;
     WavesConfig _waveConfig;
+    ScoreKeeper _scoreKeeper;
 
     // PRIVATE VARIABLES
     List<Transform> _waypoints;
@@ -19,6 +23,7 @@ public class WaveEnemyController : MonoBehaviour
     void Awake()
     {
         _spawnWaveEnemies = FindObjectOfType<SpawnWaveEnemies>();
+        _scoreKeeper = FindObjectOfType<ScoreKeeper>();
     }
 
     void Start()
@@ -45,6 +50,15 @@ public class WaveEnemyController : MonoBehaviour
         }
         else
         {
+            Destroy(gameObject);
+        }
+    }
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("PlayerWeapon") && !PauseMenu.isPaused && Timer.timerFinished && DealWithPlayerShooting.playerShootingEnabled)
+        {
+            _scoreKeeper.ModifyScore(pointsForShootingWaveObjects);
             Destroy(gameObject);
         }
     }
