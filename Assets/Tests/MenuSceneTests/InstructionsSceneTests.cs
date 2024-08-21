@@ -34,7 +34,7 @@ public class InstructionsSceneTests
         yield
         return null;
 
-        string[] textElements = { "Movement", "Escape", "Resolution", "MainText" };
+        string[] textElements = { "Adjustments", "Movement", "Shooting", "Escape", "Resolution", "MainText" };
 
         for (int i = 0; i < textElements.Length; i++)
         {

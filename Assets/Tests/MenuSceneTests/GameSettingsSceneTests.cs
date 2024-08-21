@@ -34,7 +34,8 @@ public class GameSettingsSceneTests
         yield
         return null;
 
-        string[] textElements = { "DisableMovingBackgroundText", "MainText", "EnableMovingBackgroundText", "EnableSpriteEffectText", "DisableSpriteEffectText", "AdjustSpeedText", "SpeedValue", "AdjustVolumeText" };
+        string[] textElements = { "DisableMovingBackgroundText", "EnablePlayerShootingText", "MainText", "EnableMovingBackgroundText",
+            "EnableSpriteEffectText", "DisableSpriteEffectText", "AdjustSpeedText", "SpeedValue", "AdjustVolumeText", "DisablePlayerShootingText" };
 
         for (int i = 0; i < textElements.Length; i++)
         {
@@ -54,7 +55,8 @@ public class GameSettingsSceneTests
         yield
         return null;
 
-        string[] buttonElements = { "ReturnToMenu", "DisableMovingBackground", "DisableSpriteEffect", "EnableSpriteEffect", "AddMovingBackground", "AdjustSpeedSlider" };
+        string[] buttonElements = { "ReturnToMenu", "DisableMovingBackground", "DisablePlayerShooting", "EnablePlayerShooting",
+            "DisableSpriteEffect", "EnableSpriteEffect", "AddMovingBackground", "AdjustSpeedSlider" };
 
         for (int i = 0; i < buttonElements.Length; i++)
         {
