@@ -66,6 +66,8 @@
 | Enable 'Pink'        | https://www.flaticon.com/free-icon/check-mark_1443000  |
 | Disable 'Green'      | https://www.flaticon.com/free-icon/cross_5372961       |
 | Enable 'Green'       | https://www.flaticon.com/free-icon/check_5372949       |
+| Unmute               | ww.flaticon.com/free-icon/audio_4349708                |
+| Mute                 |                                                        |
 
 #### Game Buttons 🕹️
 
