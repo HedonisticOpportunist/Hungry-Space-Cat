@@ -108,7 +108,7 @@ public class PlanetGameSceneTests
         yield
         return null;
 
-        string[] otherScriptPrefabs = { "PlanetSpawner", "SceneLoaderManager", "HelperManager" };
+        string[] otherScriptPrefabs = { "PlanetSpawner", "SceneLoaderManager", "HelperManager", "SpawnBugs" };
 
         for (int i = 0; i < otherScriptPrefabs.Length; i++)
         {

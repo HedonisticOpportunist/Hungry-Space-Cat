@@ -91,7 +91,7 @@ public class GhostGameEasySceneTests
         yield
         return null;
 
-        string[] otherScriptPrefabs = { "GhostDollSpawnerEasy", "SceneLoaderManager", "HelperManager" };
+        string[] otherScriptPrefabs = { "GhostDollSpawnerEasy", "SceneLoaderManager", "HelperManager", "SpawnBugs" };
 
         for (int i = 0; i < otherScriptPrefabs.Length; i++)
         {

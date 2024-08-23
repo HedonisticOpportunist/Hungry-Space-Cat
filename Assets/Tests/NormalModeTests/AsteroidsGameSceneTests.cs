@@ -125,7 +125,7 @@ public class AsteroidsGameSceneTests
         yield
         return null;
 
-        string[] otherScriptPrefabs = { "AsteroidGameSpawner", "SceneLoaderManager", "HelperManager" };
+        string[] otherScriptPrefabs = { "AsteroidGameSpawner", "SceneLoaderManager", "HelperManager", "SpawnBugs" };
 
         for (int i = 0; i < otherScriptPrefabs.Length; i++)
         {

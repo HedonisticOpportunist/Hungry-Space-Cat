@@ -91,7 +91,7 @@ public class UFOGameEasySceneTests
         yield
         return null;
 
-        string[] otherScriptPrefabs = { "UFOGameSpawnerEasy", "SceneLoaderManager", "HelperManager" };
+        string[] otherScriptPrefabs = { "UFOGameSpawnerEasy", "SceneLoaderManager", "HelperManager", "SpawnBugs" };
 
         for (int i = 0; i < otherScriptPrefabs.Length; i++)
         {

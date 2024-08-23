@@ -89,7 +89,7 @@ public class HamburgerGameSceneTests
         yield
         return null;
 
-        string[] otherScriptPrefabs = { "SpawnFlyingHamburgers", "SceneLoaderManager", "HelperManager" };
+        string[] otherScriptPrefabs = { "SpawnBugs", "SceneLoaderManager", "HelperManager" };
 
         for (int i = 0; i < otherScriptPrefabs.Length; i++)
         {

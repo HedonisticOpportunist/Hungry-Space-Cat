@@ -54,7 +54,7 @@ public class HamburgerGameEasySceneTests
         yield
         return null;
 
-        string[] otherScriptPrefabs = { "BugSpawner", "SceneLoaderManager", "HelperManager" };
+        string[] otherScriptPrefabs = { "SpawnBugs", "SceneLoaderManager", "HelperManager" };
 
         for (int i = 0; i < otherScriptPrefabs.Length; i++)
         {
