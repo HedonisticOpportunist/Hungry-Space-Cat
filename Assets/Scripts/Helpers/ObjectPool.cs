@@ -1,7 +1,7 @@
 using UnityEngine;
 
 /* Based on the below, with modifications: 
-// @Credit: https://gitlab.com/GameDevTV/CompleteUnity3D/realmrush/-/commit/c2e204700a5b46750e79e40c8a78a6047a678fba
+// @Credit: https://gitlab.com/GameDevTV/CompleteUnity3D/realmrush/-/blob/master/Assets/Enemy/ObjectPool.cs
 // @Credit: https://learn.unity.com/tutorial/introduction-to-object-pooling 
 */
 
