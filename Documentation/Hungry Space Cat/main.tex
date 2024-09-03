@@ -1,0 +1,966 @@
+\documentclass[sigplan,nonacm, screen]{acmart}
+\setkeys{acmart.cls}{balance=false}
+\setcopyright{none} % Remove ACM copyright from the document. 
+\usepackage{graphicx} % Required for graphics.  
+\usepackage{CJKutf8} % Required package for Japanese characters. 
+\title{Hungry Space Cat}
+\subtitle{A Game Based on the 'Project Idea Title 1: Arcade Game’ Template}
+\author{Anita Pal (20020826) }
+\email {ap383@student.london.ac.uk}
+% Figures have a box around them. 
+\usepackage{float}
+\floatstyle{boxed} 
+\restylefloat{figure}
+\begin{document}
+\maketitle
+% Title Page image.
+\begin{center} \includegraphics [scale=0.5]{title_page_image.jpg}
+\end{center}
+\clearpage
+\tableofcontents
+\listoffigures
+\begin{acks}
+I could have never started this degree without the support of my partner, David. You challenged me to become a better developer and made me believe I am not useless. 
+\par
+I also thank all the playtesters who offered criticism, advice, and support. You guys have been fantastic. Absolutely fantastic. 
+\end{acks}
+\paragraph{}
+\href{https://github.com/HedonisticOpportunist/Hungry-Space-Cat}{Link to the public GitHub repository.} 
+\ensuremath{\varheartsuit} % Suppress missing dollar sign warning.
+\section{INTRODUCTION}
+\begin{figure}
+    \centering
+    \includegraphics[width=0.5\linewidth]{cat_space_station.jpg}
+    \caption{The game is cat-themed, as cats are fun, especially in space! \cite{lenz}.}
+    \label{cat-in-space-station}
+    \Description.
+\end{figure}
+\subsection{Project Template}
+\textit{Hungry Space Cat} builds on the ‘Project Idea Title 1: Arcade Game’ template. The following chapter describes the project's main objectives, motivation and prospective audience.
+\subsection{Project Description}
+\textit{Hungry Space Cat} is a 2D feline-inspired PC arcade game, as shown in Figure \ref{cat-in-space-station}. Regarding gameplay, it takes inspiration from Namco’s \textit{Pac-Man}, a 1980 maze action game \cite{pitmann}, and - in its galaxy-themed setting and ability to shoot at enemies - \textit{Asteroids}, a 1976 space shooter by Atari \cite{retrogamer_asteroids}. 
+\par
+However, unlike these two games, it includes a more modernised look and feel. Moreover, it emphasises customisability and accessibility to stand out from other arcade games by being available to diverse players, such as those on the spectrum.
+\par
+The game features a hungry astronaut cat pursuing purple space bugs. To keep chasing the adorable insects, the cat must simultaneously evade UFOs, flying hamburgers, asteroids, ghost dolls, spaceships, snails, or a combination of these opponents. It uses arrow keys as controls to simulate an arcade game experience. ESC is used for pausing, and the space bar activates player shooting. These two keyboard keys are the only other controls employed in the game. 
+\par
+Like in \textit{Pac-Man}, the cat earns points for eating the space bugs while avoiding annoyed enemies that could spell the end of its feast (and life!) \cite{retrogamer_book_of_arcade_classics}. The player has to advance through increasingly challenging levels to eat all the floating bugs without losing the cat’s nine lives. The player can activate a laser beam that destroys their enemies, but they may also keep it turned off if they enjoy a less demanding game. The laser beam is just one of the features that the user can adjust according to their priorities. 
+\par
+Therefore, to allow players to choose the difficulty of the game they want to play, \textit{Hungry Space Cat} has two modes: one that aims to be easy and relaxing, while the other - following the trajectory of arcade games becoming progressively complex over time \cite{therrien} - poses more of a challenge, adding impulse to the player's movements and containing numerous levels. Both modes promote learnability for users to grow familiar with the game's mechanics \cite{ellis} while considering preferences such as slower speed or the ability to shoot at enemies. 
+\par
+The more difficult mode mimics the deceptive simplicity of arcade games \cite{therrien} while making the game fun and something users would want to return to \cite{therrien, gao}. Meanwhile, the simple mode offers less seasoned players the ability to enjoy the game without having too many hurdles placed in their direction. It is also shorter than the challenging mode, thus requiring less effort and time. Both modes address the game's aim to be playable and fun without requiring much investment or time for the player to understand its plot \cite{therrien}. 
+\par
+The background of \textit{Hungry Space Cat} engages a space theme to pay tribute to interstellar-related games such as \textit{Space Invaders} and \textit{Asteroids}. Similarly to these titles, realism is not at the heart of the game. Instead, its design and gameplay use silly/cute elements to appeal to a broader audience via radiant colours, happy music and relaxed gameplay to heighten positive emotions \cite{ellis}. 
+\par
+Befitting the game’s dedication to cute design, the menu scene - as depicted in Figure \ref{menu-figure} - has an astronaut cat image \cite{bevouliin} and a space-themed background \cite{screamingbrainstudios}. A white ghost cat \cite{kububbis} further enhances the menu’s design. The overall goal for the UI design is to be user-friendly and easy to understand \cite{ellis}. 
+\begin{figure}
+    \centering
+    \includegraphics[width=0.5\linewidth]{menu_design.png}
+    \caption{The menu's design emphasises vivid colours and has a feline touch.}
+    \label{menu-figure} 
+    \Description. 
+\end{figure}
+\subsection{Project Motivation}
+\subsubsection{Academic/Personal Motivation}
+\paragraph{}
+Arcade games - one of the earliest forms of electronic entertainment \cite{gao} - offer aspiring programmers a glimpse of the magic behind creating them \cite{becker}. \textit{Pac-Man} uses pathfinding and chasing/tracking algorithms \cite{gao}, e.g. the Pursuit-Evasion Game (PEG), which focuses on pursuers catching an evader quickly \cite{fernando}. 
+\par
+Not only do students benefit from learning about such algorithms \cite{becker}, but researchers have proven that Pac-Man merely needs two ghosts to capture the player \cite{fernando}. Furthermore, titles like \textit{Asteroids} use collision detection and distance calculation, enabling researchers and students to explore these topics visually \cite{becker}. Lastly, arcade games are practical tools for teaching children to learn new languages because they encourage them to interact with the material \cite{moura}. 
+\par
+\textit{Hungry Space Cat} addresses my affection for cats, allowing me to hone my coding skills and create games accessible to players who love felines.
+\subsubsection{Target Audience}
+\paragraph{}
+The target audience of \textit{Hungry Space Cat} mirrors those that Toru Iwatani, the creator of \textit{Pac-Man}, intended for his game – in particular, he wanted it to be accessible to a mixed range of players \cite{retrogamer_book_of_arcade_classics}. Consequently, aligning with the fact that video games appeal to people of various ages \cite{moura}, the game is suitable for players who:
+\begin{itemize}
+    \item Enjoy a game without requiring instruction manuals \cite{esposito}.
+    \item Wish to play a game with simple rules \cite{ellis} and engaging gameplay \cite{ellis, gao, moura}.
+    \item With health issues preventing them from playing a game for an extended time.
+    \item Enjoy light-hearted games with cute creatures and bright colours. 
+    \item Enjoy games that allow them to become part of a safe environment that positively influences their emotions \cite{moura}, and makes them happy \cite{ellis}. 
+    \item A neurodiverse audience, as video games provide a continuous activity allowing them to grow and make mistakes \cite{auroch}. 
+\end{itemize}
+\subsubsection{Objectives}
+\paragraph{}
+\textit{Hungry Space Cat} aims to be/have the following criteria:
+\begin{itemize}
+    \item Be intuitive to grasp, as arcade games are easy to play and pick up \cite{therrien}.
+    \item Elicit cheerful emotions via its design and gameplay \cite{ellis}. 
+    \item Simple, enjoyable visuals \cite{ellis} while defying the concept of fast-paced gameplay \cite{moura} by offering the player a choice between two modes, thus following the principle of accessibility of games such as \textit{Asteroids} with adjustable levels \cite{ellis}.
+    \item Provide accessibility/learnability features for players by using simple instructions and straightforward controls \cite{ellis}. 
+    \item Serve to motivate players to explore other arcade games using nostalgic design elements \cite{esposito}.
+    \item Encourage people to adopt mousers by having them engage with a cat character \cite{moura}. 
+\paragraph{}
+(922 words.)
+\end{itemize}
+\section{LITERATURE REVIEW}
+The following chapter explores accessibility in game design before discussing and evaluating previous work. 
+\subsection{Accessibility and Design}
+\subsubsection{Why Accessibility?}
+\paragraph{}
+User design is essential as games have become popular with countless people, including those with disabilities \cite{cairns}. Games enrich these individuals' lives by giving them a platform to feel empowered by a game’s narrative \cite{cairns}. Often, video games are the only venue available to people with disabilities that permits them to stand on an equal footing with their non-disabled peers \cite{cairns}. 
+\par
+At the same time, games function as entertainment, stress relief, and contributors to feelings of well-being \cite{sodhi}, further highlighting the importance of considering all kinds of users when designing them. The increasing seniority of players is another fact that touches upon the issue of accessibility, as with an advanced age come specific health issues, such as decreased vision, mobility, and hearing \cite{cairns}. 
+\par
+2.6 billion players worldwide play digital games, and this popularity has prompted calls for titles to be more inclusive and address the needs of their ever-growing audience \cite{cairns}. 
+\par
+Making games available to players with special needs would help fill a gap in the market, aiding not only the players themselves but the wider community, such as developers who could learn to understand how a game could be elevated beyond an all-purpose design while promoting a more fruitful discussion on the manifold representations of disability \cite{cairns}.  Such talks would prove eye-opening in a society obsessed with good looks. 
+\par
+Beyond a commercial need for accessible games, organisations such as the European Union with the \textit{European Accessibility Act} instruct software to have basic accessibility requirements \cite{cairns}. In the US, games need components that facilitate accessibility regarding communication, presentation and controls \cite{cairns}. 
+\par 
+Furthermore, social justice forums argue that people with disabilities are citizens who have the same right to consume entertainment as everyone else \cite{cairns}. The UN Convention similarly mandates this point of view with the \textit{Rights of Persons with Disabilities Act} \cite{cairns}.
+\subsubsection{Current Challenges}
+\paragraph{}
+Despite being aware of accessibility, modern game design frameworks do not address the complex needs of disabled players, including the changes and customisations they make to a particular game to be able to play it \cite{cairns}.
+\par 
+The issue with adapting games for a disabled audience is that many accessible games were made with a particular group of players in mind. Thus, it is difficult for other game developers to adapt these specific techniques to their games, as they cannot easily be generalised \cite{cairns}. 
+\par
+Moreover, the problem with the approach above is that many developers adopt a singular quality of a disability, ignoring the nuanced complexity of users who come with varying degrees of disability or suffer from multiple at once \cite{cairns}. 
+\par
+Additionally, game developers are realising that players with neurodiversity may not require simplified controls but a selective approach to how their emotions are aroused, as heightened ones, such as fear or surprise, could stop them from playing a game altogether \cite{cairns}. 
+\par
+Another fact that renders modern frameworks problematic is that they separate commercial concerns from those with accessibility, overlooking the fact that disabled players enjoy and wish to participate in popular games \cite{cairns}. 
+\par
+Also, while guidelines exist that attempt to streamline the accessibility of video games, a checklist - while offering reassurance - cannot help when a game's feature fails to meet its criteria, especially when dealing with less minimalistic aspects \cite{cairns}. 
+\par
+Guidelines, likewise, suffer from being limited, mainly when it comes to newer technology, which not only interacts differently with a disability but also requires an update of the guidelines themselves \cite{cairns}. Considering the size of the guidelines available, this poses a problem for the people who write these guidelines and the developers themselves, who may feel overwhelmed by the sheer amount of what is present \cite{cairns}. 
+\par
+Lastly, guidelines cannot predict how an individual player will react to a particular accessibility feature \cite{cairns}, as there may be a mismatch between the developer’s vision and the player’s expectations. 
+\subsection{Arcade Games}
+\subsubsection{Arcade Game Design}
+\paragraph{}
+Arcade games feature a simplistic design but challenging-to-master gameplay \cite{therrien}. Throughout their history, not only did the unsophisticated nature of early arcade games allow the player to grasp all of a game’s intricacies, but it made the player feel accomplished and eager to replay them to encounter new obstacles to solve \cite{therrien, bdatg2}. In contrast, modern games have excessive tutorials that affect a game's pacing, robbing players of the opportunity to feel challenged by cracking problems independently \cite{bdatg2}. 
+\par
+Taking cues from \textit{Pac-Man}, with its diverse audience \cite{retrogamer_book_of_arcade_classics} and continuing appeal to people of all ages \cite{moura}, arcade games aim to keep their players engaged in the story and want to return for more by providing them with gradually challenging levels \cite{therrien, gao}. 
+\par
+\textit{Pac-Man} uses dazzling colours and cheerful gameplay to make players feel safe and upbeat \cite{ellis}. The game's design elements - such as character and level aspects - are intended to be undemanding, with the goals and game mechanics similarly easy to gauge \cite{therrien, gao}. 
+\subsubsection{Pac-Man}
+\paragraph{}
+A 2008 report revealed that 94 \% of US consumers recognise \textit{Pac-Man}, beating \textit{Mario} in popularity \cite{retrogamer_book_of_arcade_classics}. According to its creator, Toru Iwatani – a game designer without formal training \cite{retrogamer_book_of_arcade_classics}, the gentle gameplay of \textit{Pac-Man} was intentional as, in the late 1970s, arcade centres only contained violent games focused on killing aliens \cite{pitmann}. He felt these arcade games were playgrounds for boys, leading him to develop a game for women and couples \cite{pitmann} with beaming and joy-inspiring graphics \cite{ellis}. \par
+\begin{CJK}{UTF8}{min}
+A Japanese fairytale with a demon-eating creature protecting children from monsters inspired the creation of \textit{Pac-Man's} prototype \cite{pitmann}. In \textit{Pac-Man}, the monsters from the fairytale became four ghosts \cite{therrien}, each with a unique personality \cite{pitmann}. Furthermore, Toru Iwatani used the Kanji for eating – \textit{taberu} 食 \cite{taberu} - as a premise for the game and the one for mouth - \textit{kuchi} 口 \cite{kuchi}- with its square shape as the basis for the character’s design \cite{pitmann, retrogamer_book_of_arcade_classics}. 
+\par
+\end{CJK}
+\begin{figure}
+    \centering
+    \includegraphics[width=0.5\linewidth]{pizza-pacman.jpg}
+    \caption{ According to a popular urban myth, a pizza missing a piece influenced the shape of Pac-Man \cite{retrogamer_book_of_arcade_classics}, as shown above \cite{pizza-pacman}.}
+    \label{pizza-pacman}
+    \Description.
+\end{figure}
+Iwatani insisted on the clearness of \textit{Pac-Man’}s design—a yellow disc with a mouth resembling a pizza slice, as shown in Figure \ref{pizza-pacman}—to streamline the game and keep its gameplay simple without the player requiring a manual \cite{moura, ari}. Despite the simplicity, while playing the game, the player’s strategy is crucial to winning it \cite{ari}.
+\par
+Further, Iwatani restricted the gameplay to a maze in which players move in the following directions: up, down, left, and right \cite{retrogamer_book_of_arcade_classics}. 
+As a maze game, \textit{Pac-Man} contains one screen or playfield with little to no scrolling; multiple game levels keep the player’s interest alive \cite{ari}.
+\subsubsection{Evaluation}
+\paragraph{}
+Due to its coherent controls and easy-to-understand story, \textit{Pac-Man} is a popular game with many players, including those new to arcade games. \textit{Pac-Man’s} graphics not only offer escapism due to their unsophistication but are easy on the eyes because they do not contain flashy graphics or involve having too many events concurrently on the screen. 
+\par
+Beyond that, \textit{Pac-Man} is uncomplicated to get into but becomes challenging over time due to the multiple ghost personalities and their speed changes \cite{pitmann}. As such, it offers more seasoned players the ability to advance through levels while less skilled ones feel compelled to return for more due to its addictive gameplay. Its plot does not provoke negative emotions or come with nasty surprises, making it soothing for neurodiverse players. 
+\par
+While \textit{Pac-Man} does not address more advanced accessibility features, such as those for people with upper limb disabilities who cannot use two or more buttons simultaneously \cite{cairns}, it provides visual and acoustic feedback that allows players with visual impairments, for example, to comprehend what is going on within the game without having to resort to assistive technology. 
+\par
+However, one drawback is that its graphics are very colourful, rendering the number of enemies daunting for people with cognitive issues or those sensitive to bright tones. 
+\subsubsection{Asteroids}
+\paragraph{}
+In December 1979 \cite{retrogamer_asteroids}, Atari released the shoot-em-up \textit{Asteroids} \cite{temple}. In line with its characteristics as a shooter arcade game \cite{retrogamer_asteroids}, the player controls a spaceship on a single screen to evade asteroids \cite{retrogamer_asteroids, temple}. The game has an easy-to-learn but difficult-to-master gameplay that keeps people returning to it to beat it \cite{temple}. 
+\par
+Beyond its financial success, \textit{Asteroids} helped arcade games become popular among players from various walks of life, including professionals in their 30s and 40s who played it during their lunch break \cite{temple}. The game was created by Ed Logg, depicted in Figure \ref{asteroids}. \textit{Asteroids} was his response to an unsuccessful game where players tried to shoot asteroids \cite{retrogamer_asteroids, temple}. Describing the game as dull, Ed suggested an alternative: players should blow up the asteroids instead \cite{temple}. 
+\par
+\begin{figure}
+    \centering
+    \includegraphics[width=0.5\linewidth]{ed_logg.jpg}
+    \caption{Ed Logg poses next to \textit{Gold Asteroids}, created to celebrate building 50,000 units \cite{temple}.}
+    \Description.
+    \label{asteroids}
+\end{figure}
+During a conversation with Lyle Rains, his boss at Atari, Ed stated that in contrast to a successful title such as \textit{Space Invaders}—a static shooter \cite{ari} with one-directional controls that only lets the player move left and right—he envisioned a scrolling game that allowed for two-directional movements, creating player satisfaction \cite{temple} by giving them more free-range movement \cite{ari}. 
+\par
+Despite no design processes in place, Ed sketched many versions of the ship \cite{retrogamer_asteroids}. As noted by Mark Cerny, a colleague of Ed’s at Atari, the secret to his success was that he planned the game carefully, developing features in the correct order rather than focusing on complex algorithms \cite{retrogamer_asteroids}. 
+\par
+Ed also engaged in feedback from two field playing testing sessions to fine-tune his game \cite{temple}, making him one of the first game designers to realise the importance of gameplay. He also ensured that the game was accessible, as it had a straightforward interface with understandable instructions and allowed players to adjust the game's difficulty level to suit their needs \cite{ellis}. 
+\subsubsection{Evaluation}
+\paragraph{}
+What makes \textit{Asteroids} stand out compared to other classic arcade games is the creator’s attention to detail in game design and how he approached the entire game's development process. Not only did he listen to player feedback, but he emphasised the importance of having multiple rounds of playtesting. For aspiring game developers, such an approach should be an inspiration and something they should take to heart when designing a game. 
+\par
+Even more so than \textit{Pac-Man}, \textit{Asteroids} offers clean graphics that immerse a player in the game without worrying about understanding the storyline or concept. The controls, while multiple, are straightforward to grasp and do not require too much time to get used to. 
+\par
+Additionally, the black-and-white graphics are colour-blind friendly while respecting players—such as people on the spectrum—who may prefer a less involved look to their game. The player also receives acoustic feedback with distinguishing sounds that help them understand when an enemy is approaching or the spaceship has been damaged.
+\subsection{Arcade-Based Cat Games}
+\subsubsection{Cat Trax}
+\paragraph{}
+\textit{Cat Trax} (Figure \ref{cat-trax}), released in 1982 \cite{atariprotos} or 1983 \cite{trekmd}, is a clone of \textit{Pac-Man}, featuring a cat on the run from three canines \cite{atariprotos, trekmd}. To gain points, the kitty has to eat the catnip in the maze, and – anytime a green potion appears – it transforms into a dog catcher truck that sends dogs to a pound at the top of the screen \cite{atariprotos, trekmd}. 
+\par
+Once the potion wears off, the dogs start chasing the game character again \cite{atariprotos, trekmd}. \textit{Cat Trax }was developed for the Aradia 2001 \cite{launchbox} – an obscure home game system released in 1982 by UA.Ltd \cite{atariprotos}.
+\begin{figure}
+    \centering
+    \includegraphics[width=0.5\linewidth]{cattrax.png}
+    \caption{An image of the arcade game \textit{Cat Trax} \cite{atariprotos}, showing the dogs and playable cat character.}
+    \label{cat-trax}
+    \Description.
+\end{figure}
+\subsubsection{Evaluation}
+\paragraph{}
+\textit{Cat Trax} has a fun take on \textit{Pac-Man}; however, it remains a clone with little to set it apart regarding creativity or originality, making it unenticing for players looking for something special or new. Therefore, it remains unlikely that anyone beyond a fascination for \textit{Pac-Man} copies would revisit the game more than once. 
+\par
+Furthermore, what makes it less accessible than \textit{Pac-Man} is that the cat and dog enemies are less suited to the maze than in the original game. While the circular design of Pac-Man makes it easy to distinguish the player from the ghosts, in\textit{ Cat Trex,} the cat and dog characters overlap, making the game confusing for players who need help differentiating these visuals.
+\par
+The game feels disjointed because the appearance of a dog-catching trucker adds more colourful elements to the screen, thus creating more 'noise'. Players with vision impairment may find these features overwhelming.
+\subsubsection{Mappy}
+\paragraph{}
+\begin{CJK}{UTF8}{min}
+Released by Namco in 1983, \textit{Mappy} (マッピー) is a side-scrolling maze game featuring cartoon-inspired cats and mice \cite{namcoWiki, retroGames}. It ran on the Super Pac-Man hardware modified to support horizontal side-scrolling \cite{namcoWiki, retroGames}.
+\end{CJK}
+\begin{figure}
+    \centering
+    \includegraphics[width=0.5\linewidth]{mappy.jpg}
+    \caption{A screenshot of the arcade game \textit{Mappy}, showing the trampolines inside the cat mansion \cite{retroGames}.}
+    \label{mappy}
+    \Description.
+\end{figure}
+\par
+In the game, shown in Figure \ref{mappy}, the player guides the police mouse, Mappy – a term derived from the Japanese nickname \textit{mappo} – through a cat mansion to find stolen goods \cite{namcoWiki, retroGames}. To survive, Mappy must avoid the mansion's cats and traverse the building via trampolines \cite{namcoWiki, retroGames}.
+\subsubsection{Evaluation}
+\paragraph{}
+\textit{Mappy} is more involved and complex than \textit{Cat Trax}, but its story remains simple. The enhanced gameplay does not interfere with the game’s objective; however, it feels like the player requires more skill to play the game, which could deter those who prefer a less challenging piece of entertainment, especially since there is no option to opt for a simpler version. 
+\par
+The game’s visuals also involve flashing objects and more things happening on screen, which could discourage people with epilepsy or impaired cognitive skills from wanting to continue to play. Moreover, the fact that a lot happens at once on the screen could make it hectic and faster-paced for those who prefer the gentler gameplay of \textit{Pac-Man}. 
+\subsubsection{Pac Cat}
+\paragraph{}
+\textit{Pac Cat} by Divok, displayed in Figure \ref{catpac}, is an indie game with pixel graphics for mobile devices. In it, a cat has to eat all the points to advance through the levels while running from bulldogs \cite{divok}.
+\begin{figure}
+    \centering
+    \includegraphics[width=0.25\linewidth]{catpac.jpg}
+    \caption{An image of the indie game \textit{Pac Cat} \cite{divok} which involves a cat in a maze.}
+    \label{catpac}
+    \Description.
+\end{figure}
+\subsubsection{Evaluation}
+\paragraph{}
+Reviews of the game describe it as cute but buggy, with the controls not working and the game being challenging from the get-go \cite{divok}. Consequently, \textit{Pac-Cat} defeats the purpose that arcade game creators had in mind: for their games to be simple but become more complex with increasing levels \cite{therrien}. 
+\par
+Besides, challenging controls might make the game inaccessible or difficult to an older audience, especially those who struggle with mobile devices and may need more time to adjust to the controls. Additionally, the game does not offer users any options to make it customisable according to their needs.
+\subsection{Space Cats - Web-Based Cat Games}
+\subsection{Space Cats}
+\paragraph{}
+\begin{figure}
+    \centering
+    \includegraphics[width=0.5\linewidth]{spacecats.png}
+    \caption{The user can play one of the two games in \textit{Space Cats} \cite{hedonistic}.}
+    \label{spaceCats}
+    \Description.
+\end{figure}
+\textit{Space Cats} is a web game application where users can play games and view interactive art, as shown in Figure \ref{spaceCats}. The application aims to bring together people who enjoy cute games.
+\subsubsection{Evaluation}
+\paragraph{}
+Playtesters for the project described the gameplay as too easy, which does not fit the concept of arcade games being challenging to master \cite{therrien}. Using a web browser affected the games' graphics in size/resolution, stopping a significant portion of the intended audience from engaging with the game in the first place. Consequently, the game did not fulfil its objective of being playable to a feline-obsessed audience.
+\paragraph{}
+(2399 words.)
+\section{GAME DESIGN}
+The following chapter explores the design aspects of \textit{Hungry Space Cat}, including its core mechanics, game components, and the two modes from which players can choose to play the game.  
+\subsection{Domain and Users}
+\paragraph{}
+\textit{Hungry Space Cat}'s domain is arcade games. While it focuses on offering customisable features, the intended audience is all-embracing, aiming to entertain players from contrasting backgrounds with varying game-playing skills. Therefore, the game provides the traditional trajectory of its levels, which are more complex over time for those who enjoy overcoming obstacles, while providing an accessible and relaxing mode for players who do not. 
+\subsection{Core Mechanics} 
+With each new level, the type of enemy changes, making the game less predictable and more versatile. Players can choose between two modes that influence how the space cat moves: the more difficult mode employs momentum, while the easier one does not include it.
+\par
+Two modes make the game playable and accessible to many players, but it also offers customisation. In other words, players can choose between the difficulty level and effects on display while adjusting the speed, audio volume, and ability to shoot at enemies.
+\subsubsection{Player Movement}
+\paragraph{}
+In the challenging mode, the player moves up, down, left, or right using momentum. In the more accessible mode, the player stops and starts instantaneously. Consequently, the player moves faster in that mode, while in the other mode, they are slower. The left, up, down or right arrow keys control the player's movement in both modes. 
+\par
+Triggered by the player input, the cat navigates within the screen's boundaries, restricting its movements like the maze confides the player in \textit{Pac-Man} \cite{retrogamer_book_of_arcade_classics}. Moreover, depending on the character's direction, the space cat's sprite flips to the left or right.
+\subsubsection{Pickups}
+\paragraph{}
+The cat eats purple space bugs that move within the boundaries of the screen. The cat gains points for eating the bugs; the player advances to the next level if all bugs have been eaten. When devouring a bug, the space cat sprite flashes green if the player has enabled that effect. 
+\subsubsection{Player Shooting}
+\paragraph{}
+The space bar can activate laser beams if the player triggers the shooting functionality. The space cat's position matches the direction of the beams. The player can earn points for shooting at the enemies who disappear from the screen upon being hit. Unlike the bugs, however, shooting all the enemies does not enable the player to move to the next level.  
+\subsubsection{Enemies}
+\paragraph{}
+Depending on the level, differing enemies chase the cat; for example, four UFOs travel between the corners of the screen in the first one. The space cat must avoid them while hunting for bugs. In more advanced levels, enemies that spawn off-screen appear in waves. 
+\par
+When attacked by an enemy, the player flashes red. If the player gets attacked nine times, the cat loses its life, leading to a game over. The only way to make enemies vanish is by shooting at them. 
+\subsection{Gameplay}
+\begin{figure}
+    \centering
+    \includegraphics[width=0.5\linewidth]{storyboard.png}
+    \caption{As the storyboard shows (using stock images from www.pexels.com), the concept of \textit{Hungry Space Cat} is simple, adhering to the principle of arcade games being easy to play and pick up \cite{therrien}.}
+    \label{storyboard}
+    \Description.
+\end{figure}
+The gameplay of \textit{Hungry Space Cats} - derived from an uncomplicated concept, as shown in Figure  \ref{storyboard}- is a sequence of:
+\begin{itemize}
+    \item The space cat enters the scene from any random location on the screen within its boundaries.
+    \item Bugs appear on the screen in any random location on the screen within its boundaries. 
+    \item The bugs move up and down.
+    \item The cat moves up, down, left or right to look for space bugs.
+    \item If the option is turned on, the space cat can shoot at enemies using the space bar. 
+    \item The UFOs enter the scene from the edges of the screen and then move back and forth within its boundaries.
+    \item The flying hamburgers enter the scene from different screen areas but follow the player, avoiding colliding with each other using a navigation mesh. 
+    \item The ghosts move based on wave points. 
+    \item The spaceship that shoots follows the player.
+    \item The second spaceship that shoots also follows the player. 
+    \item Green skull UFOs move based on wave points.
+    \item The snails enter the scene from the edge of the screen and then move up, down, left and right.
+    \item Asteroids enter the scene and then move around the screen.
+    \item Planets spawn randomly in a scene but do not affect the player.
+\end{itemize}
+\subsection{Tools Used}
+The game uses the Unity engine and C\# programming language. For automated testing, the project utilises Unity's testing framework. \textit{Hungry Space Cat} also engages in 2D development to honour the original design of arcade games. 
+\subsection{Game Object Components}
+The following paragraphs summarise the main playable or opposing game components of \textit{Hungry Space Cat}, each dealing with a game object and its related actions.
+\begin{figure}
+    \centering
+    \includegraphics[width=0.5\linewidth]{gameobjects.png}
+    \caption{The three-game objects form the basis of the game, allowing the player to be a space cat that eats bugs and tries to avoid enemies.}
+    \label{three_gameobjects}
+    \Description.
+\end{figure}
+As depicted in Figure \ref{three_gameobjects}, the game contains three character-related game objects that drive its main actions. 
+\subsubsection{SpaceCat}
+\paragraph{}
+The \textit{SpaceCat} component deals with the player’s movements and reactions to enemies regarding a collision. In all cases, a collision with an enemy leads to the space cat losing points and its eventual death if its nine lives have run out. 
+\par
+\begin{figure}
+    \centering
+    \includegraphics[width=0.5\linewidth]{space_cat.jpg}
+    \caption{The space cat sprite \cite{bevouliin} is cute and colourful.}
+    \label{astrocat}
+    \Description.
+\end{figure}
+If enabled, this component addresses the cat's shooting behaviour and is always responsible for the space cat's actions when dealing with the pickups. In the game, a green astronaut cat sprite \cite{bevouliin} represents the \textit{SpaceCat} component, as shown in Figure \ref{astrocat}.
+\subsubsection{Enemies}
+\paragraph{}
+\begin{figure}
+    \centering
+    \includegraphics[width=0.5\linewidth]{enemies.png}
+    \caption{A collage depicting the eleven enemies that - apart from the angry UFOs \cite{kububbis_ufo} - come from the same artist \cite{bevouliin}. }
+    \label{enemies_collage}
+    \Description.
+\end{figure}
+\par 
+The \textit{Enemies} component handles each enemy's movements and appearance in the scene. It also addresses -- as in the case of the spaceships -- their shooting behaviour, which causes the player to incur damage if hit by a bullet. This component further causes the player to be injured if they collide with an enemy. 
+\par 
+In total, there are eleven enemies -- shown in Figure \ref{enemies_collage}-- consisting of: 
+\begin{itemize}
+    \item Cute, angry UFOs \cite{kububbis_ufo}. 
+    \item Flying hamburgers \cite{bevouliin}. 
+    \item Two non-identically coloured spaceships \cite{bevouliin}. 
+    \item A skeleton-based UFO \cite{bevouliin}. 
+    \item Snails \cite{bevouliin}.
+    \item Four disparate asteroids \cite{bevouliin}.
+\end{itemize}
+\subsubsection{SpaceBugs}
+\paragraph{}
+The \textit{SpaceBugs} component -- shown in Figure \ref{space_bug}-- deals with the pickups' movement and reaction to encountering the player. It also deals with how they first appear in the scene. The player earns points for eating all the bugs and advances to the next level once they have done so. 
+\begin{figure}
+    \centering
+    \includegraphics[width=0.5\linewidth]{bug.jpg}
+    \caption{The purple space bug the player must consume to earn points \cite{bevouliin}. }
+    \label{space_bug}
+    \Description.
+\end{figure}
+\subsection{Other Game Components}
+The other components in the game are responsible for background actions such as audio, sprite effects and the UI interface. The following paragraphs summarise these components and describe their functionality in more detail. 
+\subsubsection{AudioManager}
+\paragraph{}
+The \textit{AudioManager} component deals with the sound effects used during the game and the volume handling. More explicitly, regarding volume handling, this component is responsible for muting and unmuting any sound played during the game. 
+\subsubsection{SceneLoadingManager}
+\paragraph{}
+The \textit{SceneLoadingManager} component deals with how the scenes are loaded. More precisely, this component handles:
+\begin{itemize}
+    \item The loading of scenes from the menu, including the accessible and challenging modes. 
+    \item The loading of scenes from the \textit{Resume Game} button when the game is paused. 
+    \item Loading any external sites when the \textit{Adopt a Cat} or \textit{Leave Feedback} buttons are pressed, as shown in Figure \ref{external_link}. 
+    \item Loading new levels. 
+    \item Loading the \textit{GameOver} scene when the player loses or finishes the game. 
+    \item Loading the \textit{MainMenu} scene if the player returns to the menu. 
+    \item Exiting the game.
+\end{itemize}
+\begin{figure}
+    \centering
+    \includegraphics[width=0.5\linewidth]{external_link.png}
+    \caption{Clicking the link above leads to a GitHub account.}
+    \label{external_link}
+    \Description.
+\end{figure}
+\subsubsection{ScoreManager}
+\paragraph{}
+The \textit{ScoreManager} component controls the user’s score, displayed in Figure \ref{game_score}. The \textit{ScoreManager} modifies the score when the player consumes a bug or shoots at an enemy. If the player collides with an enemy and loses a life, this component updates the score on the screen display. When the player starts a new game, this component resets the score. 
+\begin{figure}
+    \centering
+    \includegraphics[width=0.5\linewidth]{score.png}
+    \caption{The score updates when the user eats a bug or shoots an enemy. }
+    \label{game_score}
+    \Description.
+\end{figure}
+\subsubsection{HealthKeeper}
+\paragraph{}
+The \textit{HealthKeeper} component manages the player's number of lives (Figure \ref{number_of_lives}). If the player collides with an enemy, the number of lives is updated and resets when the game ends. 
+\subsubsection{UI}
+\paragraph{}
+The \textit{UI} component handles the following: 
+\begin{itemize}
+    \item The game's game over text and the user's final score display. 
+    \item Setting the pause menu components active when the user presses the ESC key.
+    \item Updating the speed display when the user selects an integer value using the \textit{AdjustSpeed} slider. 
+    \item Displaying the text that tells the player the game is loading between level transitions. 
+    \item Displaying the text that tells the player they will be redirected to the next level after eating all the bugs. 
+    \item Displaying the player's score and number of lives. 
+\end{itemize}
+\begin{figure}
+    \centering
+    \includegraphics[width=0.5\linewidth]{number_of_lives.jpg}
+    \caption{The player loses a life when colliding with an enemy or getting hit by a bullet.}
+    \label{number_of_lives}
+    \Description.
+\end{figure}
+\subsubsection{Effects}
+\paragraph{}
+The \textit{Effects} component deals with effects and animations, in particular the ones listed below:
+\begin{itemize}
+    \item The background scrolling. 
+    \item The player flashes magenta when they get hit by an enemy. 
+    \item The player flashes cyan after eating a bug.
+    \item The fade-in-and-out animation occurs when the user exits the game or switches between levels. 
+    \item The animation of sprites, such as the player and enemies. 
+\end{itemize}
+\subsubsection{Timer}
+\paragraph{}
+The \textit{Timer} component gives the game an internal countdown between levels, allowing players to prepare for new ones. 
+\subsection{Menu and UI Design}
+\paragraph{}
+The cat-based indie game \textit{Sudocats} - shown in Figure \ref{sudocats} - inspired the menu design of \textit{Hungry Space Cat}. In other words, the aim was to create a colourful, lively, and friendly UI. The reasoning behind a less simplistic interface was to make the game stand out in terms of aesthetics. In particular, \textit{Hungry Space Cat} wants to be unique, fun, and charming.
+\begin{figure}
+    \centering
+    \includegraphics[width=0.5\linewidth]{sudocats.png}
+    \caption{\textit{Sudocats} \cite{devcats} boasts a colourful and cheerful UI interface.}
+    \label{sudocats}
+    \Description.
+\end{figure}
+\par
+\begin{figure}
+    \centering
+    \includegraphics[width=0.5\linewidth]{menu_example.jpg}
+    \caption{The UI aims to be functional and cutesy.}
+    \label{menu_and_ui}
+    \Description.
+\end{figure}
+As shown in Figure \ref{menu_and_ui}, the UI and menu design aims to: 
+\begin{itemize}
+    \item Elicit cheerful emotions by using cute images and bright buttons, engaging in colours such as purple or green. 
+    \item Provide users with visual and textual clues as to the purpose of the buttons. 
+    \item Emphasise the feline nature of the game by placing cat images where the users can see them. 
+\end{itemize}
+\begin{figure}
+    \centering
+    \includegraphics[width=0.5\linewidth]{level_design.jpg}
+    \caption{All levels share common elements to avoid nasty surprises for the player.}
+    \label{level_design}
+    \Description.
+\end{figure}
+\subsection{Level Design}
+The level design of \textit{Hungry Space Cat}, depicted in Figure \ref{level_design}, aims to be consistent, providing the following elements for all levels: 
+ \begin{itemize}
+     \item A space-themed background. 
+     \item A score and number of lives text display that uses feline-inspired elements. 
+     \item The appearance of space bugs. 
+     \item The appearance of enemies.
+     \item The ability to customise the speed of the player. 
+     \item The ability to choose whether the player wants to shoot at enemies. 
+ \end{itemize}
+ \par
+Using similar elements at each level offers reassurance and gives the game a soothing atmosphere. Calming and peaceful gameplay provides the player with a safe space and allows them a form of escapism. Yet, as the following subsections showcase, players require a challenge, which is why all individual levels contain differences. 
+\subsubsection{Accessible Mode}
+\paragraph{}
+The accessible mode consists of three levels, with the speed of the space cat determined by instantaneous stopping and starting. 
+\par
+For the first level, the player must face four angry-looking UFOs that move between the scenes' borders. The second, more challenging one involves four flying hamburgers pursuing the player. 
+\begin{figure}
+    \centering
+    \includegraphics[width=0.5\linewidth]{easy_mode_last_level.jpg}
+    \caption{The last level involves a combination of enemies from the first level and some ghost dolls coming in waves. }
+    \label{ghost_game_easy}
+    \Description.
+\end{figure}
+\par
+The third level (Figure \ref{ghost_game_easy}) is the most difficult. It consists of the return of the UFOs from the first level but also contains ghost dolls that come and attack the player in waves. 
+\subsubsection{Challenging Mode}
+\paragraph{}
+The challenging mode has six levels, with the first three repeating the accessible mode. However, in this mode, the player moves using momentum.  
+\par
+The fourth level includes some planets as pretty background features but also adds the ghosts that come in waves from the third level. New enemies, snails that move up, down, left, and right, appear to spice things up. The fifth level introduces a new enemy: a spaceship that shoots at the player while following them. Moreover, skull-based UFOs appear in waves. 
+\par
+\begin{figure}
+    \centering
+    \includegraphics[width=0.5\linewidth]{normal_mode_last_level.jpg}
+    \caption{The last level of the normal mode is a scene of chaos.}
+    \label{normal_mode_last_level}
+    \Description.
+\end{figure}
+The last level - shown in Figure \ref{normal_mode_last_level}- is the most chaotic of all levels, incorporating four asteroids of assorted colours and sizes moving across the boundaries of the screen. To add even more mayhem and anarchy, snails from the fourth level show up, along with a spaceship from the fifth level that chases the
+player and shoots at them.
+\paragraph{}
+(1829 words.)
+\section{GAME IMPLEMENTATION}
+The following chapter first provides an overview of the project's structure before exploring some code snippets and implementation concepts in more detail. 
+\par 
+Please consult \href{https://github.com/HedonisticOpportunist/Hungry-Space-Cat}{GitHub} for the entire implementation; discussing the entire codebase is beyond the scope of this chapter. 
+\subsection{Code Structure}
+\begin{figure}
+    \centering
+    \includegraphics[width=0.5\linewidth]{code_structure.png}
+    \caption{There are seven categories that each serve a specific function or purpose.}
+    \label{code_structure}
+    \Description.
+\end{figure}
+Figure \ref{code_structure} shows that \textit{Hungry Space Cat’s }code structure comprises seven directories responsible for a specific functionality. The following subsections showcase each of the areas more closely.
+\subsubsection{Animation}
+\paragraph{}
+The \href{https://github.com/HedonisticOpportunist/Hungry-Space-Cat/tree/main/Assets/Scripts/Animation}{\textit{Animation}} folder is responsible for a subset of features, ranging from: 
+\begin{itemize}
+    \item Displaying arrays of sprites and their change in animation over time.
+    \item Handling the fading in and out of levels and other scene exits (e.g. game over).
+    \item Sprite effects, such as the character flashing cyan when scoring a point.
+\end{itemize}
+\subsubsection{Audio}
+\paragraph{}
+The \textit{\href{https://github.com/HedonisticOpportunist/Hungry-Space-Cat/tree/main/Assets/Scripts/Audio}{Audio}} folder takes care of the following:
+\begin{itemize}
+    \item Audio effects, e.g. picking up a coin or the player taking damage. 
+    \item SFX effects including enemy and player shooting. 
+    \item Muting and unmuting the audio, as shown in Figure \ref{menu_and_ui}.
+    \item The game’s background music.
+\end{itemize}
+\subsubsection{Controllers}
+\paragraph{}
+The \textit{\href{https://github.com/HedonisticOpportunist/Hungry-Space-Cat/tree/main/Assets/Scripts/Controllers}{Controllers}} folder includes two subdirectories - \textit{\href{https://github.com/HedonisticOpportunist/Hungry-Space-Cat/tree/main/Assets/Scripts/Controllers/EnemyControllers}{\textit{EnemyControllers}}} and \href{https://github.com/HedonisticOpportunist/Hungry-Space-Cat/tree/main/Assets/Scripts/Controllers/OtherControllers}{OtherControllers}.
+\par
+The \textit{Controllers} folder handles the movement and collision of game objects, including enemies, pickups, and the players themselves. More specifically, controllers deal with: 
+\begin{itemize}
+    \item How asteroids rotate and move in a scene. 
+    \item How enemies follow a player. 
+    \item How spaceships shoot bullets at the player. 
+    \item How snails and other enemies move. 
+    \item How the player reacts to colliding with enemies. 
+    \item How the player reacts to being shot by spaceships.
+    \item How the enemies react to being shot by the player. 
+    \item How the pickups react when eaten by the player. 
+    \item How the player reacts upon gaining a point or taking damage. 
+    \item How the player reacts to dying. 
+    \item How the player moves in a scene depending on the user input. 
+    \item How the player shoots at enemies depending on the user input. 
+\end{itemize}
+\subsubsection{GamePlay}
+\paragraph{}
+\begin{figure}
+    \centering
+    \includegraphics[width=0.5\linewidth]{loading_of_scenes.png}
+    \caption{A button click is all it takes for the player to choose between one of two modes.}
+    \label{level_loading}
+    \Description.
+\end{figure}
+The \textit{\href{https://github.com/HedonisticOpportunist/Hungry-Space-Cat/tree/main/Assets/Scripts/GamePlay}{GamePlay}} folder deals with the following aspects of \textit{Hungry Space Cat} and its gameplay:
+\begin{itemize}
+    \item Adjusting the player character's speed, i.e., the space cat, by making them either slow or faster. 
+    \item Turning on and off the background scrolling effect. 
+    \item Tuning on and off the sprite's flashing effects. 
+    \item The calculation of the game's score and the amount of lives available.
+    \item Modifying the game's score when the player eats a bug or shoots at an enemy. 
+    \item Modifying the number of lives when the player gets hit by a bullet or collides with an enemy. 
+    \item The loading of scenes depending on the game's progression or the user input (e.g. ending the game when the user presses the \textit{Exit} button).
+    \item Ensuring an internal timer helps the game load between levels, allowing players to prepare for them. 
+    \item Turning on and off the player's ability to shoot at enemies. 
+    \item Handing any loading of scenes triggered by button clicks on the menu, as shown in Figure \ref{level_loading}. 
+\end{itemize}
+\subsubsection{Helpers}
+\paragraph{}
+The \textit{\href{https://github.com/HedonisticOpportunist/Hungry-Space-Cat/tree/main/Assets/Scripts/Helpers}{Helpers}} folder includes reusable functions found in the other directories, such as: 
+\begin{itemize}
+    \item Clamping sprite movements. 
+    \item Initialising bounds for the clamping of movements. 
+    \item Following the player. 
+    \item Moving away from the player. 
+    \item Flipping sprites. 
+    \item Spawning objects into the scenes in waves.
+    \item Instantiating objects into the scenes using an object pool. 
+    \item Instantiating objects into the scene without using an object pool. 
+\end{itemize}
+\subsubsection{Spawners}
+\paragraph{}
+The Spawners folder - consisting of the subdirectories \textit{\href{https://github.com/HedonisticOpportunist/Hungry-Space-Cat/tree/main/Assets/Scripts/Spawners/EnemySpawners}{EnemySpawners}} and \textit{\href{https://github.com/HedonisticOpportunist/Hungry-Space-Cat/tree/main/Assets/Scripts/Spawners/OtherSpawners}{OtherSpawners}} - deals with: 
+\begin{itemize}
+    \item The spawning of objects at the edges of a screen. 
+    \item  Spawning objects randomly within a scene.
+\end{itemize}
+\subsubsection{UI}
+\paragraph{}
+\begin{figure}
+    \centering
+    \includegraphics[width=0.5\linewidth]{level_transition.jpg}
+    \caption{When transitioning between levels, a text informs the user that the game is loading.}
+    \label{level_transitions}
+    \Description.
+\end{figure}
+The \textit{\href{https://github.com/HedonisticOpportunist/Hungry-Space-Cat/tree/main/Assets/Scripts/UI}{UI}} folder deals with UI-specific functionalities, such as: 
+\begin{itemize}
+    \item Displaying the game over text and visuals when appropriate.
+    \item Displaying the pause game menu and its buttons, as shown in Figure \ref{game_paused}. 
+    \item Any text displayed during the game's level transitions, as shown in Figure \ref{level_transitions}.
+    \item Displaying menu buttons and feline-related images.
+    \item Dealing with the display of the player's speed value (\ref{menu_and_ui})  and the slider that adjusts it. 
+    \item Displaying the score and 'number of lives' components on the screen, shown in Figure \ref{number_of_lives}. 
+\end{itemize}
+\begin{figure}
+    \centering
+    \includegraphics[width=0.5\linewidth]{game_paused.jpg}
+    \caption{The pause menu components are loaded when the user presses the ESC key.}
+    \label{game_paused}
+    \Description.
+\end{figure}
+\subsection{The AnimatedSprite Script} 
+The \textit{\href{https://github.com/HedonisticOpportunist/Hungry-Space-Cat/blob/main/Assets/Scripts/Animation/AnimatedSprite.cs}{AnimatedSprite}} script is responsible for animating the sprites, including how an array of them is displayed during the game to reflect changes in movement over time. The script is attached to all game objects that use multiple sprites. The implementation is based on a \textit{Pac-Man} tutorial \cite{zigurous}.
+\begin{figure}
+    \centering
+    \includegraphics[width=0.5\linewidth]{move_animation_forward.png}
+    \caption{The \textit{MoveAnimationForward} function first checks that a \textit{SpriteRenderer} component is enabled before verifying the animation frame conditions.}
+    \label{move_animation_forward}
+    \Description.
+\end{figure}
+\par
+The \textit{MoveAnimationForward} function increments the animation frame variable by one when the game object’s \textit{SpriteRenderer} component is enabled, and the animation frame conditions are fulfilled—i.e. the \textit{CheckAnimationFrameConditions} method runs without issues. A \textit{SpriteRenderer} component is responsible for how a sprite is rendered and depicted on a screen \cite{spriteRenderer}. The function is displayed in Figure \ref{move_animation_forward}.
+\par
+The \textit{CheckAnimationFrameConditions} function, called in the \textit{MoveAnimationForward} method (Figure \ref{move_animation_forward}), checks that animation continues seamlessly if the sprite array is smaller than the animation frame by setting its current index to one of the animation frames. It also checks that the game is running/not paused.
+\par 
+If the animation frame is larger than the length of the sprite array and smaller or equal to 0, then it is set to zero so that the sprite animation can continue looping again. The code snippet is shown in Figure \ref{check_animation_frame_conditions}.
+\begin{figure}
+    \centering
+    \includegraphics[width=0.5\linewidth]{check_frame_conditions.jpg}
+    \caption{The \textit{CheckAnimationFrameConditions} method checks for animation frame conditions to ensure the animation can continue looping.}
+    \label{check_animation_frame_conditions}
+    \Description.
+\end{figure}
+\subsection{The BackgroundSpriteScroller Script}
+The \textit{\href{https://github.com/HedonisticOpportunist/Hungry-Space-Cat/blob/main/Assets/Scripts/Animation/BackgroundSpriteScroller.cs}{BackgroundSpriteScroller}} helps with parallax scrolling (Figure \ref{background_scrolling}), in which background images move more slowly than forefront ones \cite{scrolling}. Parallax scrolling became popular in the early 1980s, along with video arcade games such as \textit{Jump Bug} \cite{scrolling}.
+\par 
+There are two methods for background scrolling: layering, which involves multiple backgrounds and changing each layer’s position by a different amount in the same direction \cite{scrolling}. The other method engages pseudo-layers using sprites drawn by hardware on top of layers \cite{scrolling}. \textit{Hungry Space Cat} uses layering to honour the design of arcade games. 
+\begin{figure}
+    \centering
+    \includegraphics[width=0.5\linewidth]{background_scrolling.jpg}
+    \caption{The image uses the layering method to show how parallax scrolling looks from the side \cite{scrolling}.}
+    \label{background_scrolling}
+    \Description.
+\end{figure}
+\par 
+Within the \textit{BackgroundSpriteScroller} script's \textit{Update} function (Figure \ref{code_background_scrolling}), modelled after an implementation from a 2D game tutorial by GameDev.tv \cite{pettie_scrolling}, a private offset variable is multiplied by the move speed and \textit{Time.deltaTime} to create smooth movement.
+\begin{figure}
+    \centering
+    \includegraphics[width=0.5\linewidth]{background_scrolling_function.jpg}
+    \caption{The code above is responsible for creating the scrolling effect. }
+    \label{code_background_scrolling}
+    \Description.
+\end{figure}
+\par 
+Afterwards, the offset is added to the background material’s texture offset to create the scrolling effect. A static boolean checks whether this option has been triggered (i.e. the user has chosen to turn off the effects in the \textit{Game Settings} menu, as shown in Figure \ref{menu_and_ui}).
+\par 
+To ensure smooth movements with the scrolling backgrounds, Unity uses \textit{Time.deltaTime} - displayed in Figure \ref{time_delta_time} - which measures the interval between the current frame and the last one, ensuring that the animations and movement of game objects are consistent across platforms and varied forms of hardware \cite{educative}. 
+\begin{figure}
+    \centering
+    \includegraphics[width=0.5\linewidth]{time_delta_time.jpg}
+    \caption{The formula helps normalise calculating the rate at which a machine renders a frame \cite{educative}. Calculating a game object's vector in Unity with the equation returns a fixed speed, no matter the frame rate \cite{educative}.}
+    \label{time_delta_time}
+    \Description.
+\end{figure}
+\subsection{The SpriteEffects Script}
+\begin{figure}
+    \centering
+    \includegraphics[width=0.5\linewidth]{sprite_effects_functions.jpg}
+    \caption{The sprite functions above exist to make the player flash magenta or cyan depending on certain game events.}
+    \label{sprite_effects_functions}
+    \Description.
+\end{figure}
+The \textit{\href{https://github.com/HedonisticOpportunist/Hungry-Space-Cat/blob/main/Assets/Scripts/Animation/SpriteEffects.cs}{SpriteEffects}} script handles the space cat's flashing a different colour when the player eats a bug or is injured by an enemy through collision or shooting. The code in Figure \ref{sprite_effects_functions} does not adhere to the traditional purpose of the \textit{IEnumerator} in C\#, which fetches a current value from a collection \cite{tariq} and only allows for forward cursor movement when iterating through it \cite{tutor}. 
+\par 
+In Unity, using a coroutine and the keyword \textit{yield} suspends the method until the next frame or a set amount of time passes (e.g., WaitForSeconds()) \cite{reed}. Usually, a standard void method applies all of its functions in a single frame \cite{reed}. A coroutine is used to flash sprite effects after ensuring a delay
+between the actions, triggering the change of the player’s colour and displaying the change of colour effect itself.
+\subsection{The DealWithEffects Script}
+The \textit{\href{https://github.com/HedonisticOpportunist/Hungry-Space-Cat/blob/main/Assets/Scripts/GamePlay/DealWithEffects.cs}{DealWithEfects}} class contains public methods for turning effects on or off throughout the game. Static variables are created once as a copy and then shared \cite{geeksforgeeks}. 
+\par 
+The functions in Figure \ref{deal_with_effects_script} control the disabling of the sprawling background and sprite effects, allowing the user to take control of the UI and animation. Giving back power to the player regarding such features enables them to make the game more playable, especially as the flashing sprite effects and the sprawling backgrounds can be too much for some people.
+\begin{figure}
+    \centering
+    \includegraphics[width=0.5\linewidth]{deal_with_effects_script.png}
+    \caption{The \textit{DealWithEffects} script helps the user enable and disable animation-related effects.}
+    \label{deal_with_effects_script}
+    \Description.
+\end{figure}
+\subsection{The ObjectPool Script}
+Object pooling improves an application's performance by instantiating and destroying an array of objects on demand \cite{unity_learn}. It is a design pattern that reduces the burden on the CPU by pre-creating the game objects needed before gameplay \cite{unity_learn}. By doing that, there is no need to create new objects or destroy old ones \cite{unity_learn}. 
+\begin{figure}
+    \centering
+    \includegraphics[width=0.5\linewidth]{create_object_pool.jpg}
+    \caption{The \textit{CreatePoolOfObjects} function creates the underlying instances of objects that the players may wish to use later.}
+    \label{object_pool_function}
+    \Description.
+\end{figure}
+\par 
+The \href{https://github.com/HedonisticOpportunist/Hungry-Space-Cat/blob/main/Assets/Scripts/Helpers/ObjectPool.cs}{\textit{ObjectPool}} script is based on an implementation in a Unity tutorial \cite{unity_learn} and another for a 3D Game tutorial by GameDev.tv \cite{pettie_object_pool}. 
+\par 
+As shown in Figure \ref{object_pool_function}, the size of the object pool is determined during the array's creation in the \textit{CreatePoolOfObjects} function. Afterwards, a for loop instantiates the required objects and sets them to inactive so they are not viewable before the required gameplay. 
+\par 
+In the \textit{GetPooledObjects} (Figure \ref{get_pooled_objects_function}) function, which is activated in the \textit{Awake} method and returns a game object, an object from the pool is fetched from a for loop after being set to active. This only occurs if the object in the hierarchy is set to false, as - otherwise - an object that is already in use would be activated, thus defeating the purpose of using an object pool.
+\begin{figure}
+    \centering
+    \includegraphics[width=0.5\linewidth]{get_pool_of_objects.jpg}
+    \caption{The \textit{GetPooledObjects} function sets objects to active and inactive per the game's needs.}
+    \label{get_pooled_objects_function}
+    \Description.
+\end{figure}
+\par 
+The function above is used for spawning space bugs; however, the implementation is not a singleton, which would have been even more effective than using several object pools across multiple scenes.
+\par 
+Implementing such a solution had to be abandoned due to the project’s time constraints and the relatively late addition of the object pool. Moreover, although an attempt was made, \href{https://github.com/HedonisticOpportunist/Hungry-Space-Cat/blob/main/Assets/Scripts/Controllers/EnemyControllers/EnemyShooterController.cs}{bullet creation} does not use an object pool because it proved inefficient.
+\subsection{The FollowPlayer Script}
+The \textit{\href{https://github.com/HedonisticOpportunist/Hungry-Space-Cat/blob/main/Assets/Scripts/Helpers/ControllerHelper.cs}{ControllerHelper}} function contains several methods for moving objects, but they are placed within a single file for reusability. Code reusability follows the principle of DRY and helps make the implementation more beneficial for future projects.
+\begin{figure}
+    \centering
+    \includegraphics[width=0.5\linewidth]{follow_player.jpg}
+    \caption{The \textit{FollowPlayer} function enables an object to follow a given target.}
+    \label{follow_player_function}
+    \Description.
+\end{figure}
+\par 
+One of these functions—the \textit{FollowPlayer} one (Figure \ref{follow_player_function})—involves a game object following another depending on its position. The implementation is based on a video tutorial using Navmesh in Unity 2D \cite{rootbin}. 
+\par 
+Unity's navmesh system is based on AI pathfinding \cite{martin}. Navmesh—or navigation mesh—is an abstract data structure that helps agents find their way through complicated spaces by representing the world using polygons \cite{wiki}, which describe the surface game objects can walk on \cite{granberg}.
+\par 
+\begin{figure}
+    \centering
+    \includegraphics[width=0.5\linewidth]{navmeshgraph_graph.png}
+    \caption{A \textit{navmesh} does not have equally sized nodes \cite{granberg}.}
+    \label{navmesh_graph}
+    \Description.
+\end{figure}
+Navmeshes are more beneficial than nodes arranged in a grid pattern, requiring fewer nodes \cite{granberg}. Having too many nodes can feel superfluous when designing a landscape needing only a few areas the play can navigate around \cite{granberg}. Figure \ref{navmesh_graph} shows that navmeshes consist of nodes of miscellaneous sizes based on the game's needs \cite{granberg}. 
+\par 
+As the nodes in a navigation mesh are smaller, they can more accurately describe the environment \cite{granberg}. Furthermore, they are smaller because no space is wasted on empty notes, which makes them faster for AI pathfinding \cite{granberg}. AI pathfinding deals with locating the shortest path between two routes while avoiding obstacles \cite{craig}.  
+\par 
+In \textit{Hungry Space Cat}, the navigation mesh prevents the flying hamburgers—representing the enemies in the second level in both the accessible and challenging mode—from colliding with each other while following the player. 
+\par 
+\begin{figure}
+    \centering
+    \includegraphics[width=0.5\linewidth]{fixed_update.png}
+    \caption{\textit{FixedUpdate} is used for the movement in the \textit{FlyingHamburgerController} script, as the flying hamburgers have rigid bodies attached, and this function is in synch with the game's physics system \cite{french}.}
+    \label{fixed_update}
+    \Description.
+\end{figure}
+The \textit{FollowPlayer} function is called in the \textit{\href{https://github.com/HedonisticOpportunist/Hungry-Space-Cat/blob/main/Assets/Scripts/Controllers/EnemyControllers/FlyingHamburgerController.cs}{FlyingHamburgerController}} script in the \textit{FixedUpDate} function (Figure \ref{fixed_update}), which deals with how physical objects move in the game \cite{french}. Unlike the \textit{Update} function, it is frame rate independent and called at timed intervals \cite{french}.
+\par 
+Before the \textit{FollowPlayer} function can be called, an if statement checks that the game is running, that the space cat's target position is present and that the flying hamburgers have a \textit{Rigidbody} attached, which controls their position using physics simulation \cite{rigidbody}.  
+\paragraph{}
+(1983 words.)
+\section{GAME EVALUATION}
+The following chapter used Python scripts to create word
+clouds and pie charts to visualise results. All the scripts can be found on \href{https://github.com/HedonisticOpportunist/Hungry-Space-Cat/tree/main/Evaluation}{GitHub}. Additionally, \href{https://jupyter.org/try-jupyter/lab/}{JupyterLite} and \href{https://www.w3schools.com/python/matplotlib_pie_charts.asp}{W3Schools} generated the images from the Python code used as figures throughout this chapter. 
+\subsection{Evaluation Factors}
+\textit{Hungry Space} evaluates its quality using manual testing, automated unit testing, and playtesting. In playtesting, honest feedback was favoured over questionnaires.  The factors described in the following subsections have determined the project's success.
+\subsubsection{The Game's Playability}
+\paragraph{}
+The truth of the following statements measures the playability of the game:
+\begin{itemize}
+    \item The game loads without any issues.
+    \item The game transitions from one level to another, providing players with a well-deserved breather in between. 
+    \item The user pauses the game and resumes it without any hiccups.
+    \item The user can exit the game without any issues. 
+    \item The game ends with a game-over text that informs the player that it has ended. 
+\end{itemize}
+\subsubsection{The Game's Enjoyability}
+\paragraph{}
+While subjective, the enjoyability of the game is judged by:
+\begin{itemize}
+    \item How users describe the game and its overall gameplay.
+    \item The absence of bugs or unexpected crashes.
+    \item The degree of simplicity or difficulty of the game.
+    \item The accessibility of the game. 
+    \item The atmosphere and the look and feel of the game.
+\end{itemize}
+\subsubsection{The Game's Aesthetics}
+\paragraph{}
+The aesthetics of the game are measured by:
+\begin{itemize}
+    \item The appearance of the sprites and their animation.
+    \item The way the graphics enhance the game.
+    \item The colour palette and its consistency across the game.
+    \item The way effects inform the user about actions and their consequences.
+\end{itemize}
+\subsubsection{The Game's UI}
+\paragraph{}
+The UI’s success is evaluated by:
+\begin{itemize}
+    \item The clarity regarding the purpose of the buttons.
+    \item The way the buttons and the appearance of the UI fit together. 
+    \item The size and readability of the fonts.
+    \item The accessibility of the UI.
+\end{itemize}
+\subsubsection{The Game's Automated Unit Tests}
+\paragraph{}
+The success of the game's (Figure \ref{automated_tests}) automated unit tests is decided by the validity of the following statements: 
+\begin{itemize}
+    \item All text elements are present in the scenes. 
+    \item All buttons are present within the menu scenes.
+    \item The game scenes contain the space cat character prefab.
+    \item The game scenes contain the required enemies and script prefabs.
+    \item The game scenes contain the proper \textit{Navmesh} components, if applicable. 
+    \item The game scenes contain the pause menu components. 
+    \item The game scenes contain the components of the score and 'number of cat lives'. 
+\end{itemize}
+\begin{figure}
+    \centering
+    \includegraphics[width=0.5\linewidth]{automated_tests.png}
+    \caption{\textit{Hungry Space Cat} uses automated tests to check for the presence of given elements in each scene.}
+    \label{automated_tests}
+    \Description.
+\end{figure}
+\par 
+While automated tests cannot guarantee the absence of bugs or replace playtesters, they provide fast feedback when changes are made to the game and - thus - provide confidence that any previously working features were not broken. The visual feedback offered by Unity's \href{https://docs.unity3d.com/Packages/com.unity.test-framework@1.1/manual/workflow-create-playmode-test.html}{play mode} is beneficial, as the tests are run in the editor itself and help a developer understand what is working.
+\subsubsection{The Game's Progress}
+\paragraph{}
+The criteria below measure the game’s success against the project guidelines and deadline:
+\begin{itemize}
+    \item The completeness of the game (which means that it has more than one level and becomes progressively more difficult).
+    \item The project adheres to the principles of an arcade game (easy to play and pick up with simple controls).
+    \item The project's evolution in bug-fixing and sticking to the original work plan—did the project stay on track?
+\end{itemize}
+\subsection{Evaluation Questions}
+During peer-graded reviews taking place in weeks 14 and 18 of the module, an evaluation asked users the following questions, which were answerable to the following criteria as displayed in Figure \ref{rating_criteria}:
+The evaluation questions comprise the following: 
+\begin{itemize}
+    \item Is the game playable?
+    \item Would you feel compelled to come back and play the game again?
+    \item Does the game look good?
+\end{itemize}
+\par
+The purpose of using open-ended questions that could still be answered by 'yes/no' was to encourage players to write their own narratives about the gameplay. Consequently, the feedback would be more than just metrics but a story with a life of its own. 
+\begin{figure}
+    \centering
+    \includegraphics[width=0.5\linewidth]{rating_criteria.jpg}
+    \caption{The reviewers could answer questions by selecting the criteria in the screenshot.}
+    \label{rating_criteria}
+    \Description.
+\end{figure}
+\subsection{Playtesting Sessions}
+More than twenty playtesting sessions took place within the module's lifespan.  Players, ranging from two to five at a time, included volunteers from the module, acquaintances from a gaming-related \textit{Discord} channel, and - at one point - two professional game testers from \href{https://app.playcocola.com/guest/play_gatherings/f84791e2-52ba-495b-b400-4570970b5cdd?fbclid=IwY2xjawE1rwFleHRuA2FlbQIxMQABHbGrFLn9pv8pQ8y2fY8fK68UTeqSuOlL9zufMXteVznaKEgsyX5AQ5qIxQ_aem_S3pyAr3Y5-CksWFOCpyIZA}{Playcocola}. 
+\par
+To avoid infusing players with my biases, they were given free rein for feedback, as the focus lay on gathering their true feelings regarding the gameplay and other aspects of \textit{Hungry Space Cat}. Playtesting sessions started early in the semester, with records kept regarding each session to keep track of bugs and any other feedback mentioned. 
+\par 
+While few playtesters played the game throughout the entire playtesting rounds, feedback proved valuable, as important insights, such as the menu requiring game instructions and the gameplay needing more customisation options, came to fruition because of them. 
+\subsection{Evaluation Results}
+The overall consensus for \textit{Hungry Space Cat} —as the following sections will explore—was positive, with players describing the gameplay as fun. The game's look and feel also garnered favourable feedback. The following subsections reflect on gameplay, UI and music, graphics and the game itself. 
+\subsubsection{Gameplay}
+\paragraph{}
+\begin{figure}
+    \centering
+    \includegraphics[width=0.5\linewidth]{gameplay.jpg}
+    \caption{The word cloud above is a collection of adjectives players have used to describe the gameplay during the playtesting and peer-graded sessions.}
+    \label{word_cloud_gameplay}
+    \Description.
+\end{figure}
+As the \href{https://github.com/HedonisticOpportunist/Hungry-Space-Cat/blob/main/Evaluation/gameplay.py}{word cloud} in Figure \ref{word_cloud_gameplay} indicates, the overall narrative about the gameplay was that it was fun, good and entertaining. Additionally, the words 'challenging' and 'playable' crop up often, suggesting that - as an arcade game - \textit{Hungry Space Cat} has fulfilled its objective of becoming more difficult with each level \cite{therrien}.
+\par
+\begin{figure}
+    \centering
+    \includegraphics[width=0.5\linewidth]{playable.png}
+    \caption{The chart above comes from week 18, where seven people responded, with the majority stating that the game was playable.}
+    \label{game_playable}
+    \Description.
+\end{figure}
+However, while the word cloud suggests cautious optimism, the \href{https://github.com/HedonisticOpportunist/Hungry-Space-Cat/blob/main/Evaluation/gameplay_pie_chart.py}{pie chart} (Figure \ref{game_playable}) from the peer-graded evaluation sessions implies room for improvement in the gameplay, especially since a small percentage of the players said the game was partially playable. While week 18 showed progress in playability, the small pool of players - seven, to be exact - makes even one person's statement that the game was partially playable worrying, specifically since the previous round contained merely eleven people responding to the evaluation. 
+\par 
+Written feedback from both the peer-graded comments and playtesting sessions suggests that people would like more levels and even more range of enemies, which is not possible due to the project's relatively short development span. 
+\par 
+Overall, the gameplay seems successful, but more data would be required to capture the nuances behind why the game is playable or unplayable, especially in light of differing tastes and preferences. 
+\subsubsection{Game Graphics}
+\begin{figure}
+    \centering
+    \includegraphics[width=0.5\linewidth]{word_cloud_graphics.png}
+    \caption{The word cloud above captures adjectives players have used to describe the game's look and feel during playtesting and peer-graded evaluation sessions.}
+    \label{word_cloud_graphics}
+    \Description.
+\end{figure}
+\paragraph
+As Figure \ref{word_cloud_graphics} suggests, the \href{https://github.com/HedonisticOpportunist/Hungry-Space-Cat/blob/main/Evaluation/game_graphics.py}{graphics} of \textit{Hungry Space Cat} are nice, cartoony, and velvety, indicating that the game has a pleasant appearance. The only negative comment regarding the game's graphics came from one player, who stated that the sprite for the space cat character was unappealing. 
+\subsubsection{Game UI and Music}
+\paragraph{}
+\begin{figure}
+    \centering
+    \includegraphics[width=0.5\linewidth]{game_looks_good.png}
+    \caption{In week 18, seven players thought the game looked good, while two thought it only partially did so.}
+    \label{game_looks_good_pie_chart}
+    \Description.
+\end{figure}
+While the \href{https://github.com/HedonisticOpportunist/Hungry-Space-Cat/blob/main/Evaluation/game_looks_good_pie_chart.py}{pie chart} (Figure \ref{game_looks_good_pie_chart}) from week 18 shows that two out of seven players thought the game looked partially good, the response to the UI has enjoyed a tumultuous history. Much of the game’s early development focused on improving the buttons' layout, adjusting the audio's customisability and devising a less clunky menu design.
+\par 
+Early feedback from playtesters emphasised the game's clumsy menu and lack of coherency regarding the buttons' purpose; however, as the \href{https://github.com/HedonisticOpportunist/Hungry-Space-Cat/blob/main/Evaluation/ui_and_music.py}{word cloud} in Figure \ref{ui_and_music_word_cloud} showcases, improvements were made to make the UI more straightforward. To some degree, the menu seems to look acceptable to players, even though more data would be required to reach a broader consensus on this subject. 
+\begin{figure}
+    \centering
+    \includegraphics[width=0.5\linewidth]{music_and_ui_wordcloud.png}
+    \caption{As with previous word clouds, the word cloud above uses a collection of words that players have used to describe the game's UI and music. }
+    \label{ui_and_music_word_cloud}
+    \Description.
+\end{figure}
+\par 
+Meanwhile, the music has enjoyed consistently positive feedback, with playtesters stating it was good. 
+\subsubsection{The Entire Game Itself}
+\paragraph{}
+\begin{figure}
+    \centering
+    \includegraphics[width=0.5\linewidth]{game_memorable_piechart.png}
+    \caption{While memorability is subjective, four out of nine players thought the game was partially memorable.}
+    \label{game_memorable_pie_chart}
+    \Description.
+\end{figure}
+Figure \ref{game_memorable_pie_chart} shows that four out of nine players thought the game was partially \href{https://github.com/HedonisticOpportunist/Hungry-Space-Cat/blob/main/Evaluation/game_memorable_pie_chart.py}{memorable}, suggesting they felt bored or only wanted to play it once. As the term 'memorability' is subjective and the pool of playtesters for this evaluation was small, it can be hoped that more data would indicate a better (or worse!) outcome. 
+\par 
+However, the word cloud concerning the entire game (Figure \ref{word_cloud_entire_game}) portrays a more hopeful outcome than the pie chart earlier. It tells a \href{https://github.com/HedonisticOpportunist/Hungry-Space-Cat/blob/main/Evaluation/entire_game.py}{story} of a fun, simple, good and nice game. While those adjectives are not accolades of greatness, they suggest that \textit{Hungry Space Cat} is, at least, a decent prototype. 
+\begin{figure}
+    \centering
+    \includegraphics[width=0.5\linewidth]{entire_game_wordcloud.png}
+    \caption{The word cloud above is a compilation of all the words players have used to describe the game.}
+    \label{word_cloud_entire_game}
+    \Description.
+\end{figure}
+\par 
+Of course, the word cloud comprises all the words used to describe the previous word clouds, meaning that the results are inferred. That is why - as with prior sections - the evaluation should be viewed critically, as more data would be needed to produce more precise results. 
+\subsection{Overall Evaluation}
+From the perspective of the game being finished on time, \textit{Hungry Space} is a success, as the development of the core features has gone according to plan. From the players' point of view, the game is playable and fun, even if not the most memorable, which hints at success but also gives room for future work. 
+\paragraph{}
+(1454 words.)
+\section{CONCLUSION}
+The following section summarises the conclusions drawn from creating \textit{Hungry Space Cat}, including any planned future work.
+\subsubsection{Personal Development}
+\paragraph{}
+Given that I was inexperienced as a game developer and had only previously worked on another game as part of a team, I am proud of the outcome of this project. It met all its deadlines despite full-time work and other academic commitments.
+\par 
+Not only that, but I embarked on this degree as an unseasoned video game player who knew little and appreciated even less the complexities of creating a game. I had only ever
+heard about Unity, and it was only through this course that I understood how it worked. To see an idea go from being a rough outline in my head to a playable game has been a bit baffling and humbling but also rewarding.
+\par 
+\textit{Hungry Space Cat} is a working game prototype with a look and feel precisely as feline-inspired as initially envisioned. Furthermore, the gameplay is cute, and I have come a long way since first undertaking the project. Not only can I tackle the programming of a game using various tools independently, but I have grown more confident doing so.
+\subsubsection{Future Work}
+\paragraph{}
+Some areas of \textit{Hungry Space Cat} could benefit from code refactoring regardless of the working prototype. For example, as mentioned in the implementation section, the object pool should be a singleton for better code reuse and more efficient performance. With lack of time no longer a decisive factor in the game's development, I can research more game design and development patterns, helping me refine the object pool code and look into polishing other scripts.  
+\par 
+Code that needs refactoring includes the overall structure that does not adhere to any programming patterns, as the project focused on completing it on time. Thus, future work will involve polishing the code while ensuring it becomes more elegant and readable. Unity itself offers e-books that teach developers about \href{https://unity.com/blog/games/level-up-your-code-with-game-programming-patterns}{ game programming patterns}. 
+\par 
+Moreover, to help lessen my reliance on game artists, I plan to learn more about designing my own sprites and shaders. Learning more about game design would help \textit{Hungry Space Cat} feel more original, grow my skill set, and enable me to further grasp the secret behind making a good game. It would also feel more gratifying, as there is an undeniable beauty in creating your own assets.
+\subsubsection{Beyond This Project}
+\paragraph{}
+Beyond this project, I want to explore other game engines like Unreal or Godot. Learning about these engines would expand my knowledge of game creation and give me the tools to become a more well-rounded developer. 
+\par 
+In addition to learning more game engines, I would like to know about UX and UI concepts to make better menus that are accessible and aesthetically pleasing. In that vein, an increased exposure to web design and applications may also decrease my deficits in this area. 
+\paragraph{}
+(474 words.)
+\bibliographystyle{ACM-Reference-Format.bst}
+\bibliography{references} 
+\paragraph{}
+(9061 words.)
+\end{document}
